@@ -1,0 +1,632 @@
+  /* Config Header */
+        
+  @media(min-width: 992px){
+    #header #header-int{
+        /*cor do background*/
+        background: rgb(3,116,14);
+        background: linear-gradient(0deg, rgba(3,116,14,1)9%, rgba(3,79,10,1) 10%);
+        height: 130px;
+    }
+    
+    #header img{
+        /* editando a localização da logo da agro */
+        margin-top: -15%;
+        margin-bottom: -7.5%;
+        margin-left: 20%;
+        
+    } 
+}
+
+@media(max-width: 991px){
+    #header #header-int{
+        /*cor do background*/
+        background: rgb(3,116,14);
+        background: linear-gradient(0deg, rgba(3,116,14,1) 11%, rgba(3,79,10,1) 12%);
+        height: 20%;
+    }
+    
+    #header img{
+        /* editando a localização da logo da agro */
+        margin-top: -15%;
+        margin-bottom: -7.5%;
+        margin-left: 20%;
+        
+    } 
+}
+
+/*config navbar*/   
+
+@media(min-width: 992px){
+
+    #header #navbar #nav{
+    /* definindo a cor e o tipo de fonte do texto dos links da navbar */
+        color: #fff;
+        font-family: arial;
+        
+    }  
+    
+
+    #header #navbar a h1{
+        /* definindo o tamanho do texto dos links da navbar */
+        font-size: 1.9em;
+    }
+
+    #itens-navbar{
+        /* editando o visual dos itens da navbar  */
+        margin-top: 1%;
+        margin-right: 8%;
+        margin-left: 9%;
+        border-top: 2px solid #034F0A;
+        border-bottom: 2px solid #034F0A;
+        border-right: 2px solid #ffffff;
+        border-left: 2px solid #ffffff;
+    }
+
+    #header #navbar #nav:hover{
+        /* colocando o brilhinho quando passa o mouse em cima */
+        color: #FFF086;
+    }  
+
+
+    #header #login{
+        /*editando o visual do butão de login*/
+        font-size: 1.2em;
+        font-family: arial;
+        margin-top: 15px;
+        margin-right: 3%;
+        width: 150px;
+    }
+
+    #header #login #link {
+        /* tirando a decoração do link */
+        text-decoration: none; 
+        color:#fff;
+    }
+
+    #header #login #link:hover{
+        /* colocando o brilhinho quando passa o mouse em cima */
+        color: #FFF086;
+    } 
+    
+    #pag_up{
+        /*dando um espaço do header para a pagina*/
+        margin-bottom: 8%;
+        
+    }
+
+}
+
+@media(max-width: 991px){
+
+    #header #navbar #nav{
+        /* definindo a cor e o tipo de fonte do texto dos links da navbar */
+        color: #222;
+        font-family: arial;
+       
+    }  
+
+   
+    
+    #header #navbar a h1{
+        /* definindo o tamanho do texto dos links da navbar */
+        font-size: 1.2em;
+    }
+    #header #offcanvasNavbarLabel{
+        color: #888;
+    }
+    #header #navbar #nav:active, #header #login #link:    {
+        /* colocando o brilhinho quando passa o mouse em cima */
+        color: #FFF086;
+    }  
+
+    #header #login{
+        /*editando o visual do butão de login*/
+        font-size: 1.2em;
+        font-family: arial;
+        margin-top: 20%;
+    }
+
+    #header #login #link {
+        /* tirando a decoração do link */
+        text-decoration: none; 
+        color: #222;
+        
+    }
+
+    #pag_up{
+        margin-bottom: 8%;
+    }
+}
+
+
+/*footer config*/
+@media(min-width: 992px){
+    
+    #footer {
+        background: rgb(3,79,10);
+        background: linear-gradient(0deg, rgba(3,79,10,1) 93%, rgba(3,116,14,1) 94%);
+        display: flex;
+        justify-content: space-evenly;
+        padding: 20px;
+    }
+    
+    #footer #cont {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Layout de 2 colunas */
+        grid-gap: 20px; /* Espaçamento geral entre os itens */
+        column-gap: 40px; /* Espaçamento lateral maior entre colunas */
+        margin-bottom: 7%;
+    }
+    
+    #footer #titulo {
+        font-size: 1.4em;
+        color: white;
+        margin-bottom: 13%;
+    }
+    
+    #footer #logo img {
+        margin-top: -15px;
+    }
+    
+    #footer #perguntas,
+    #footer #logo,
+    #footer #linksfora {
+        
+        margin-bottom: 1%;
+    }
+    
+    #footer #perguntas a {
+        color: white;
+        font-size: 0.8em;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    #footer #perguntas a:hover {
+        color: #FFF086;
+    }
+    
+    /* Links externos */
+    #footer #linksfora {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 0;
+    }
+    
+    #footer #linksfora #cont {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Layout de 2 colunas */
+        grid-gap: 20px; /* Espaçamento entre os links */
+        column-gap: 40px; /* Espaçamento lateral entre as colunas */
+        
+    }
+    
+    #footer #linksfora a {
+        color: white;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2em;
+    }
+    
+    #footer #linksfora a:hover,
+    #footer #linksfora #Emailbotum:hover {
+        color: #FFF086;
+    }
+    
+    #footer #linksfora #Emailbotum {
+        font-family: Arial, Helvetica, sans-serif;
+        background: none;
+        border: none;
+        text-decoration: none;
+        font-size: 1.2em;
+        color: white;
+        cursor: pointer;
+        margin-left: -5px;
+    }
+    
+    .copy {
+        display: flex;
+        justify-content: flex-end;
+        font-weight: bold;
+        margin-bottom: -5px;
+        font-size: 18px;
+        color: #fff;
+    }
+    
+    /* Adicionando ícones nos links */
+    #footer #linksfora li {
+        list-style: none;
+    }
+    
+    #footer #linksfora li#facefoo {
+        list-style-image: url('../multimidia/icones/facebook.png');
+    }
+    
+    #footer #linksfora li#instfoo {
+        list-style-image: url('../multimidia/icones/instagram.png');
+    }
+    
+    #footer #linksfora li#whatfoo {
+        list-style-image: url('../multimidia/icones/whatsapp.png');
+    }
+    
+    #footer #linksfora li#Emailfoo {
+        list-style-image: url('../multimidia/icones/gmail.png');
+    }
+    
+    
+}
+
+
+@media(max-width: 991px){
+
+    #footer {
+        /*  */
+        background: #034f0a;
+        background: linear-gradient(0deg, rgba(3,79,10,1) 93%, rgba(3,116,14,1) 94%); 
+        margin-bottom: -10px;
+    }
+
+    #footer #linksfora{
+        
+        margin-left: 34%;
+        margin-right: 34%;
+    }
+    #footer #perguntas{
+        padding-top: 60px;
+        margin-left: 25%;
+        margin-right: 25%;
+        
+    }
+
+    #footer #logo{
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    
+    #footer #cont{
+        
+        margin-bottom: 7%;
+    }
+
+    #footer #titulo {
+        font-size: 1.4em;
+        color: white;
+        margin-bottom: 25%;
+        margin-left: -8%;
+    }
+
+    #footer #linksfora #titulo{
+        margin-left: -20%;
+    }
+
+    #footer #logo img{
+        margin-top: -15px;
+    }
+    
+    #footer #perguntas, #footer #logo, #footer #linksfora{
+        margin-top: 2%;
+        margin-bottom: 1%;
+    }
+    
+    /*editando links para seção de ajuda*/
+
+    #footer #perguntas a {
+        color: white;
+        font-size: 1.2em;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    #footer #perguntas a:active {
+        color: #FFF086;
+    }
+    
+    /* Links externos */
+    #footer #linksfora {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 0;
+    }  
+    
+    
+        /*editando os links externos*/
+    
+            
+    #footer #linksfora a {
+        color: white;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5em;
+      
+    }
+    
+    #footer #linksfora a:,
+    #footer #linksfora #Emailbotum:active {
+        color: #FFF086;
+    }
+    
+    #footer #linksfora #Emailbotum {
+        font-family: Arial, Helvetica, sans-serif;
+        background: none;
+        border: none;
+        text-decoration: none;
+        font-size: 1.5em;
+        color: white;
+        cursor: pointer;
+        margin-left: -5px;
+    }
+
+
+        
+    .copy {
+        display: flex;
+        justify-content: flex-end;
+        font-weight: bold;
+        margin-bottom: -5px;
+        font-size: 18px;
+        color: #fff;
+    }
+    
+
+    /* Adicionando ícones nos links */
+    #footer #linksfora li {
+        list-style: none;
+    }
+    
+    #footer #linksfora li#facefoo {
+        list-style-image: url('../multimidia/icones/facebook.png');
+    }
+    
+    #footer #linksfora li#instfoo {
+        list-style-image: url('../multimidia/icones/instagram.png');
+    }
+    
+    #footer #linksfora li#whatfoo {
+        list-style-image: url('../multimidia/icones/whatsapp.png');
+    }
+    
+    #footer #linksfora li#Emailfoo {
+        list-style-image: url('../multimidia/icones/gmail.png');
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(min-width: 992px){
+            
+    /* home config*/
+    #home{
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 50px;
+    }
+
+    #home .title{
+        column-span: all;
+        display: block;
+        font-size: 1.8em;
+    }
+
+    #home #apresentacao{
+        columns: 150px 2;
+        column-gap: 20px;
+        padding: 25px;
+        margin-bottom: 100px;
+        font-family: Verdana;
+        text-align: justify;
+    }
+
+
+    #home #logo{
+        /* a logo que fica no home*/
+        margin-left: 30%;
+        margin-right: 50%;
+        margin-bottom: 70px;
+        border-radius: 6%; 
+    }
+
+    
+    
+}
+
+
+@media(max-width: 991px){
+
+            
+   
+
+    
+}
+
+
+
+
+
+
+#home #foto1, 
+#home #foto2{
+display: flex;
+}
+
+
+#home #foto1 #foto{
+border: solid 2px #034F0A;
+padding: 15px 15px 10px 15px;
+border-radius: 8px;
+
+}
+
+#home #foto1 #foto #descricao {
+align-items: center;
+padding-left: 10%;
+padding-right: 10%;
+}
+
+
+#home #foto1 #foto p{
+margin-top: 0px;
+margin-bottom: 0px;
+font-family: 'Times New Roman', Times, serif;
+}
+
+#home #foto1 #foto #faixada{
+height: 300px;
+width: 450px;
+border-radius: 8px;
+}
+#home #foto1 #texto{
+margin-left: 60px;
+margin-top: 80px;
+font-family: 'Times New Roman', Times, serif;
+font-size: 1.5em;
+text-align: justify;
+}
+#home #foto2 #texto{
+margin-left: 15px;
+margin-top: 80px;
+font-family: 'Times New Roman', Times, serif;
+font-size: 1.5em;
+text-align: justify;
+}
+#home #foto1 #texto p:hover{
+color: #034F0A;
+font-size: 105%;
+}
+#home #foto2 #texto p:hover{
+margin-left: -10px;
+color: #034F0A;
+font-size: 105%;
+}
+
+
+
+#home #foto2 {
+margin-top: -40px;
+margin-left: 240px;
+}
+#home #foto2 #linkMaps{
+text-decoration: none;
+margin-left: 100px;
+}
+
+#home #foto2 #maps {
+border: solid 2px #034F0A;
+border-radius: 8px ;
+}
+
+#home #foto2 #maps #titulo {
+border: 2px solid #034F0A;
+border-top: 0;
+border-right: 0;
+border-left: 0;
+border-radius: 5px;
+font-size: 2.2em;
+padding: 13px;
+padding: -1px;
+text-shadow: 2px 2px 4px #000000;
+color: #fff;
+background-color: #34A853;
+}
+
+#home #foto2 #maps #titulo:hover{
+font-size: 2.3em;
+}
+
+#home #foto2 #maps #espacamento{
+padding: 10px;
+}
+
+#home #foto2 #maps #imagem {
+border-radius: 8px;
+border:solid 1px #034F0A;
+}
+
+
+#home #avaliacao #tabel {
+border: solid 2px #034F0A;
+border-radius: 8px ;
+}
+
+#home #avaliacao #tabel #titulo {
+border: 2px solid #034F0A;
+border-top: 0;
+border-right: 0;
+border-left: 0;
+border-radius: 5px;
+font-size: 1.2em;
+padding: 13px;
+background-color: #05660e;
+padding: -1px;
+
+text-shadow: 2px 2px 4px #272727;
+}
+#home #avaliacao #tabel #titulo #link{
+text-decoration: none;
+color:#ffffff;
+}
+#home #avaliacao #tabel #texto{
+margin-left: 18px;
+margin-right: 18px;
+margin-top: 10px;
+font-family: 'Times New Roman', Times, serif;
+font-size: 1em;
+text-align: justify;
+}
+#home #avaliacao {
+margin-left: 80px;
+margin-bottom: 50px;
+}
+#home #avaliacao a {
+text-decoration: none;
+color: white;
+}
+
+
+

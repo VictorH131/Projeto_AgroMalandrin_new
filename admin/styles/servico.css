@@ -1,0 +1,125 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    margin: 0;
+    padding-left: 60px;
+}
+
+h1, h2 {
+    color: #c0392b; /* Tom de vermelho mais escuro */
+    text-align: center; /* Centralizando o título */
+}
+
+.container {
+    max-width: 600px; /* Aumentando a largura máxima do container */
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px; /* Mantendo o padding do container */
+}
+
+table {
+    width: 100%; /* Aumentando a largura da tabela */
+    border-collapse: collapse;
+    margin: 10px 0; /* Ajustando a margem da tabela */
+    overflow-x: auto; /* Permitir rolagem horizontal em dispositivos móveis */    
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #c0392b; /* Tom de vermelho */
+    color: white;
+}
+
+.alert {
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+form {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 15px; 
+    background: #e9ecef;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border: 1px solid #c0392b; 
+    outline: none; 
+}
+
+button {
+    background-color: #c0392b; 
+    color: white;
+    border: none; /* Removendo a borda */
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    cursor: pointer;
+    font-weight: bold; 
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #a93226; 
+    transform: scale(1.05); 
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    table {
+        font-size: 14px;
+        width: 100%; /* Mantendo a tabela na largura total */
+        display: block;
+        overflow-x: auto; /* Adiciona rolagem horizontal */
+        white-space: nowrap; /* Impede que a tabela quebre */
+    }
+
+    th, td {
+        padding: 8px; /* Ajustando o padding das células */
+    }
+}

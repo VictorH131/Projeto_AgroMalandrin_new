@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    border-radius: 10px 10px 10px 10px;
+    width: 800px;
+    height: 400px;
+    display: flex;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.left-panel {
+    background-color: #000;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+.left-panel{
+    border-radius: 8px 0px 0px 8px;
+}
+.right-panel{
+    border-radius: 0px 8px 8px 0px;
+}
+.left-panel img {
+    width: 120px;
+}
+
+.left-panel h1 {
+    font-size: 29px;
+    margin-top: -12px;
+    font-family: 'Inria Serif', serif;
+}
+
+.right-panel {
+    background-color: #000;
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.right-panel h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-family: 'Inria Serif', serif;
+}
+
+.right-panel form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-panel label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+}
+
+.right-panel input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.right-panel button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.right-panel button:hover {
+    background-color: #ccc;
+    transform: scale(1.1); /* Aumenta o botão em 10% */
+}
+
+.right-panel button:active {
+    transform: scale(0.95); /* Efeito de clique */
+    background-color: #bbb;
+}
+
+.img_icons a {
+    margin: 0 7px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icon {
+    margin-top: 20px;
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.img_icons a:hover .icon {
+    transform: scale(1.2); 
+    opacity: 0.8;
+}
+
+.img_icons a:active .icon {
+    transform: scale(1); 
+    opacity: 1; 
+}
+
+
+/* Barra vertical */
+.divider {
+    width: 3px;
+    background-color: #fff;
+    margin: 0 ;
+}
+
+.img_icons a {
+    margin: 0 7px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.img_icons a:hover .icon {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.img_icons a:active .icon {
+    transform: scale(1);
+    opacity: 1;
+}
+
+        
