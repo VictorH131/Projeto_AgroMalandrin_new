@@ -114,7 +114,7 @@
     #header #offcanvasNavbarLabel{
         color: #888;
     }
-    #header #navbar #nav:active, #header #login #link:    {
+    #header #navbar #nav:active, #header #login #link    {
         /* colocando o brilhinho quando passa o mouse em cima */
         color: #FFF086;
     }  
@@ -351,7 +351,7 @@
       
     }
     
-    #footer #linksfora a:,
+    #footer #linksfora a,
     #footer #linksfora #Emailbotum:active {
         color: #FFF086;
     }
@@ -558,7 +558,7 @@ margin-left: 100px;
 
 #home #foto2 #maps {
 border: solid 2px #034F0A;
-border-radius: 8px ;
+border-radius: 8px;
 }
 
 #home #foto2 #maps #titulo {
@@ -591,7 +591,7 @@ border:solid 1px #034F0A;
 
 #home #avaliacao #tabel {
 border: solid 2px #034F0A;
-border-radius: 8px ;
+border-radius: 8px;
 }
 
 #home #avaliacao #tabel #titulo {
@@ -628,5 +628,83 @@ text-decoration: none;
 color: white;
 }
 
+
+
+
+
+
+/* config departamento */
+
+#produto {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+#produto .menu-container {
+    position: relative;
+    width: 200px;
+    margin: 20px;
+}
+
+#produto .menu-button {
+    background-color: #03740E;
+      color: white;
+      padding: 15px;
+      margin-top: 60%;
+      border: 3px solid #034F0A;
+      border-radius: 8px;
+      width: 120%;
+      text-align: left;
+      font-size: 20px;
+      cursor: pointer;
+}
+
+#produto .menu-button:hover {
+    background-color: #FCDCB7;
+    color: black;
+    border: 3px solid #F6A507;
+}
+
+#produto .dropdown-menu {
+    display: none;
+     background-color: white;
+     border: 10px solid black;
+     border-radius: 10px;
+     position: absolute;
+     margin-top: 60%;
+     top: 40px;
+     width: 120%;
+     z-index: 1;
+}
+
+#produto .dropdown-menu a {
+    display: block;
+     padding: 10px;
+     border-radius: 6.8px;
+     text-decoration: none;
+     color: black;
+     border-bottom: 2px solid black;
+     border-top: 2px solid black;
+     border-left: 1.8px solid black;
+     border-right: 1.8px solid black;
+}
+
+#produto .dropdown-menu a:hover {
+    background-color: #FCDCB7;
+    color: black;
+}
+
+#produto .menu-container:hover .dropdown-menu {
+    display: block;
+    margin-top: 72.8%;
+    border: 2px solid transparent;
+    border-top: 1px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
 
 

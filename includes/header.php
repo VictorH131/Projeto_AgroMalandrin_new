@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- conectando com o css-->
-    <link href="estilos/estilos.css" rel="stylesheet" type="text/css">
+    <link href="estilos/estilo2.css" rel="stylesheet" type="text/css">
 
     
     <!-- colocando o icone da pagina-->
@@ -33,8 +33,8 @@
             
                 
                 <picture>
-                    <source media="(min-width: 992px)" srcset="multimidia/logo_Head.png">
-                    <img src="multimidia/logo_Head_mob.png" alt="logo Agro malandrin" id="logo">
+                    <source media="(min-width: 992px)" srcset="multimidia/logo/logo_Head.png">
+                    <img src="multimidia/logo/logo_Head_mob.png" alt="logo Agro malandrin" id="logo">
                 </picture>
             
                 
@@ -59,7 +59,7 @@
                             </li>
                             
                             <li class="nav-item">
-                                <a href="Produtos.php" id="nav" class="nav-link mx-lg-2"> <h1>Produtos</h1> </a>
+                                <a href="produtos.php" id="nav" class="nav-link mx-lg-2"> <h1>Produtos</h1> </a>
                             </li>
 
                             <li class="nav-item">

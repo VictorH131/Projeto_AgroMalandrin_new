@@ -12,13 +12,12 @@
 include_once 'includes/header.php'
 ?>
 
-
-<marquee> visiti-nos em Nossa Loja </marquee>
+<marquee> visite-nos em Nossa Loja </marquee>
 
 <main id="home">
     
     <picture>
-        <source media="(min-width: 992px)" srcset="multimidia/Logo_Home.png">
+        <source media="(min-width: 992px)" srcset="multimidia/logo/Logo_Home.png">
         <img src="multimidia/logo_Home_mob.png" alt="logo Agro malandrin" id="logo">
     </picture>
 
@@ -44,7 +43,7 @@ include_once 'includes/header.php'
     <div id="foto1">
         
         <div id="foto"> 
-            < 
+            <img src="" alt="">
 
             <p id="descricao">Rua Joaquim de Souza Dias - São Vincente, Itapira-SP</p>
         </div>

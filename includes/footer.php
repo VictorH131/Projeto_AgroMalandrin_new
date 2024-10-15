@@ -11,7 +11,7 @@
 
     <div id="logo"> <!-- logo no footer -->
         <a href="#header">
-            <img src="multimidia/logo_Foo.png" alt="logo Agro malandrin" id="logo">
+            <img src="multimidia/logo/logo_Foo.png" alt="logo Agro malandrin" id="logo">
         </a>
     </div>
 
