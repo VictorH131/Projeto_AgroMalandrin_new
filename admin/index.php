@@ -42,7 +42,7 @@
         border-radius: 10px; /* Borda arredondada */
         width: 300px;
         text-align: center;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 10px #000;
     }
 
     .menu-item h2 {
@@ -65,7 +65,7 @@
     }
 
     .menu-item a:hover {
-        color: #ad190e;
+        color: #FFF086;
     }
 
     hr {
@@ -139,7 +139,7 @@
     </div>
    
    <!-- Botão Sair fixado no canto superior direito -->
-   <button onclick="window.location.href='../secure/logout.php'">Sair</button>
+   
 
 </body>
 </html>

@@ -15,19 +15,27 @@
 </head>
 <body>
  
+
   <!-- Ícone de sanduíche -->
   <span class="hamburger" onclick="toggleSidebar()">&#9776;</span>
  
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
     <ul class="nav flex-column">
+    
+    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" >
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-4"><img src="../multimidia/logo/Logo_Head_mob.png" alt=""></span>
+    </a>
 
+   
+      
       <li class="nav-item">
-        <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Inicial</a> <!-- Ícone de casa -->
+        <!-- Ícone de casa -->
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="forms_usu.php"><i class="fas fa-user"></i> Usuários</a> <!-- Novo ícone de clientes -->
+        <a class="nav-link" href="forms_usu.php"><i class="fas fa-users"></i> Usuários</a> <!-- Novo ícone de clientes -->
       </li>
 
       <li class="nav-item">
@@ -74,6 +82,20 @@
       
 
     </ul>
+
+
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fas fa-user"></i>
+        <strong><?php echo $nomeUsuario; ?></strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+        
+        <li> <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Home </a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#" onclick="window.location.href='../secure/logout.php'">Sair</a></li>
+      </ul>
+    </div>
   </div>
  
   <script>

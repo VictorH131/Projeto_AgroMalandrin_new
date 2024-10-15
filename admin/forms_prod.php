@@ -65,7 +65,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>+Produto | Salão Novo Estilo</title>
+    <title>+Produto | Agro Malandrin</title>
     <link rel="shortcut icon" href="" type="image/x-icon">
     <link rel="stylesheet" href="styles/forms.css">
 </head>

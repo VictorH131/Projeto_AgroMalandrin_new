@@ -72,7 +72,7 @@
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>+Usuários | Salão Novo Estilo</title>
+    <title>+Usuários | Agro Malandrin</title>
     <link rel="stylesheet" href="styles/usuario.css">
     <link rel="stylesheet" href="styles/forms.css">
 </head>
