@@ -19,10 +19,10 @@ include_once 'includes/header.php'
     <div class="menu-container">
         <button class="menu-button"><strong>☰ Departamentos</strong></button>
         <div class="dropdown-menu">
-            <a href="#">Rações <img src="/multimidia/icones/seta.png" alt="" style="width: 15%; margin-left: 55%;"></a>
-            <a href="#">Ferramentas <img src="/multimidia/icones/seta.png" alt="" style="width: 15%; margin-left: 37%;"></a>
-            <a href="#">Vestimentas <img src="/multimidia/icones/seta.png" alt="" style="width: 15%; margin-left: 38%;"></a>
-            <a href="#">Remédios <img src="/multimidia/icones/seta.png" alt="" style="width: 15%;  margin-left: 45%;"></a>
+            <a href="#">Rações <img src="multimidia/icones/seta.png" alt="Seta" style="width: 15%; margin-left: 55%;"></a>
+            <a href="#">Ferramentas <img src="multimidia/icones/seta.png" alt="Seta" style="width: 15%; margin-left: 37%;"></a>
+            <a href="#">Vestimentas <img src="multimidia/icones/seta.png" alt="Seta" style="width: 15%; margin-left: 38%;"></a>
+            <a href="#">Remédios <img src="multimidia/icones/seta.png" alt="Seta" style="width: 15%;  margin-left: 45%;"></a>
         </div>
     </div>
 

@@ -8,7 +8,7 @@
     position: fixed;
     top: 0;
     left: -200px; 
-    background-color: black; /* Cor do fundo */
+    background-color: #034F0A; /* Cor do fundo */
     padding-top: 1px;
     transition: 0.3s ease; /* Transição suave */
   }
@@ -24,8 +24,12 @@
   }
 
   .sidebar a:hover {
-    background-color: red; /* Efeito hover */
+    background-color: #013406; /* Efeito hover */
     color: white;
+  }
+
+  .sidebar a:active {
+    color: #FFF086;
   }
 
   /* Adicionando margem aos ícones */

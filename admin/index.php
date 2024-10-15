@@ -37,7 +37,7 @@
     }
 
     .menu-block {
-        background-color: #000;
+        background-color: #034F0A;
         padding: 20px;
         border-radius: 10px; /* Borda arredondada */
         width: 300px;

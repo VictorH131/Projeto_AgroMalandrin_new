@@ -1,4 +1,5 @@
 <?php
+
 session_start(); 
 
 // Verificar se o usuário já está logado
@@ -71,29 +72,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+
+include 'includes/header.php'
+
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Salão Novo Estilo</title>
-    <link rel="stylesheet" href="styles/stylelogin.css"> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - Agro Malandrin</title>
+        <link rel="stylesheet" href="styles/stylelogin.css"> 
 
-    <!-- Importar a biblioteca SHA-512 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha512/0.8.0/sha512.min.js"></script>
-    <!-- Importar o script para manipular o formulário -->
-    <script type="text/JavaScript" src="js/forms.js"></script>
-    
-</head>
-<body>
-    <div class="login-container">
-        <div class="left-panel">
-            <img src="../multimidia/logologin.png" alt="">
-            <h1>Salão Novo Estilo</h1>          
-        </div>
-        <div class="divider"></div> <!-- Barra vertical -->
+        <!-- Importar a biblioteca SHA-512 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha512/0.8.0/sha512.min.js"></script>
+        
+        
+    </head>
+
+    <div id="login">     
         <div class="right-panel">
             <h2>Login</h2>
             
@@ -103,21 +101,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             <form action="<?= $_SERVER["PHP_SELF"] ?>" method="POST" id="form_login" onsubmit="hashSenha(this, this.password); return false;">
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="coloque sua E-mail" required>
 
                 <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" placeholder="coloque sua Senha" p required>
 
-                <a href="#" style="font-size: 13px;">Esqueceu sua senha?</a>
+                <div id="link"><a href="#" style="font-size: 13px;">Esqueceu sua senha?</a></div>
+                
                 <button type="submit">Entrar</button>
             </form>
 
             <div class="img_icons">
-                Login com:
-                <a href="verifica_login/google-login.php"><img src="../multimidia/icon/google.png" alt="Google" class="icon"></a> 
+                Login com:<a href="verifica_login/google-login.php"><img src="../multimidia/icones/google.png" alt="Google logo" class="icon">Google</a> 
             </div>
 
         </div>
     </div>
+    
 </body>
 </html>

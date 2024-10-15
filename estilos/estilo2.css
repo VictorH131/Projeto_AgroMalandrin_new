@@ -267,7 +267,7 @@
     #footer {
         /*  */
         background: #034f0a;
-        background: linear-gradient(0deg, rgba(3,79,10,1) 93%, rgba(3,116,14,1) 94%); 
+        background: linear-gradient(0deg, #034f0a 93%, rgba(3,116,14,1) 94%); 
         margin-bottom: -10px;
     }
 
@@ -650,7 +650,7 @@ color: white;
     background-color: #03740E;
       color: white;
       padding: 15px;
-      margin-top: 60%;
+      margin-top: -5%;
       border: 3px solid #034F0A;
       border-radius: 8px;
       width: 120%;
@@ -671,7 +671,7 @@ color: white;
      border: 10px solid black;
      border-radius: 10px;
      position: absolute;
-     margin-top: 60%;
+     margin-bottom: 60%;
      top: 40px;
      width: 120%;
      z-index: 1;
@@ -696,7 +696,7 @@ color: white;
 
 #produto .menu-container:hover .dropdown-menu {
     display: block;
-    margin-top: 72.8%;
+    margin-top: 8%;
     border: 2px solid transparent;
     border-top: 1px solid black;
     border-left: 3px solid black;
@@ -706,5 +706,8 @@ color: white;
     padding-top: 0px;
     padding-bottom: 0px;
 }
+
+
+
 
 

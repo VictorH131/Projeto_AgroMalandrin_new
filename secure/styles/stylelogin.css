@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body {
+#login {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
@@ -21,47 +21,35 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.left-panel {
-    background-color: #000;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
 
-}
-.left-panel{
-    border-radius: 8px 0px 0px 8px;
-}
 .right-panel{
-    border-radius: 0px 8px 8px 0px;
-}
-.left-panel img {
-    width: 120px;
+    border-radius: 8px;
 }
 
-.left-panel h1 {
-    font-size: 29px;
-    margin-top: -12px;
-    font-family: 'Inria Serif', serif;
-}
 
 .right-panel {
-    background-color: #000;
+    background-color: #ffffff;
+    border: 3px solid #F6A507;
     width: 50%;
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .right-panel h2 {
     margin-bottom: 20px;
     font-size: 28px;
     font-family: 'Inria Serif', serif;
+    color: rgb(0, 0, 0);
+    background: rgb(200,135,9);
+background: linear-gradient(307deg, rgba(200,135,9,1) 17%, rgba(236,202,136,1) 51%, rgba(200,135,9,1) 81%);
+    text-align: center;
+    border-radius: 30px;
+    height: 40px;
+    width: 300px;
 }
 
 .right-panel form {
@@ -81,15 +69,18 @@ body {
     padding: 10px;
     margin-bottom: 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     outline: none;
+    color: #595959;
+    border: 3px solid #F6A507;
 }
+
 
 .right-panel button {
     padding: 10px 20px;
     background-color: #fff;
     color: #000;
-    border: none;
+    border: solid 1px #F6A507;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -98,18 +89,21 @@ body {
 }
 
 .right-panel button:hover {
-    background-color: #ccc;
+    
+    border: solid 2px #F6A507;
     transform: scale(1.1); /* Aumenta o botão em 10% */
 }
 
 .right-panel button:active {
     transform: scale(0.95); /* Efeito de clique */
-    background-color: #bbb;
+    background-color: #FCDCB7;
 }
 
-.img_icons a {
+
+.img_icons #link a {
     margin: 0 7px;
     transition: transform 0.3s ease, opacity 0.3s ease;
+
 }
 
 .icon {
@@ -140,6 +134,8 @@ body {
 .img_icons a {
     margin: 0 7px;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    text-decoration: none;
+    color: #000;
 }
 
 .icon {
