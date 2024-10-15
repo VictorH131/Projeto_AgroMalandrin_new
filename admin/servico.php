@@ -52,7 +52,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>+Serviços | Agro Malandrin</title>
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <!-- colocando o icone da pagina-->
+    <link rel="shortcut icon" href="../multimidia/icones/planta.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/forms.css">
 </head>
 <?php 
@@ -71,7 +72,7 @@
         <?php endif; ?>
 
         <!-- Formulário para adicionar ou editar serviço -->
-        <form action="forms_serv.php" method="POST">
+        <form action="servico.php" method="POST">
             <input type="hidden" name="id_serv" value="<?= htmlspecialchars($_POST['id_serv'] ?? -1) ?>">
 
             <label for="nome_serv">Nome do Serviço:</label>
@@ -115,7 +116,7 @@
                         <td><?= htmlspecialchars($servico['prazo_serv']) ?></td>
                         <td><?= htmlspecialchars($servico['status_serv']) ?></td>
                         <td>
-                            <a href="forms_serv.php?id_serv=<?= $servico['id_serv'] ?>" class="edit">Editar</a> |
+                            <a href="servico.php?id_serv=<?= $servico['id_serv'] ?>" class="edit">Editar</a> |
                             <a href="?id_serv=<?= $servico['id_serv'] ?>&del=true" onclick="return confirm('Tem certeza que deseja desabilitar este serviço?');">Desabilitar</a>
                         </td>
                     </tr>

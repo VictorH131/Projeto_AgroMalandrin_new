@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -70,8 +72,14 @@
                     
                         
                         <div class="d-flex " id="login">
+                            <?php
+                            
+                                       
+                                    echo '<a href="secure/login.php" id="link"> <p>Ola, logue ou cadastre-se</p> </a> ';
+                            
+                            ?>
                             <!-- colocando o botão para poder logar -->
-                            <a href="secure/login.php" id="link"> <p>Ola, logue ou cadastre-se</p> </a> 
+                            
                         </div>
                         
                     </div>

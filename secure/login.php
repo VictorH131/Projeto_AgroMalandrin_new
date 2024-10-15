@@ -111,9 +111,7 @@ include 'includes/header.php'
                 <button type="submit">Entrar</button>
             </form>
 
-            <div class="img_icons">
-                Login com:<a href="verifica_login/google-login.php"><img src="../multimidia/icones/google.png" alt="Google logo" class="icon">Google</a> 
-            </div>
+           
 
         </div>
     </div>

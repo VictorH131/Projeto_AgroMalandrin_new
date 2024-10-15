@@ -73,7 +73,8 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>+Usuários | Agro Malandrin</title>
-    <link rel="stylesheet" href="styles/usuario.css">
+   <!-- colocando o icone da pagina-->
+   <link rel="shortcut icon" href="../multimidia/icones/planta.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/forms.css">
 </head>
 <?php 
@@ -95,7 +96,7 @@
 
 
     <!-- Formulário para adicionar ou editar usuário -->
-    <form action="forms_usu.php" method="POST">
+    <form action="usuario.php" method="POST">
         <input type="hidden" name="id_usu" value="<?= isset($_POST['id_usu']) ? (int) $_POST['id_usu'] : -1 ?>">
 
         <label for="nome_usu">Nome:</label>
@@ -116,12 +117,76 @@
         <label for="data_nascimento">Data de Nascimento:</label>
         <input type="date" id="data_nascimento" name="data_nascimento" required>
 
-        <label for="tipo_documento">Tipo do Documento:</label>
-        <input type="text" id="tipo_documento" name="tipo_documento" required>
+        <label for="tipo_documento">Tipo de Documento:</label>
+        <select name="tipo_documento" id="tipo_documento" required>
+            <optgroup label="Documento">
+                <option value="invalido">SELECIONE</option>
+                <option value="cpf" <?= (isset($_POST['tipo_documento']) && $_POST['tipo_documento'] === 'cpf') ? 'selected' : '' ?>>CPF</option>
+                <option value="rg" <?= (isset($_POST['tipo_documento']) && $_POST['tipo_documento'] === 'rg') ? 'selected' : '' ?>>RG</option>
+            </optgroup>
+        </select>
 
         <label for="documento_usu">Documento:</label>
         <input type="text" id="documento_usu" name="documento_usu" required>
 
+        
+
+    <?php
+    function validarCPF($cpf) {
+        // Remove caracteres não numéricos
+        $cpf = preg_replace('/[^0-9]/', '', $cpf);
+
+        // CPF deve ter 11 dígitos
+        if (strlen($cpf) != 11 || preg_match('/^(\d)\1{10}$/', $cpf)) {
+            return false;
+        }
+
+        // Cálculo do primeiro dígito verificador
+        $soma = 0;
+        for ($i = 0; $i < 9; $i++) {
+            $soma += intval($cpf[$i]) * (10 - $i);
+        }
+        $primeiroDigito = 11 - ($soma % 11);
+        if ($primeiroDigito >= 10) {
+            $primeiroDigito = 0;
+        }
+        if (intval($cpf[9]) != $primeiroDigito) {
+            return false;
+        }
+
+        // Cálculo do segundo dígito verificador
+        $soma = 0;
+        for ($i = 0; $i < 10; $i++) {
+            $soma += intval($cpf[$i]) * (11 - $i);
+        }
+        $segundoDigito = 11 - ($soma % 11);
+        if ($segundoDigito >= 10) {
+            $segundoDigito = 0;
+        }
+        if (intval($cpf[10]) != $segundoDigito) {
+            return false;
+        }
+
+        return true;
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $tipo_documento = $_POST['tipo_documento'];
+        $documento_usu = $_POST['documento_usu'];
+
+        if ($tipo_documento === 'cpf') {
+            if (validarCPF($documento_usu)) {
+                echo "<p>CPF é válido.</p>";
+            } else {
+                echo "<script>alert('CPF é inválido.');</script>";
+            }
+        } elseif ($tipo_documento === 'rg') {
+            echo "<p>RG foi enviado, mas a validação não está implementada.</p>";
+        }
+    }
+    ?>
+
+        
         <label for="cep">CEP:</label>
         <input type="text" id="cep" name="cep" placeholder="00000-000">
 
@@ -170,8 +235,8 @@
                     <td><?= $row['telefone_usu'] ?></td>
                     <td><?= $row['status_usu'] ?></td>
                     <td>                     
-                        <a href="forms_usu.php?id_usu=<?= $row['id_usu'] ?>" class="edit">Editar</a> |
-                        <a href="forms_usu.php?id_usu=<?= $row['id_usu'] ?>&del=1" onclick="return confirm('Tem certeza que deseja desabilitar este serviço?');">Desabilitar</a>
+                        <a href="usuario.php?id_usu=<?= $row['id_usu'] ?>" class="edit">Editar</a> |
+                        <a href="usuario.php?id_usu=<?= $row['id_usu'] ?>&del=1" onclick="return confirm('Tem certeza que deseja desabilitar este serviço?');">Desabilitar</a>
                     </td>
                 </tr>
             <?php endwhile; ?>

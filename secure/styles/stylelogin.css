@@ -131,12 +131,6 @@ background: linear-gradient(307deg, rgba(200,135,9,1) 17%, rgba(236,202,136,1) 5
     margin: 0 ;
 }
 
-.img_icons a {
-    margin: 0 7px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    text-decoration: none;
-    color: #000;
-}
 
 .icon {
     width: 25px;
@@ -144,14 +138,6 @@ background: linear-gradient(307deg, rgba(200,135,9,1) 17%, rgba(236,202,136,1) 5
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.img_icons a:hover .icon {
-    transform: scale(1.2);
-    opacity: 0.8;
-}
 
-.img_icons a:active .icon {
-    transform: scale(1);
-    opacity: 1;
-}
 
         

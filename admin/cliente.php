@@ -72,7 +72,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>+Serviços | Agro Malandrin</title>
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <!-- colocando o icone da pagina-->
+    <link rel="shortcut icon" href="../multimidia/icones/planta.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/forms.css">
 </head>
 <?php
@@ -92,7 +93,7 @@
             <?php endif; ?>
 
     <!-- Formulário para adicionar ou editar cliente -->
-                <form action="forms_cli.php" method="POST">
+                <form action="cliente.php" method="POST">
                     <input type="hidden" name="id_cli" value="<?= isset($_POST['id_cli']) ? (int) $_POST['id_cli'] : -1 ?>">
             
                         <label for="nome_cli">Nome do Cliente:</label>
@@ -187,8 +188,8 @@
                     
                     <td>
                         <!-- modificar o editar logo abaixo - 09/10/24 -->
-                        <a href="editar_forms_cli.php?id_cli=<?= $row["id_cli"] ?>">Editar</a> |
-                        <a href="forms_cli.php?id_cli=<?= $row["id_cli"] ?>&del=true" onclick="return confirm('Tem certeza que deseja desabilitar este cliente?')">Desabilitar</a>
+                        <a href="editar_cliente.php?id_cli=<?= $row["id_cli"] ?>">Editar</a> |
+                        <a href="cliente.php?id_cli=<?= $row["id_cli"] ?>&del=true" onclick="return confirm('Tem certeza que deseja desabilitar este cliente?')">Desabilitar</a>
                        
                        
                     </td>

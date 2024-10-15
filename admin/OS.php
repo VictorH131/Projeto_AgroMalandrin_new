@@ -56,7 +56,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro OS | Agro Malandrin</title>
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    
+
+    <!-- colocando o icone da pagina-->
+    <link rel="shortcut icon" href="../multimidia/icones/planta.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/forms.css">
 </head>
 <?php 
@@ -77,7 +80,7 @@
 
 
     <!-- Formulário para adicionar ou editar ordem de serviço -->
-    <form action="forms_ordem_servico.php" method="POST">
+    <form action="OS.php" method="POST">
         <input type="hidden" name="id_ordem" value="<?= isset($_POST['id_ordem']) ? $_POST['id_ordem'] : -1 ?>">
 
         <input type="hidden" name="data_ordem_servico" value="<?= date('Y-m-d H:i:s') ?>" required>

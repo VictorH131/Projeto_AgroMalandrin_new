@@ -66,7 +66,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>+Produto | Agro Malandrin</title>
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <!-- colocando o icone da pagina-->
+    <link rel="shortcut icon" href="../multimidia/icones/planta.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/forms.css">
 </head>
 <?php
@@ -86,7 +87,7 @@
 
 
         <!-- Formulário para adicionar ou editar produto -->
-        <form action="forms_prod.php" method="POST">
+        <form action="produtos.php" method="POST">
             <input type="hidden" name="id_prod" value="<?= isset($_POST['id_prod']) ? $_POST['id_prod'] : -1 ?>">
 
             <label for="nome_prod">Nome do Produto:</label>
@@ -142,7 +143,7 @@
                         <td><?= htmlspecialchars($produto['estoque_minimo']) ?></td>
                         <td><?= htmlspecialchars($produto['status_prod']) ?></td>
                         <td>
-                            <a href="forms_prod.php?id_prod=<?= $produto['id_prod'] ?>&del=1"
+                            <a href="produtos.php?id_prod=<?= $produto['id_prod'] ?>&del=1"
                                 onclick="return confirm('Tem certeza que deseja desabilitar este produto?')">Desabilitar</a>
                         </td>
                     </tr>

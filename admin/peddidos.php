@@ -74,7 +74,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>+Pedido | Agro Malandrin</title>
-    <link rel="shortcut icon" href="" type="image/x-icon">     
+    <!-- colocando o icone da pagina-->
+    <link rel="shortcut icon" href="../multimidia/icones/planta.png" type="image/x-icon">     
     <link rel="stylesheet" href="styles/forms.css">
 </head>
 <?php 
@@ -96,7 +97,7 @@
 
 
     <!-- Formulário para adicionar ou editar pedido -->
-    <form action="forms_ped.php" method="POST">
+    <form action="peddidos.php" method="POST">
         <input type="hidden" name="id_ped" value="<?= isset($_POST['id_ped']) ? $_POST['id_ped'] : '' ?>">
 
         <input type="hidden" name="data_ped" value="<?= date('Y-m-d H:i:s') ?>" required>
@@ -156,7 +157,7 @@
                         <td><?= htmlspecialchars($pedido['nome_cli']) ?></td>
                         <td><?= htmlspecialchars($pedido['nome_usu']) ?></td>
                         <td>
-                            <a href="forms_ped.php?id_ped=<?= $pedido['id_ped'] ?>" onclick="return confirm('Tem certeza que deseja remover este pedido?')">Remover</a>
+                            <a href="peddidos.php?id_ped=<?= $pedido['id_ped'] ?>" onclick="return confirm('Tem certeza que deseja remover este pedido?')">Remover</a>
                         </td>
                     </tr>
                 <?php endwhile; ?>

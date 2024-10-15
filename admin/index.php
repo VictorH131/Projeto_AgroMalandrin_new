@@ -8,7 +8,10 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="../secure/verifica_login/session.php">
-   <title>Index-CRUD</title>
+   <title>Index | Agro Malandrin</title>
+    <!-- colocando o icone da pagina-->
+    <link rel="shortcut icon" href="../multimidia/icones/planta.png" type="image/x-icon">
+
    <style>
     * {
         margin: 0;
@@ -113,28 +116,28 @@
     <!-- Bloco com as opções -->
     <div class="menu-block">
         <div class="menu-item">
-            <a href="forms_usu.php"><h2>+Usuário</h2></a>
-            <p><a href="forms_usu.php">Cadastrar/Editar</a></p>
+            <a href="usuario.php"><h2>+Usuário</h2></a>
+            <p><a href="usuario.php">Cadastrar/Editar</a></p>
         </div>
 
         <div class="menu-item">
-            <a href="forms_cli.php"><h2>+Clientes</h2></a>
-            <p><a href="forms_cli.php">Cadastrar/Editar</a></p>
+            <a href="cliente.php"><h2>+Clientes</h2></a>
+            <p><a href="cliente.php">Cadastrar/Editar</a></p>
         </div>
         <hr>
         <div class="menu-item">
-            <a href="forms_serv.php"><h2>+Serviços</h2></a>
-            <p><a href="forms_serv.php">Cadastrar/Editar</a></p>
+            <a href="servico.php"><h2>+Serviços</h2></a>
+            <p><a href="servico.php">Cadastrar/Editar</a></p>
         </div>
         <hr>
         <div class="menu-item">
-            <a href="forms_prod.php"><h2>+Produtos</h2></a>
-            <p><a href="forms_prod.php">Cadastrar/Editar</a></p>
+            <a href="produtos.php"><h2>+Produtos</h2></a>
+            <p><a href="produtos.php">Cadastrar/Editar</a></p>
         </div>
         <hr>
         <div class="menu-item">
-            <a href="forms_forne.php"><h2>+Fornecedores</h2></a>
-            <p><a href="forms_forne.php">Cadastrar/Editar</a></p>
+            <a href="fornec.php"><h2>+Fornecedores</h2></a>
+            <p><a href="fornec.php">Cadastrar/Editar</a></p>
         </div>
     </div>
    

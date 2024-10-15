@@ -76,7 +76,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>+Fornecedores | Agro Malandrin</title>
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <!-- colocando o icone da pagina-->
+    <link rel="shortcut icon" href="../multimidia/icones/planta.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/forms.css">
 </head>
 <?php 
@@ -97,7 +98,7 @@
 
 
     <!-- Formulário para adicionar ou editar fornecedor -->
-    <form action="forms_forne.php" method="POST">
+    <form action="fornec.php" method="POST">
         <input type="hidden" name="id_for" value="<?= isset($_POST['id_for']) ? $_POST['id_for'] : -1 ?>">
 
         <label for="nome_for">Nome do Fornecedor:</label>
@@ -245,7 +246,7 @@
                     <td><?= htmlspecialchars($fornecedor['celular_for']) ?></td>
                     <td><?= htmlspecialchars($fornecedor['status_for']) ?></td>
                     <td>
-                        <a href="forms_forne.php?id_for=<?= $fornecedor['id_for'] ?>&del=1"
+                        <a href="fornec.php?id_for=<?= $fornecedor['id_for'] ?>&del=1"
                             onclick="return confirm('Tem certeza que deseja desabilitar este fornecedor?')">Desabilitar</a>
                     </td>
                 </tr>

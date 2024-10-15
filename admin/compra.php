@@ -70,7 +70,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Itens Compra | Agro Malandrin</title>
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <!-- colocando o icone da pagina-->
+    <link rel="shortcut icon" href="../multimidia/icones/planta.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/forms.css">
 </head>
 <?php 
@@ -90,7 +91,7 @@
         <?php endif; ?>
 
     <!-- Formulário para adicionar ou editar compra -->
-    <form action="forms_compra.php" method="POST">
+    <form action="compra.php" method="POST">
         <input type="hidden" name="id_compra" value="<?= isset($_GET['id_compra']) ? $_GET['id_compra'] : -1 ?>">
 
         <!-- Campo para a data da compra -->
@@ -189,8 +190,8 @@
                     <td><?= htmlspecialchars($compra['data_entrega_efetiva']) ?></td>
                     <td><?= htmlspecialchars($compra['preco_compra']) ?></td>
                     <td>
-                        <a href="forms_compra.php?id_compra=<?= $compra['id_compra'] ?>">Editar</a> |
-                        <a href="forms_compra.php?id_compra=<?= $compra['id_compra'] ?>&delete=true"
+                        <a href="compra.php?id_compra=<?= $compra['id_compra'] ?>">Editar</a> |
+                        <a href="compra.php?id_compra=<?= $compra['id_compra'] ?>&delete=true"
                             onclick="return confirm('Tem certeza que deseja remover esta compra?')">Excluir</a>
                     </td>
                 </tr>
