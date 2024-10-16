@@ -26,7 +26,7 @@ include_once 'includes/header.php'
     </div>
  
    
-    <div class="container justify-content-evenly">
+    <div class="container d-flex justify-content-center">
             <div class="row"id="imagens">
                 <div class="col-md 4 col-sm-12" id="produto" >
                     <img id="img1" src="multimidia/produtos/caixa-de-ferramenta.png" class="rounded float-left, rounded" alt="Bota Masculina">

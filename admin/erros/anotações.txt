@@ -1,4 +1,8 @@
- -- anotações
+ -- Anotações
+
+    Criamos a pagina de usuario, botamos um formulario e tb uma tabela
+
+    No arquivo clientes.php, foi adicionado um formulario chamado Tabela de Clientes
 
 
  
