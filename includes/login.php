@@ -56,15 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['nome'] = $user['nome_usu'];
                     $_SESSION['id'] = $user['id_usu'];
 
-                    // Redefinir o contador de tentativas de login
-                    $_SESSION['login_attempts'] = 0;
+                   
 
                     // Redireciona após o login
                     echo '<script>window.location.href = "../admin/index.php";</script>';
                     exit;
             } else {
                 $error = "E-mail ou senha incorretos.";
-                $_SESSION['login_attempts']++;
+               
             }
             $stmt->close();  
         } else {
