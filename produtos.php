@@ -30,30 +30,38 @@ include_once 'includes/header.php'
             <div class="row"id="imagens">
                 <div class="col-md 4 col-sm-12" id="produto" >
                     <img id="img1" src="multimidia/produtos/caixa-de-ferramenta.png" class="rounded float-left, rounded" alt="Bota Masculina">
+                    <p class="caption">Caixa de Ferramenta BOSCH</p>
                 </div>
                 
                 <div class="col-md 4 col-sm-12" id="produto">
                     <img id="img2"src="multimidia/produtos/esmerilhadeira-angular.png" class="rounded float-left, rounded" alt="Bota Masculina">
+                    <p class="caption">Esmerilhadeira Angular Makita</p>
                 </div>
                 <div class="col-md 4 col-sm-12" id="produto">
                     <img id="img3" src="multimidia/produtos/lepecid-spray.png"  class="rounded float-left, rounded" alt="Caixa de Ferramenta">
+                    <p class="caption">Lepecid Spray</p>
                 </div>
                 <div class="col-md 4 col-sm-12" id="produto">                    
                     <img id= "img4" src="multimidia/produtos/master-LP.png" class="rounded float-left, rounded" alt="Bota Masculina">
+                    <p class="caption">Master LP</p>
                 </div>
             </div>
             <div class="row" id="imagens">
                 <div class="col-md 4 col-sm-12" id="produto">
-                    <img id="img5" src="multimidia/produtos/fipronil-gado-de-corte.png"  class="rounded float-left, rounded" >
+                    <img id="img5" src="multimidia/produtos/fipronil-gado-de-corte.png"  class="rounded float-left, rounded">
+                    <p class="caption">Fipronil Gado de Corte</p>
                 </div>
                 <div class="col-md 4 col-sm-12" id="produto">
                     <img id="img6" src="multimidia/produtos/escova-de-aco-circular.png"  class="rounded float-left, rounded">
+                    <p class="caption">Escova de Aço Circular</p>
                 </div>
                 <div class="col-md 4 col-sm-12" id="produto">
-                    <img id="img7" src="multimidia/produtos/racao-aves-postura.png"  class="rounded float-left, rounded" >
+                    <img id="img7" src="multimidia/produtos/racao-aves-postura.png"  class="rounded float-left, rounded">
+                    <p class="caption">Ração Aves Postura</p>
                 </div>
                 <div class="col-md 4 col-sm-12" id="produto">                    
-                    <img id="img8" src="multimidia/produtos/serra_tico-tico.png" class="rounded float-left, rounded" >
+                    <img id="img8" src="multimidia/produtos/serra_tico-tico.png" class="rounded float-left, rounded">
+                    <p class="caption">Serra Tico-Tico</p>
                 </div>
             </div>
         </div>

@@ -437,7 +437,7 @@
 
         #dicas #conteiner #titulo {
             border: 2px solid #F6A507;
-            border-top: 0;
+            border-top: 0px;
             border-right: 0;
             border-left: 0;
             text-align: center;
@@ -775,14 +775,29 @@ color: white;
 }
  
 #produto #imagens img{
- 
     width: 200px;
     height: 250px;
     border: solid 3px #034F0A;
-   
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.575);
+    border-radius: 10px;
 }
- 
 
+.rounded { /* Aqui tem que trocar o nome, que nao esta funcionando no site */
+    width: 100%;
+    border-radius: 7px;
+    border: 3px solid #034F0A; /* Border around the image */
+}
+
+.caption {
+    margin-top: -42px;
+    font-size: 13px;
+    text-align: center;
+    color: #000;
+    padding: 8px;
+    width: 77%;
+    border-radius: 10px;
+    border: 3px solid #034F0A; /* Border around the caption */
+}
 
 
 

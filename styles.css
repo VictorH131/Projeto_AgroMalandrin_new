@@ -1,0 +1,25 @@
+.card {
+    background-color: #fff;
+    border: 2px solid #cce7b0;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dog-image {
+    width: 100%;
+    border-radius: 7px;
+    border: 3px solid #005304; /* Border around the image */
+}
+
+.caption {
+    margin-top: -45px;
+    font-size: 16px;
+    color: #333;
+    padding: 8px;
+    width: 94.5%;
+    border-radius: 7px;
+    border: 3px solid #005304; /* Border around the caption */
+}
