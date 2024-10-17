@@ -24,14 +24,14 @@
 
                 <div class="box"> 
 
-                    <h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Tabela de Clientes</h3><br><br>
+                    <br><h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Tabela de Clientes</h3><br>
 
                         <form action="" method="POST">
 
                             <input type="hidden" name="id_cliente" value="">
 
                             <label for="nome_cli">Nome do Cliente:</label><br>
-                            <input type="text" name="nome_cli" value="" class="form-control"><br><br>
+                            <input type="text" name="nome_cli" value="" class="form-control"><br>
 
                             <label for="tipo_do_documento_cli">Tipo do Documento:</label><br>
                                 <select name="tipo_do_documento_cli" required class="form-control">
@@ -46,28 +46,28 @@
                                 </select><br>
 
                             <label for="documento_cli">Documento:</label><br>
-                            <input type="text" name="documento_cli" value="" required class="form-control"> <br><br>
+                            <input type="text" name="documento_cli" value="" required class="form-control"><br>
 
                             <label for="data_nascimento">Data de Nascimento:</label><br>
-                            <input type="date" name="data_nascimento" value="" required class="form-control"><br><br>
+                            <input type="date" name="data_nascimento" value="" required class="form-control"><br>
 
                             <label for="email_cli">Email:</label><br>
-                            <input type="email" name="email_cli" value="" required class="form-control"><br><br>
+                            <input type="email" name="email_cli" value="" required class="form-control"><br>
 
                             <label for="cep">CEP:</label><br>
-                            <input type="text" name="cep" value="" required class="form-control"><br><br>
+                            <input type="text" name="cep" value="" required class="form-control"><br>
 
                             <label for="rua">Rua:</label><br>
-                            <input type="text" name="rua" value="" required class="form-control"><br><br>
+                            <input type="text" name="rua" value="" required class="form-control"><br>
 
                             <label for="bairro">Bairro:</label><br>
-                            <input type="text" name="bairro" value="" required class="form-control"><br><br>
+                            <input type="text" name="bairro" value="" required class="form-control"><br>
 
                             <label for="cidade">Cidade:</label><br>
-                            <input type="text" name="cidade" value="" required class="form-control"><br><br>
+                            <input type="text" name="cidade" value="" required class="form-control"><br>
 
                             <label for="telefone_cli">Telefone:</label><br>
-                            <input type="text" name="telefone_cli" value="" required class="form-control"><br><br>
+                            <input type="text" name="telefone_cli" value="" required class="form-control"><br>
 
                             <label for="uf">UF:</label><br>
                             <select name="uf" required class="form-control"><br>
@@ -75,7 +75,7 @@
                                 <?php
 
                                 ?>
-                            </select><br><br>
+                            </select><br>
             
                             <button type="submit"> </button>
                         </form><br><br>

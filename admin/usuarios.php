@@ -96,7 +96,7 @@ function validarCPF($cpf) {
         <div class="row"> 
             <div class="col-md-6 mx-auto"> 
                 <div class="box"> 
-                    <h3>Cadastro de Usuários</h3><br>
+                    <br><h3>Cadastro de Usuários</h3><br>
 
                     <!-- Exibir mensagens de sucesso ou problema-->
                     <?php if (!empty($success)): ?>
