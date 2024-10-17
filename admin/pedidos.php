@@ -15,9 +15,7 @@
     <div class="container justify-content-center">
         <div class="row"> 
             <div class="col-md-6 mx-auto"> 
-
-                <div class="box"> 
-                    
+                <div class="box">
                     <br><h3>Cadastro de Pedidos</h3><br>
                     
                         <form action="" method="POST">
@@ -46,6 +44,6 @@
                             <button type="submit"></button>
                         </form><br><br>
 
-                        <h3>Pedidos Feitos</h3>
+                        <h3>Pedidos Realizados</h3>
 </body>
 </html>
