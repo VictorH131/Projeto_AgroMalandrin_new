@@ -4,9 +4,9 @@
    $password = '$en4C2024';
    $dbname = "u335479363_alunos4";
 
-   $con = mysqli_connect($localhost, $username, $password, $dbname); 
-   if (!$con) 
+   $conn = mysqli_connect($localhost, $username, $password, $dbname); 
+   if (!$conn->connect_error) 
    {
-      die ("Falha na Conexão: " .$con->connect_error); 
+      die ("Falha na Conexão: " .$conn->connect_error); 
    }  
 ?>

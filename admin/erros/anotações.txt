@@ -1,8 +1,13 @@
- -- Anotações
+-- Anotações
 
-    Criamos a pagina de usuario, botamos um formulario e tb uma tabela
+-- 16/10/2024 
+   Criamos o arquivo usuarios.php, botamos um formulario e tambem uma tabela.
+   No arquivo clientes.php, foi adicionado um formulario chamado Tabela de Clientes.
+   No arquivo usuarios.php, foi adicionado
 
-    No arquivo clientes.php, foi adicionado um formulario chamado Tabela de Clientes
+
+
+   class="form-control
 
 
  
