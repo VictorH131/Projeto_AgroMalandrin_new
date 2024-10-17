@@ -1,0 +1,2 @@
+-- erros
+    1 - Conseguimos inserir de primeira no banco, mas ouve alguns erros nos adicionado dos campos onde alguns deles não foram inseridos.

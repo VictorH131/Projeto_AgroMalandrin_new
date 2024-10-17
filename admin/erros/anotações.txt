@@ -3,11 +3,6 @@
 -- 16/10/2024 
    Criamos o arquivo usuarios.php, botamos um formulario e tambem uma tabela.
    No arquivo clientes.php, foi adicionado um formulario chamado Tabela de Clientes.
-   No arquivo usuarios.php, foi adicionado
-
-
-
-   class="form-control
-
-
- 
+   No arquivo usuarios.php, foi adicionado um formulario chamado Cadastro de Usuários.
+   Nos arquivos clientes.php e usuarios.php adicionamos uma classe chamada class="form-control" que irá expandir a caixa de texto.
+   Criamos o arquivo pedidos.php, foi adicionado um formulario chamado Cadastro de Pedidos.
