@@ -10,74 +10,29 @@ $aviso = '';
  
 // Inserir/Atualizar Usuário
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["nome_usu"], $_POST["documento_usu"], $_POST["tipo_documento"], $_POST["data_nascimento"], $_POST["email_usu"], $_POST["rua"], $_POST["bairro"], $_POST["cidade"], $_POST["cep"], $_POST["telefone_usu"], $_POST["uf"], $_POST["senha"])) {
+    if (isset($_POST["id_for"], $_POST["id_usu"], $_POST["prev_entrega"], $_POST["preco_compra"], $_POST["data_entrega_efetiva"])) {
         // Verifica se algum campo obrigatório está vazio
-        if (empty($_POST["nome_usu"]) || empty($_POST["documento_usu"]) || empty($_POST["tipo_documento"]) || empty($_POST["data_nascimento"]) || empty($_POST["email_usu"]) || empty($_POST["rua"]) || empty($_POST["bairro"]) || empty($_POST["cidade"]) || empty($_POST["cep"]) || empty($_POST["telefone_usu"]) || empty($_POST["uf"]) || empty($_POST["senha"])) {
+        if (empty($_POST["id_for"]) || empty($_POST["id_usu"]) || empty($_POST["prev_entrega"]) || empty($_POST["preco_compra"]) || empty($_POST["data_entrega_efetiva"])) {
             $aviso = "Todos os campos obrigatórios devem ser preenchidos.";
         } else {
             // Captura dados do formulário
-            $nome_usu = $_POST["nome_usu"];
-            $nome_social = $_POST["nome_social"] ?? null; // Nome social pode ser nulo
-            $documento_usu = $_POST["documento_usu"];
-            $tipo_documento = $_POST["tipo_documento"];
-            $data_nascimento = $_POST["data_nascimento"];
-            $data_cadastro_usu = date('Y-m-d H:i:s'); // Setando a data e hora atual
-            $email_usu = $_POST["email_usu"];
-            $rua = $_POST["rua"];
-            $bairro = $_POST["bairro"];
-            $cidade = $_POST["cidade"];
-            $numero = $_POST["numero"];
-            $cep = $_POST["cep"];
-            $telefone_usu = $_POST["telefone_usu"];
-            $celular_usu = $_POST["celular_usu"] ?? null; // Celular pode ser nulo
-            $uf = $_POST["uf"];
-            $complemento = $_POST["complemento"] ?? null; // Complemento pode ser nulo
-            $status_usu = "ativo"; // Definindo status inicial como 'ativo'
-            $senha = password_hash($_POST["senha"], PASSWORD_BCRYPT); // Criptografando a senha
- 
-            if ($tipo_documento === 'cpf' && !validarCPF($documento_usu)) {
-                $aviso = "CPF inválido.";
-            } else {
- 
-                // Preparar a inserção
-                $stmt = $conn->prepare("INSERT INTO Usuario (nome_usu, nome_social, email_usu, tipo_do_documento_usu, documento_usu, data_nascimento, telefone_usu, celular_usu, cep, rua, numero, bairro, complemento, cidade, uf, status_usu, senha, data_cadastro_usu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
- 
-                // Bind de todos os parâmetros
-                $stmt->bind_param("ssssssssssssssssss", // mano fiquei 2:45 horas por conta que tinha um "s" a "menos Suicidio é vida " otima frase
-                    $nome_usu,
-                    $nome_social,
-                    $email_usu,
-                    $tipo_documento,
-                    $documento_usu,
-                    $data_nascimento,
-                    $telefone_usu,
-                    $celular_usu,
-                    $cep,
-                    $rua,
-                    $numero,
-                    $bairro,
-                    $complemento,
-                    $cidade,
-                    $uf,
-                    $status_usu,
-                    $senha,
-                    $data_cadastro_usu
-                );
- 
- 
+            $id_for = $_POST["id_for"];
+            $id_usu = $_POST["id_usu"];
+            $prev_entrega = $_POST["prev_entrega"];
+            $preco_compra = $_POST["preco_compra"];
+            $data_entrega_efetiva = $_POST["data_entrega_efetiva"] ?? null; // Data de Entrega Efetiva pode ser nulo
    
                 // Executar a inserção
                 if ($stmt->execute()) {
-                    $success = "Usuário cadastrado com sucesso.";
+                    $success = "Compra cadastrado com sucesso.";
                 } else {
-                    $aviso = "Erro ao cadastrar usuário: " . $stmt->error;
+                    $aviso = "Erro ao cadastrar a compra: " . $stmt->error;
                 }
             }
         }
     } else {
         $aviso = "Todos os campos obrigatórios devem ser preenchidos.";
     }
-}
  
 // Desabilitar Usuário
 if (isset($_GET["id_usu"]) && is_numeric($_GET["id_usu"]) && isset($_GET["del"])) {
@@ -95,41 +50,6 @@ if (isset($_GET["id_usu"]) && is_numeric($_GET["id_usu"]) && isset($_GET["del"])
 $sql = "SELECT * FROM Usuario WHERE status_usu = 'ativo'";
 $usuarios = $conn->query($sql);
  
-function validarCPF($cpf) {
-    $cpf = preg_replace('/[^0-9]/', '', $cpf); // Remove caracteres não numéricos
-    if (strlen($cpf) != 11 || preg_match('/^(\d)\1{10}$/', $cpf)) {
-        return false; // CPF inválido
-    }
- 
-    // Cálculo do primeiro dígito verificador
-    $soma = 0;
-    for ($i = 0; $i < 9; $i++) {
-        $soma += intval($cpf[$i]) * (10 - $i);
-    }
-    $primeiroDigito = 11 - ($soma % 11);
-    if ($primeiroDigito >= 10) {
-        $primeiroDigito = 0;
-    }
-    if (intval($cpf[9]) != $primeiroDigito) {
-        return false; // CPF inválido
-    }
- 
-    // Cálculo do segundo dígito verificador
-    $soma = 0;
-    for ($i = 0; $i < 10; $i++) {
-        $soma += intval($cpf[$i]) * (11 - $i);
-    }
-    $segundoDigito = 11 - ($soma % 11);
-    if ($segundoDigito >= 10) {
-        $segundoDigito = 0;
-    }
-    if (intval($cpf[10]) != $segundoDigito) {
-        return false; // CPF inválido
-    }
- 
-    return true; // CPF válido
-}
- 
 ?>
  
 <!DOCTYPE html>
@@ -137,7 +57,7 @@ function validarCPF($cpf) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuários | Agro Malandrin</title>
+    <title>Compras | Agro Malandrin</title>
 </head>
  
 <body>
@@ -158,91 +78,54 @@ function validarCPF($cpf) {
             <div class="row">
                 <div class="col-md-6 mx-auto">
                     <div class="box">
-                        <br><h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Usuário</h3><br>
-                        <!-- Formulário para adicionar ou editar usuário -->
-                        <form action="usuarios.php" method="POST">
-                            <input type="hidden" name="id_usu" value="<?= isset($_POST['id_usu']) ? (int) $_POST['id_usu'] : -1 ?>">
+                        <br><h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Compras</h3><br>
+
+                        <!-- Inicio do Formulario de Compras -->
+                        <form action="compra.php" method="POST">
+                            <input type="hidden" name="id_compra" value="<?= isset($_POST['id_compra']) ? (int) $_POST['id_compra'] : -1 ?>">
+
+                            <input type="hidden" name="data_compra" value="<?= date('Y-m-d H:i:s') ?>">
  
-                            <label for="nome_usu">Nome:</label>
-                            <input type="text" id="nome_usu" name="nome_usu" required class="form-control"><br>
+                            <label for="id_for">Fornecedor:</label><br>
+                            <select name="id_for" required class="form-control">
+                                <option value="">Selecione</option>
+                                <?php
+                                    $conn = new mysqli("localhost", "username", "password", "dbname");
+                                    
+                                    if ($conn->connect_error) {
+                                        die("Falha na conexão: " . $conn->connect_error);
+                                    }
+                                    
+                                    $stmt = $conn->prepare("SELECT id_for, nome_for FROM Fornecedor");
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
+                                    
+                                    while ($fornecedor = $result->fetch_assoc()) {
+                                        $selected = (isset($_POST['id_for']) && $_POST['id_for'] == $fornecedor['id_for']) ? 'selected' : '';
+                                        echo "<option value='{$fornecedor['id_for']}' $selected>{$fornecedor['nome_for']}</option>";
+                                    }
+                                    
+                                    $stmt->close();
+                                    $conn->close();                                    
+                                ?>
+                            </select>
  
-                            <label for="nome_social">Nome Social:</label>
-                            <input type="text" id="nome_social" name="nome_social" class="form-control"><br>
+                            <label for="id_usu">Usuário:</label>
+                            <input type="text" name="id_usu" value="" disabled class="form-control"><br>
  
-                            <label for="email_usu">E-mail:</label>
-                            <input type="email" id="email_usu" name="email_usu" required class="form-control"><br>
+                            <label for="prev_entrega">Previsão de Entrega:</label>
+                            <input type="date" name="prev_entrega" value="" required class="form-control"><br>
  
-                            <label for="telefone_usu">Telefone:</label>
-                            <input type="text" id="telefone_usu" name="telefone_usu" placeholder="(00) 1234-5678" class="form-control"><br>
+                            <label for="preco_compra">Preço de Compra:</label>
+                            <input type="text" id="preco_compra" name="preco_compra" placeholder="R$ 0,00" value="" required class="form-control"><br>
+
+                            <label for="data_entrega_efetiva">Data de Entrega Efetiva:</label>
+                            <input type="date" name="data_entrega_efetiva" value="" class="form-control"><br>
  
-                            <label for="celular_usu">Celular:</label>
-                            <input type="text" id="celular_usu" name="celular_usu" placeholder="(00) 12345-6789" class="form-control"><br>
- 
-                            <label for="data_nascimento">Data de Nascimento:</label>
-                            <input type="date" id="data_nascimento" name="data_nascimento" required class="form-control"><br>
- 
-                           
-                            <label for="tipo_documento">Tipo de Documento:</label>
-                            <select name="tipo_documento" id="tipo_documento" class="form-control" required>
-                                <option value="invalido">Selecione</option>
-                                <option value="cpf">CPF</option>
-                                <option value="rg">RG</option>
-                            </select><br>
- 
-                            <label for="documento_usu">Documento:</label>
-                            <input type="text" id="documento_usu" name="documento_usu" required class="form-control"><br>
- 
-                            <label for="rua">Rua:</label>
-                            <input type="text" id="rua" name="rua" required class="form-control"><br>
- 
-                            <label for="numero">Número:</label>
-                            <input type="text" id="numero" name="numero" required class="form-control"><br>
- 
-                            <label for="bairro">Bairro:</label>
-                            <input type="text" id="bairro" name="bairro" required class="form-control"><br>
- 
-                            <label for="cidade">Cidade:</label>
-                            <input type="text" id="cidade" name="cidade" required class="form-control"><br>
- 
-                            <label for="uf">Estado:</label><br>
-                            <select id="uf" name="uf"  class="form-control" required>
-                                <option>Selecione</option>
-                                <option value="SP">São Paulo</option>
-                                <option value="MG">Minas Gerais</option>
-                                <option value="RJ">Rio de Janeiro</option>
-                                <option value="RS">Rio Grande do Sul</option>
-                                <option value="BA">Bahia</option>
-                                <option value="PR">Paraná</option>
-                                <option value="SC">Santa Catarina</option>
-                                <option value="DF">Distrito Federal</option>
-                                <option value="CE">Ceará</option>
-                                <option value="PE">Pernambuco</option>
-                                <option value="ES">Espírito Santo</option>
-                                <option value="MA">Maranhão</option>
-                                <option value="GO">Goiás</option>
-                                <option value="MT">Mato Grosso</option>
-                                <option value="MS">Mato Grosso do Sul</option>
-                                <option value="AM">Amazonas</option>
-                                <option value="PA">Pará</option>
-                                <option value="AP">Amapá</option>
-                                <option value="TO">Tocantins</option>
-                                <option value="RO">Rondônia</option>
-                                <option value="AC">Acre</option>
-                                <option value="RR">Roraima</option>
-                                <option value="AL">Alagoas</option>
-                            </select><br>
- 
-                            <label for="cep">CEP:</label>
-                            <input type="text" id="cep" name="cep" required class="form-control"><br>
- 
-                            <label for="complemento">Complemento:</label>
-                            <input type="text" id="complemento" name="complemento" class="form-control"><br>
- 
-                            <label for="senha">Senha:</label>
-                            <input type="password" id="senha" name="senha" required class="form-control"><br>
- 
-                            <button type="submit"  class="btn btn-success" >Cadastrar</button>
+                            <button type="submit" class="btn btn-success">Cadastrar</button>
                         </form><br><br>
+
+                        <!-- Fim do Formulario de Compras -->
                     </div>
                 </div>
             </div>
@@ -250,46 +133,48 @@ function validarCPF($cpf) {
            
            
             <div class="container">
-               
                 <div class="row">
-                   
                     <div class="box">
-                        <h2>Tabela de Usuários</h2>
+                        <h2>Tabela de Compras</h2>
                         <div class="table-responsive">
+
+                        <!-- Inicio da Tabela de Compras -->
                             <table  class="table table-bordered ">
                                 <thead>
                                     <tr class="table-success">
-                                        <th >ID</th>
-                                        <th>Nome</th>
-                                        <th>E-mail</th>
-                                        <th>Telefone</th>
-                                        <th>Documento</th> <!-- Adicionado campo Documento -->
-                                        <th>Status</th>
+                                        <th>ID Compra</th>
+                                        <th>Data Compra</th>
+                                        <th>Fornecedor</th>
+                                        <th>Usuário</th>
+                                        <th>Previsão de Entrega</th> 
+                                        <th>Data Entrega Efetiva</th>
+                                        <th>Preço</th>
                                         <th>Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php while ($row = $usuarios->fetch_assoc()): ?>
+                                    <?php while ($row = $compras->fetch_assoc()): ?>
                                         <tr>
+                                            <td><?= $row['id_compra'] ?></td>
+                                            <td><?= $row['data_compra'] ?></td>
+                                            <td><?= $row['id_for'] ?></td>
                                             <td><?= $row['id_usu'] ?></td>
-                                            <td><?= $row['nome_usu'] ?></td>
-                                            <td><?= $row['email_usu'] ?></td>
-                                            <td><?= $row['telefone_usu'] ?></td>
-                                            <td><?= $row['documento_usu'] ?></td> <!-- Exibindo Documento -->
-                                            <td><?= $row['status_usu'] ?></td>
+                                            <td><?= $row['prev_entrega'] ?></td>
+                                            <td><?= $row['data_entrega_efetiva'] ?></td>
+                                            <td><?= $row['preco_compra'] ?></td>
                                             <td id="acao">                    
-                                                <a href="usuarios.php?id_usu=<?= $row['id_usu'] ?>"  class="btn btn-primary">Editar</a> |
-                                                <a href="usuarios.php?id_usu=<?= $row['id_usu'] ?>&del=1" onclick="return confirm('Tem certeza que deseja desabilitar este serviço?');" class="btn btn-danger">Desabilitar</a>
+                                                <a href="compra.php?id_compra=<?= $row['id_compra'] ?>" class="btn btn-primary">Editar</a> |
+                                                <a href="compra.php?id_compra=<?= $row['id_compra'] ?>&del=1" onclick="return confirm('Tem certeza que deseja desabilitar este serviço?');" class="btn btn-danger">Desabilitar</a>
                                             </td>
                                         </tr>
                                     <?php endwhile; ?>
                                 </tbody>
                             </table>
+
+                            <!-- Fim da Tabela de Compras -->
                         </div>
                     </div>
-                   
                 </div>
             </div>
- 
 </body>
 </html>
