@@ -319,7 +319,7 @@ function validarCPF($cpf) {
                                 </tbody>
                             </table>
                         </div>
-                                            </div>
+                    </div>
                 </div>
             </div>
 </body>
