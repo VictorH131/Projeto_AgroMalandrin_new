@@ -1,6 +1,8 @@
 -- erros
     1 - Conseguimos inserir de primeira no banco, mas ouve alguns erros nos adicionado dos campos onde alguns deles não foram inseridos.
 
-    2 - tentamos mas deu um erro pelo nome dos campos ao adicionar na tabela
+    2 - Tentamos mas deu um erro pelo nome dos campos ao adicionar na tabela
 
+    4/20 - Erros de campos faltando campo, por erros de nomes tentados por no banco, a resolução foi o numero de preparações ""ssssssssssssssssss"" antigo com defeito "sssssssssssssssss" a diferença foi de 1 (0_0) 
 
+    21 - 

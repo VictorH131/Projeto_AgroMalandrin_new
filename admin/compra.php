@@ -38,10 +38,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($tipo_documento === 'cpf' && !validarCPF($documento_usu)) {
                 $aviso = "CPF inválido.";
             } else {
-
+ 
                 // Preparar a inserção
                 $stmt = $conn->prepare("INSERT INTO Usuario (nome_usu, nome_social, email_usu, tipo_do_documento_usu, documento_usu, data_nascimento, telefone_usu, celular_usu, cep, rua, numero, bairro, complemento, cidade, uf, status_usu, senha, data_cadastro_usu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
+ 
                 // Bind de todos os parâmetros
                 $stmt->bind_param("ssssssssssssssssss", // mano fiquei 2:45 horas por conta que tinha um "s" a "menos Suicidio é vida " otima frase
                     $nome_usu,
@@ -63,16 +63,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $senha,
                     $data_cadastro_usu
                 );
-
-
-    
+ 
+ 
+   
                 // Executar a inserção
                 if ($stmt->execute()) {
                     $success = "Usuário cadastrado com sucesso.";
                 } else {
                     $aviso = "Erro ao cadastrar usuário: " . $stmt->error;
                 }
-            } 
+            }
         }
     } else {
         $aviso = "Todos os campos obrigatórios devem ser preenchidos.";
@@ -84,45 +84,23 @@ if (isset($_GET["id_usu"]) && is_numeric($_GET["id_usu"]) && isset($_GET["del"])
     $id_usu = (int) $_GET["id_usu"];
     $stmt = $conn->prepare("UPDATE Usuario SET status_usu = 'desabilitado' WHERE id_usu = ?");
     $stmt->bind_param('i', $id_usu);
-    
     if ($stmt->execute()) {
         $success = "Usuário desabilitado com sucesso.";
     } else {
         $aviso = "Erro ao desabilitar usuário: " . $stmt->error;
     }
 }
-
-
-
-
-// Verifica se a variável 'ativo' foi passada via GET
-$ativo = isset($_GET['ativo']) ? $_GET['ativo'] : 'ativo'; // Default para 'ativo'
-
-// Consulta para buscar usuários com base no status
-$sql = ($ativo === 'desabilitado') ? "SELECT * FROM Usuario WHERE status_usu = 'desabilitado'" : "SELECT * FROM Usuario WHERE status_usu = 'ativo'";
+ 
+// Consulta para buscar todos os usuários ativos/desativos
+$sql = "SELECT * FROM Usuario WHERE status_usu = 'ativo'";
 $usuarios = $conn->query($sql);
-
-if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
-    $id_usu = (int)$_GET['reabilitar'];
-    $stmt = $conn->prepare("UPDATE Usuario SET status_usu = 'ativo' WHERE id_usu = ?");
-    $stmt->bind_param('i', $id_usu);
-    if ($stmt->execute()) {
-        echo "<div class='alert alert-success'> Usuário Reabilitado com sucesso.</div>";
-    } else {
-        echo "<div class='alert alert-danger'>Erro ao reabilitar usuário.</div>";
-    }
-}
-
-
-
-
-
+ 
 function validarCPF($cpf) {
     $cpf = preg_replace('/[^0-9]/', '', $cpf); // Remove caracteres não numéricos
     if (strlen($cpf) != 11 || preg_match('/^(\d)\1{10}$/', $cpf)) {
         return false; // CPF inválido
     }
-
+ 
     // Cálculo do primeiro dígito verificador
     $soma = 0;
     for ($i = 0; $i < 9; $i++) {
@@ -135,7 +113,7 @@ function validarCPF($cpf) {
     if (intval($cpf[9]) != $primeiroDigito) {
         return false; // CPF inválido
     }
-
+ 
     // Cálculo do segundo dígito verificador
     $soma = 0;
     for ($i = 0; $i < 10; $i++) {
@@ -148,10 +126,10 @@ function validarCPF($cpf) {
     if (intval($cpf[10]) != $segundoDigito) {
         return false; // CPF inválido
     }
-
+ 
     return true; // CPF válido
 }
-
+ 
 ?>
  
 <!DOCTYPE html>
@@ -174,15 +152,12 @@ function validarCPF($cpf) {
             <div class="alert alert-success"><?= htmlspecialchars($success) ?></div>
         <?php endif; ?>
  
-        
+ 
  
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mx-auto">
                     <div class="box">
-                    
-
-
                         <br><h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Usuário</h3><br>
                         <!-- Formulário para adicionar ou editar usuário -->
                         <form action="usuarios.php" method="POST">
@@ -206,9 +181,9 @@ function validarCPF($cpf) {
                             <label for="data_nascimento">Data de Nascimento:</label>
                             <input type="date" id="data_nascimento" name="data_nascimento" required class="form-control"><br>
  
-                            
+                           
                             <label for="tipo_documento">Tipo de Documento:</label>
-                            <select name="tipo_documento" id="tipo_documento" class="form-control" required> 
+                            <select name="tipo_documento" id="tipo_documento" class="form-control" required>
                                 <option value="invalido">Selecione</option>
                                 <option value="cpf">CPF</option>
                                 <option value="rg">RG</option>
@@ -272,19 +247,14 @@ function validarCPF($cpf) {
                 </div>
             </div>
  
-            
-            <div class="btn-group" role="group" aria-label="Status dos Usuários">
-            <a href="?ativo=ativo" class="btn btn-success">Ativos</a>
-            <a href="?ativo=desabilitado" class="btn btn-danger">Desabilitados</a>
-            </div>
            
            
             <div class="container">
                
                 <div class="row">
-                    
+                   
                     <div class="box">
-                        <h3>Usuários <?= $ativo === "desabilitado" ? "Desativados" : "Ativos" ?></h3>
+                        <h2>Tabela de Usuários</h2>
                         <div class="table-responsive">
                             <table  class="table table-bordered ">
                                 <thead>
@@ -299,29 +269,25 @@ function validarCPF($cpf) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                     <?php while ($row = $usuarios->fetch_assoc()): ?>
-                                    <tr>
-                                        <td><?= $row['id_usu'] ?></td>
-                                        <td><?= $row['nome_usu'] ?></td>
-                                        <td><?= $row['email_usu'] ?></td>
-                                        <td><?= $row['telefone_usu'] ?></td>
-                                        <td><?= $row['documento_usu'] ?></td>
-                                        <td><?= $row['status_usu'] ?></td>
-                                        <td>
-                                            <a href="usuarios.php?id_usu=<?= $row['id_usu'] ?>" class="btn btn-primary">Edit</a> |
-                                            <?php if ($ativo === 'desabilitado'): ?>
-                                                <a href="?reabilitar=<?= $row['id_usu'] ?>" class="btn btn-success">Reabilitar</a>
-                                            <?php else: ?>
-                                                <a href="usuarios.php?id_usu=<?= $row['id_usu'] ?>&del=1" onclick="return confirm('Tem certeza que deseja desabilitar este serviço?');" class="btn btn-danger">Delete</a>
-                                            <?php endif; ?>
-                                        </td>
-                                    </tr>
-                                <?php endwhile; ?>
+                                    <?php while ($row = $usuarios->fetch_assoc()): ?>
+                                        <tr>
+                                            <td><?= $row['id_usu'] ?></td>
+                                            <td><?= $row['nome_usu'] ?></td>
+                                            <td><?= $row['email_usu'] ?></td>
+                                            <td><?= $row['telefone_usu'] ?></td>
+                                            <td><?= $row['documento_usu'] ?></td> <!-- Exibindo Documento -->
+                                            <td><?= $row['status_usu'] ?></td>
+                                            <td id="acao">                    
+                                                <a href="usuarios.php?id_usu=<?= $row['id_usu'] ?>"  class="btn btn-primary">Editar</a> |
+                                                <a href="usuarios.php?id_usu=<?= $row['id_usu'] ?>&del=1" onclick="return confirm('Tem certeza que deseja desabilitar este serviço?');" class="btn btn-danger">Desabilitar</a>
+                                            </td>
+                                        </tr>
+                                    <?php endwhile; ?>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    
+                   
                 </div>
             </div>
  

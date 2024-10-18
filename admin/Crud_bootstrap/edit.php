@@ -77,6 +77,3 @@
 
         </div>
 </div>
-
-<?php
-    require_once 'footer.php'; // linka a pagina footer e traz as info de lá para o final da página edit

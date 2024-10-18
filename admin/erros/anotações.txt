@@ -1,10 +1,23 @@
 -- Anotações
 
 -- 16/10/2024 
-   Criamos o arquivo usuarios.php, botamos um formulario e tambem uma tabela.
-   No arquivo clientes.php, foi adicionado um formulario chamado Tabela de Clientes.
-   No arquivo usuarios.php, foi adicionado um formulario chamado Cadastro de Usuários.
-   Nos arquivos clientes.php, usuarios.php e pedidos.php nos adicionamos uma classe chamada class="form-control" que irá expandir a caixa de texto.
+   Criamos o arquivo usuarios.php, dentro dele foi adicionado um formulario chamado Cadastro de Usuário que o usuario irá se cadastrar e tambem uma tabela que irá aparecer os usuarios ativos.
+   No arquivo clientes.php, dentro dele foi adicionado um formulario chamado Tabela de Clientes que o cliente irá se cadastrar e tambem uma tabela que irá aparecer os clientes ativos.
+   Nos arquivos clientes.php, usuarios.php, itens_pedidos.php, produtos.php e pedidos.php nos adicionamos uma classe chamada class="form-control" que irá expandir a caixa de texto.
    Criamos o arquivo pedidos.php, foi adicionado um formulario chamado Cadastro de Pedidos.
 
 -- 17/10/2024
+   Criamos os arquivos produtos.php, itens_pedidos.php, dentro deles adicionamos um formulario e tambem uma tabela.
+   finalizamos a inclusão do usuarios,
+
+
+
+-- Commits
+   compra.php - Add um form e tambem uma tbl, esta pre-completo
+   fornecdor.php - Add um form, pre-incompleto
+   itens-pedido.php - Foi excluido pois nao iremos usar agr
+   os.php - Add um form, pre-incompleto
+   pedidos.php - Add um form e tambem uma tbl, esta pre-incompleto
+   produtos.php - Add um form e tambem uma tbl, esta pre-incompleto
+   servico.php - Add um form, pre-incompleto
+   usuarios.php - Add um form, uma tbl de atv/dsblt  (semi - finalizado "esta faltando apenas editar, mas é em outra pagina")

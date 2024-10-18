@@ -18,32 +18,36 @@
                 <div class="box">
                     <br><h3>Cadastro de Pedidos</h3><br>
                     
-                        <form action="" method="POST">
+                    <form action="" method="POST">
                             
-                            <input type="hidden" name="id_ped" value="">
+                        <input type="hidden" name="id_ped" value="">
 
-                            <input type="hidden" name="data_ped" value="">
+                        <input type="hidden" name="data_ped" value="">
 
-                            <label for="endereco_entrega">Endereço de Entrega:</label><br>
-                            <input type="text" name="endereco_entrega" value="" required class="form-control"><br>
+                        <label for="endereco_entrega">Endereço de Entrega:</label><br>
+                        <input type="text" name="endereco_entrega" value="" required class="form-control"><br>
 
-                            <label for="data_entrega_ped">Data de Entrega:</label><br>
-                            <input type="date" name="data_entrega_ped" value="" class="form-control"><br>
+                        <label for="data_entrega_ped">Data de Entrega:</label><br>
+                        <input type="date" name="data_entrega_ped" value="" class="form-control"><br>
 
-                            <label for="id_cli">Cliente:</label>
-                            <select name="id_cli" required class="form-control">
-                                <option value="">Selecione</option>
-                                <?php
+                        <label for="id_cli">Cliente:</label>
+                        <select name="id_cli" required class="form-control">
+                            <option value="">Selecione</option>
+                            <?php
 
-                                ?>
-                            </select><br>
+                            ?>
+                        </select><br>
 
-                            <label for="id_usu">Usuario:</label><br>
-                            <input name="id_usu" value="" class="form-control"><br>
+                        <label for="id_usu">Usuario:</label><br>
+                        <input name="id_usu" value="" class="form-control"><br>
 
-                            <button type="submit"></button>
-                        </form><br><br>
+                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                    </form><br><br>
 
-                        <h3>Pedidos Realizados</h3>
+                    <h3>Pedidos Realizados</h3>
+                </div>
+            </div>    
+        </div>
+    </div>
 </body>
 </html>
