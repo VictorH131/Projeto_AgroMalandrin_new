@@ -109,7 +109,7 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
     if ($stmt->execute()) {
         echo "<div class='alert alert-success'> Usuário Reabilitado com sucesso.</div>";
     } else {
-        echo "<div class='alert alert-danger'>Erro ao reabilitar usuário.</div>";
+        echo "<div class='alert alert-danger'>Erro ao reabilitar o usuário.</div>";
     }
 }
 
@@ -166,8 +166,8 @@ function validarCPF($cpf) {
     <div class="container">
         <!-- Exibir mensagens de aviso ou sucesso -->
        
-        <?php if (!empty($aviso)): ?>
-            <div class="alert alert-danger"><?= htmlspecialchars($aviso) ?></div>
+        <?php if (!empty($alert)): ?>
+            <div class="alert alert-danger"><?= htmlspecialchars($alert) ?></div>
         <?php endif; ?>
  
         <?php if (!empty($success)): ?>
@@ -280,9 +280,7 @@ function validarCPF($cpf) {
            
            
             <div class="container">
-               
                 <div class="row">
-                    
                     <div class="box">
                         <h3>Usuários <?= $ativo === "desabilitado" ? "Desativados" : "Ativos" ?></h3>
                         <div class="table-responsive">
@@ -321,10 +319,8 @@ function validarCPF($cpf) {
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                    
+                                            </div>
                 </div>
             </div>
- 
 </body>
 </html>
