@@ -74,6 +74,7 @@
                                 <li><a href="compra.php"  class="dropdown-item" > <h1>compra</h1> </a></li>
                                 <li><a href="produtos.php"  class="dropdown-item" > <h1>servico</h1> </a></li>
                                 <li><a href="OS.php"  class="dropdown-item" > <h1>Ordem de Servico</h1> </a></li>
+                                <li><a href="edit/edit_usu.php"  class="dropdown-item" > <h1>Ordem de Servico</h1> </a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">Separated link</a></li>
                             </ul>

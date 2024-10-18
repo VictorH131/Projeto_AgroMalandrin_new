@@ -308,11 +308,12 @@ function validarCPF($cpf) {
                                         <td><?= $row['documento_usu'] ?></td>
                                         <td><?= $row['status_usu'] ?></td>
                                         <td>
-                                            <a href="usuarios.php?id_usu=<?= $row['id_usu'] ?>" class="btn btn-primary">Edit</a> |
+                                        <?php echo "<a href='edit/edit_usu.php?id=".$row['id_usu']."' class='btn btn-primary'>Edit |</a>"; ?>
+                                            
                                             <?php if ($ativo === 'desabilitado'): ?>
                                                 <a href="?reabilitar=<?= $row['id_usu'] ?>" class="btn btn-success">Reabilitar</a>
                                             <?php else: ?>
-                                                <a href="usuarios.php?id_usu=<?= $row['id_usu'] ?>&del=1" onclick="return confirm('Tem certeza que deseja desabilitar este serviço?');" class="btn btn-danger">Delete</a>
+                                                <a href="usuarios.php?id_usu=<?= $row['id_usu'] ?>&del=1" onclick="return confirm('Tem certeza que deseja desabilitar este serviço?');" class="btn btn-danger">Desligar</a>
                                             <?php endif; ?>
                                         </td>
                                     </tr>
