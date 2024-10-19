@@ -109,7 +109,7 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
     if ($stmt->execute()) {
         echo "<div class='alert alert-success'> Usuário Reabilitado com sucesso.</div>";
     } else {
-        echo "<div class='alert alert-danger'>Erro ao reabilitar o usuário.</div>";
+        echo "<div class='alert alert-danger'>Erro ao reabilitar usuário.</div>";
     }
 }
 
@@ -166,8 +166,8 @@ function validarCPF($cpf) {
     <div class="container">
         <!-- Exibir mensagens de aviso ou sucesso -->
        
-        <?php if (!empty($alert)): ?>
-            <div class="alert alert-danger"><?= htmlspecialchars($alert) ?></div>
+        <?php if (!empty($aviso)): ?>
+            <div class="alert alert-danger"><?= htmlspecialchars($aviso) ?></div>
         <?php endif; ?>
  
         <?php if (!empty($success)): ?>
@@ -180,11 +180,10 @@ function validarCPF($cpf) {
             <div class="row">
                 <div class="col-md-6 mx-auto">
                     <div class="box">
-                    
-
 
                         <br><h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Usuário</h3><br>
-                        <!-- Formulário para adicionar ou editar usuário -->
+                        
+                        <!-- Inicio do Formulario de Usuários -->
                         <form action="usuarios.php" method="POST">
                             <input type="hidden" name="id_usu" value="<?= isset($_POST['id_usu']) ? (int) $_POST['id_usu'] : -1 ?>">
  
@@ -268,22 +267,37 @@ function validarCPF($cpf) {
  
                             <button type="submit"  class="btn btn-success" >Cadastrar</button>
                         </form><br><br>
+
+                        <!-- Fim do Formulario de Usuários -->
                     </div>
                 </div>
             </div>
+            <hr>
  
-            
-            <div class="btn-group" role="group" aria-label="Status dos Usuários">
-            <a href="?ativo=ativo" class="btn btn-success">Ativos</a>
-            <a href="?ativo=desabilitado" class="btn btn-danger">Desabilitados</a>
-            </div>
-           
-           
             <div class="container">
                 <div class="row">
+                    <div class="col-md-3 mx-auto">
+                        <div class="box">
+                                    
+                            <div class="btn-group" role="group" aria-label="Status dos Usuários">
+                                <a href="?ativo=ativo"  class="btn btn-success">Ativos</a> 
+                                <a href="?ativo=desabilitado" class="btn btn-danger">Desabilitados</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="container">
+               
+                <div class="row">
+                    
                     <div class="box">
                         <h3>Usuários <?= $ativo === "desabilitado" ? "Desativados" : "Ativos" ?></h3>
                         <div class="table-responsive">
+
+                            
                             <table  class="table table-bordered ">
                                 <thead>
                                     <tr class="table-success">
@@ -306,7 +320,7 @@ function validarCPF($cpf) {
                                         <td><?= $row['documento_usu'] ?></td>
                                         <td><?= $row['status_usu'] ?></td>
                                         <td>
-                                        <?php echo "<a href='edit/edit_usu.php?id=".$row['id_usu']."' class='btn btn-primary'>Edit |</a>"; ?>
+                                        <?php echo "<a href='edit/edit_usu.php?id=".$row['id_usu']."' class='btn btn-primary'>Edit </a> |"; ?>
                                             
                                             <?php if ($ativo === 'desabilitado'): ?>
                                                 <a href="?reabilitar=<?= $row['id_usu'] ?>" class="btn btn-success">Reabilitar</a>
@@ -318,9 +332,13 @@ function validarCPF($cpf) {
                                 <?php endwhile; ?>
                                 </tbody>
                             </table>
+
+                            
                         </div>
                     </div>
+                    
                 </div>
             </div>
+ 
 </body>
 </html>

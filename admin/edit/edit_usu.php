@@ -143,10 +143,23 @@
     <?php if (!empty($success)): ?>
         <div class='alert alert-success'><?= htmlspecialchars($success) ?></div>
     <?php endif; ?>
-
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="box">
+    
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 mx-auto">
+                    <div class="box">
+                        <a href="../usuarios.php" class="btn btn-secondary">  voltar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="box">
+                    
                 <h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Modificar Usuário</h3>
 
                 <form action="" method="POST">
@@ -192,10 +205,36 @@
                     <input type="text" id="cidade" name="cidade" value="<?php echo $row['cidade'];?>" required class="form-control"><br>
 
                     <label for="uf">Estado:</label><br>
-                    <select id="uf" name="uf" class="form-control" required>
-                        <option value="SP" <?= ($row['uf'] == 'SP') ? 'selected' : '' ?>>São Paulo</option>
-                        <!-- Adicionar outros estados -->
-                    </select><br>
+                        <select id="uf" name="uf" class="form-control" required>
+                            <option value="">Selecione</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select><br>
 
                     <label for="cep">CEP:</label>
                     <input type="text" id="cep" name="cep" value="<?php echo $row['cep'];?>" required class="form-control"><br>

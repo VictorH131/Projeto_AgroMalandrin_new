@@ -71,10 +71,10 @@
                                 <li><a href="clientes.php"  class="dropdown-item" > <h1>Clientes</h1> </a></li>
                                 <li><a href="pedidos.php"  class="dropdown-item" > <h1>Pedidos</h1> </a></li>
                                 <li><a href="produtos.php"  class="dropdown-item" > <h1>Produtos</h1> </a></li>
-                                <li><a href="compra.php"  class="dropdown-item" > <h1>compra</h1> </a></li>
-                                <li><a href="produtos.php"  class="dropdown-item" > <h1>servico</h1> </a></li>
-                                <li><a href="OS.php"  class="dropdown-item" > <h1>Ordem de Servico</h1> </a></li>
-                                <li><a href="edit/edit_usu.php"  class="dropdown-item" > <h1>Ordem de Servico</h1> </a></li>
+                                <li><a href="compras.php"  class="dropdown-item" > <h1>Compras</h1> </a></li>
+                                <li><a href="servicos.php"  class="dropdown-item" > <h1>Serviços</h1> </a></li>
+                                <li><a href="fornecedor.php"  class="dropdown-item" > <h1>Fornecedor</h1> </a></li>
+                                <li><a href="os.php"  class="dropdown-item" > <h1>Ordem de Serviço</h1> </a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">Separated link</a></li>
                             </ul>

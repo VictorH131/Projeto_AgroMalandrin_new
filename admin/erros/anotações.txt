@@ -10,14 +10,14 @@
    Criamos os arquivos produtos.php, itens_pedidos.php, dentro deles adicionamos um formulario e tambem uma tabela.
    finalizamos a inclusão do usuarios,
 
+-- 18/10/2024
 
+   criamos a pagina de alteração de dados do Usuario, e terminamos toda a parte de usuario.
 
--- Commits
-   compra.php - Add um form e tambem uma tbl, esta pre-completo
-   fornecdor.php - Add um form, pre-incompleto
-   itens-pedido.php - Foi excluido pois nao iremos usar agr
-   os.php - Add um form, pre-incompleto
-   pedidos.php - Add um form e tambem uma tbl, esta pre-incompleto
-   produtos.php - Add um form e tambem uma tbl, esta pre-incompleto
-   servico.php - Add um form, pre-incompleto
-   usuarios.php - Add um form, uma tbl de atv/dsblt  (semi - finalizado "esta faltando apenas editar, mas é em outra pagina")
+   criando e finalizando a parte inteira do clientes (inserção, alteração, modificação de status).
+
+   criando e finalizando a parte inteira do Compras (inserção, alteração, modificação de status).
+
+   criando e finalizando a parte inteira do Produtos (inserção, alteração, modificação de status).
+
+   criando e semi-finalizando da parte  do servicos (inserção, modificação de status).
