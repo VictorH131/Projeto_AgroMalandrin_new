@@ -1,4 +1,5 @@
 -- erros
+    -- Erros corrigidos
     1 - Conseguimos inserir de primeira no banco, mas ouve alguns erros nos adicionado dos campos onde alguns deles não foram inseridos.
 
     2 - Tentamos mas deu um erro pelo nome dos campos ao adicionar na tabela
@@ -7,4 +8,7 @@
 
     21/24 - erro ao editar tabela usu, o erro estava no id que estava com o nome errado
 
-    25 -
+    25 - erro ao editar a pagina pedidos.
+
+    --Erros a corrigir
+    1 - na pagina pedidos funciona normalmente mas ao atualizar o valor não atualiza aotomaticomete para o eitor mas edita na tabela

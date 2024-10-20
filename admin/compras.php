@@ -136,7 +136,7 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
                                     <th>Prev. Entrega</th>
                                     <th>Data Entrega Efetiva</th>
                                     <th>Preço da Compra</th>
-                                    <th>Ações</th> <!-- Nova coluna Ações -->
+                                    <th>Ações</th> 
                                 </tr>
                             </thead>
                             <tbody>
@@ -151,7 +151,7 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
                                         <td><?= htmlspecialchars($row['preco_compra']) ?></td>
                                         <td>
                                             <a href="edit/edit_compra.php?id=<?= $row['id_compra'] ?>" class="btn btn-primary">Edit</a>
-                                        </td> <!-- Botão de edição -->
+                                        </td> 
                                     </tr>
                                 <?php endwhile; ?>
                             </tbody>

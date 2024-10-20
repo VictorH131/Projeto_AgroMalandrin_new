@@ -21,3 +21,9 @@
    criando e finalizando a parte inteira do Produtos (inserção, alteração, modificação de status).
 
    criando e semi-finalizando da parte  do servicos (inserção, modificação de status).
+
+-- 19/10/2024
+
+   criando e finalizando a parte inteira do Pedidos (inserção, alteração, modificação de status).
+
+
