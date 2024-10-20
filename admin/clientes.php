@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($stmt->execute()) {
                     $success = "Cliente cadastrado com sucesso.";
                 } else {
-                    $aviso = "Erro ao cadastrar cliente: " . $stmt->error;
+                    $aviso = "Erro ao cadastrar o cliente: " . $stmt->error;
                 }
             }
         }
@@ -108,7 +108,7 @@ if (isset($_GET["id_cli"]) && is_numeric($_GET["id_cli"]) && isset($_GET["del"])
     if ($stmt->execute()) {
         $success = "Cliente desabilitado com sucesso.";
     } else {
-        $aviso = "Erro ao desabilitar cliente: " . $stmt->error;
+        $aviso = "Erro ao desabilitar o cliente: " . $stmt->error;
     }
 }
 
@@ -240,18 +240,20 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
    
     <br><br>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-3 mx-auto">
-            <div class="box">
-                <div class="btn-group" role="group" aria-label="Status dos Clientes">
-                    <a href="?ativo=ativo" class="btn btn-success">Ativos</a> 
-                    <a href="?ativo=desabilitado" class="btn btn-danger">Desabilitados</a>
+    <div class="container">
+                <div class="row">
+                    <div class="col-md-3 mx-auto">
+                        <div class="box">
+                                    
+                            <a href="clientes.php?ativo=<?= $ativo === 'desabilitado' ? 'ativo' : 'desabilitado' ?>" 
+                                class="btn <?= $ativo === 'desabilitado' ? 'btn btn-primary' : 'btn btn-danger' ?>">
+                                Ver Fornecedores <?= $ativo === 'desabilitado' ? 'Ativos' : 'Desabilitados' ?>
+                            </a>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 
 <div class="container">
     <div class="row">

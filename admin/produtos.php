@@ -139,14 +139,17 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
             </div>
             <hr>
  
+            
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 mx-auto">
                         <div class="box">
-                            <div class="btn-group" role="group" aria-label="Status dos Produtos">
-                                <a href="?status=ativo" class="btn btn-success">Ativos</a> 
-                                <a href="?status=desabilitado" class="btn btn-danger">Desabilitados</a>
-                            </div>
+                                    
+                            <a href="Produtos.php?status=<?= $status === 'desabilitado' ? 'ativo' : 'desabilitado' ?>" 
+                                class="btn <?= $status === 'desabilitado' ? 'btn btn-primary' : 'btn btn-danger' ?>">
+                                Ver Fornecedores <?= $status === 'desabilitado' ? 'Ativos' : 'Desabilitados' ?>
+                            </a>
+
                         </div>
                     </div>
                 </div>

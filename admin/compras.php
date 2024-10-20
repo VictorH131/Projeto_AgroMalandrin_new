@@ -113,7 +113,7 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
                         </div>
 
                         <button type="submit" class="btn btn-success">Cadastrar Compra</button>
-                    </form>
+                    </form><br>
                 </div>
             </div>
         </div>
@@ -122,7 +122,7 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
         <div class="container">          
             <div class="row">
                 <div class="box">
-                    <h3>Lista de Compras</h3>
+                    <h3>Tabela de Compras</h3>
                     <div class="table-responsive">
 
                         

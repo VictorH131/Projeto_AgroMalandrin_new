@@ -279,10 +279,10 @@ function validarCPF($cpf) {
                     <div class="col-md-3 mx-auto">
                         <div class="box">
                                     
-                            <div class="btn-group" role="group" aria-label="Status dos Usuários">
-                                <a href="?ativo=ativo"  class="btn btn-success">Ativos</a> 
-                                <a href="?ativo=desabilitado" class="btn btn-danger">Desabilitados</a>
-                            </div>
+                            <a href="usuarios.php?ativo=<?= $ativo === 'desabilitado' ? 'ativo' : 'desabilitado' ?>" 
+                                class="btn <?= $ativo === 'desabilitado' ? 'btn btn-primary' : 'btn btn-danger' ?>">
+                                Ver Fornecedores <?= $ativo === 'desabilitado' ? 'Ativos' : 'Desabilitados' ?>
+                            </a>
 
                         </div>
                     </div>
