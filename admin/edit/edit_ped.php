@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["data_entrega_ped"])) {
                     <div class="form-group">
                         <label for="data_entrega_ped">Data de Entrega:</label>
                         <input type="datetime-local" id="data_entrega_ped" name="data_entrega_ped" class="form-control" required value="<?= htmlspecialchars($row['data_entrega_ped']) ?>">
-                    </div>
+                    </div><br>
 
                     <button type="submit" class="btn btn-success">Atualizar Data de Entrega</button>
                 </form>

@@ -103,7 +103,7 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
                             <input type="number" step="0.01" min="0" id="preco_serv" name="preco_serv" required class="form-control"><br>
 
                             <label for="prazo_serv">Previsão de Entrega:</label>
-                            <input type="datetime-local" id="prazo_servprazo_serv" name="prazo_serv" required class="form-control"><br>
+                            <input type="datetime-local" id="prazo_serv" name="prazo_serv" required class="form-control"><br>
                             
                             <button type="submit"  class="btn btn-success" >Cadastrar</button>
                         </form><br><br>
@@ -118,10 +118,12 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
                 <div class="row">
                     <div class="col-md-3 mx-auto">
                         <div class="box">
-                            <div class="btn-group" role="group" aria-label="Status dos Serviços">
-                                <a href="?ativo=ativo"  class="btn btn-success">Ativos</a> 
-                                <a href="?ativo=desabilitado" class="btn btn-danger">Desabilitados</a>
-                            </div>
+                                    
+                            <a href="usuarios.php?ativo=<?= $ativo === 'desabilitado' ? 'ativo' : 'desabilitado' ?>" 
+                                class="btn <?= $ativo === 'desabilitado' ? 'btn btn-primary' : 'btn btn-danger' ?>">
+                                Ver Fornecedores <?= $ativo === 'desabilitado' ? 'Ativos' : 'Desabilitados' ?>
+                            </a>
+
                         </div>
                     </div>
                 </div>

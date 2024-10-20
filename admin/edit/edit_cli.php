@@ -193,6 +193,7 @@ if ($result && $result->num_rows > 0) {
 
                         <button type="submit" name="update" class="btn btn-success">Atualizar Cliente</button>
                     </form>
+                    <br>
                 </div>
             </div>
         </div>

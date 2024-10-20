@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["data_entrega_efetiva"]
             <div class="row">
                 <div class="col-md-9 mx-auto">
                     <div class="box">
-                        <a href="../compras.php" class="btn btn-secondary">  voltar</a>
+                        <a href="../compras.php" class="btn btn-secondary">Voltar</a>
                     </div>
                 </div>
             </div>
@@ -121,8 +121,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["data_entrega_efetiva"]
                             <input type="datetime-local" id="data_entrega_efetiva" name="data_entrega_efetiva" class="form-control" required value="<?= htmlspecialchars($row['data_entrega_efetiva']) ?>">
                         </div>
 
-                        <button type="submit" class="btn btn-success">Atualizar Data de Entrega</button>
+                        <button type="submit" name="update" class="btn btn-success">Atualizar Data de Entrega</button>
                     </form>
+                    <br>
                 </div>
             </div>
         </div>

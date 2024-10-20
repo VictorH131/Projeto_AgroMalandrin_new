@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="row">
                 <div class="col-md-9 mx-auto">
                     <div class="box">
-                        <a href="../produtos.php" class="btn btn-secondary">  voltar</a>
+                        <a href="../produtos.php" class="btn btn-secondary">Voltar</a>
                     </div>
                 </div>
             </div>
@@ -121,9 +121,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <option value="desabilitado" <?= $produto['status_prod'] === 'desabilitado' ? 'selected' : '' ?>>Desabilitado</option>
                         </select><br>
 
-                        <button type="submit" class="btn btn-success">Atualizar</button>
+                        <button type="submit" name="update" class="btn btn-success">Atualizar Compra</button>
                     </form>
-                    <br><br>
+                    <br>
                     <!-- Fim do Formulário de Edição de Produto -->
                 </div>
             </div>

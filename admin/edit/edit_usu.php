@@ -119,7 +119,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -149,7 +149,7 @@
             <div class="row">
                 <div class="col-md-9 mx-auto">
                     <div class="box">
-                        <a href="../usuarios.php" class="btn btn-secondary">  voltar</a>
+                        <a href="../usuarios.php" class="btn btn-secondary">Voltar</a>
                     </div>
                 </div>
             </div>
@@ -245,8 +245,9 @@
                     <label for="senha">Senha:</label>
                     <input type="password" id="senha" name="senha" required class="form-control"><br>
 
-                    <input type="submit" name="update" class="btn btn-success" value="Atualizar">
+                    <input type="submit" name="update" class="btn btn-success" value="Atualizar Usuário">
                 </form>
+                <br>
             </div>
         </div>
     </div>
