@@ -562,14 +562,23 @@
         text-align: justify;
     }
 
+    #home #ads{
+        display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            
+            margin: 0; 
+    }
 
-    #home #logo{
+    #home #ads #logo{
         /* a logo que fica no home*/
-        margin-left: 30%;
-        margin-right: 50%;
+        max-width: 100%; /* Mantém a imagem responsiva */
+        height: auto;
         margin-bottom: 70px;
         border-radius: 6%; 
     }
+
+    
 
     
     #home #foto1 #foto{
@@ -598,7 +607,67 @@
 
 @media(max-width: 991px){
 
+           /* home config*/
+    #home{
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 50px;
+    }
+
+    #home .title{
+        column-span: all;
+        display: block;
+        font-size: 1.8em;
+    }
+
+    #home #apresentacao{
+        columns: 150px 2;
+        column-gap: 20px;
+        padding: 25px;
+        margin-bottom: 100px;
+        font-family: Verdana;
+        text-align: justify;
+    }
+
+    #home #ads{
+        display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
             
+            margin: 0; 
+    }
+
+    #home #ads #logo{
+        /* a logo que fica no home*/
+        max-width: 100%; /* Mantém a imagem responsiva */
+        height: auto;
+        margin-bottom: 70px;
+        border-radius: 6%; 
+    }
+
+    
+
+    
+    #home #foto1 #foto{
+        border: solid 2px #034F0A;
+        padding: 15px 15px 10px 15px;
+        border-radius: 8px;
+        
+    }
+    
+    #home #foto1 #foto #descricao {
+        align-items: center;
+        padding-left: 10%;
+        padding-right: 10%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 0.9em;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    #home #foto1 #text #menor:hover{
+        color: #034F0A;
+    } 
    
 
     
@@ -614,34 +683,62 @@
 
 
 
+#foto2 #titulo google-logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+        }
 
+        #foto2 .google-logo span {
+        transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
 
-#home #foto2 #texto p:hover{
-    color: #034F0A;
+    /* Cores da logo do Google */
+    #foto2 .g {
+        color: #4285F4;
+    }
+    #foto2 .o1 {
+        color: #EA4335;
+    }
+    #foto2 .o2 {
+        color: #FBBC05;
+    }
+    #foto2 .g2 {
+        color: #4285F4;
+    }
+    #foto2 .l {
+        color: #34A853;
+    }
+    #foto2 .e {
+        color: #EA4335;
+    }
+
+   
+
+    #foto2 table {
+width: 100%; /* Ajuste conforme necessário */
+border-collapse: collapse; /* Remove os espaços entre as bordas das células */
+/* Removido a borda de 2px da tabela */
 }
 
+#foto2 th, #foto2 td {
+padding: 10px; /* Espaçamento interno */
+text-align: left; /* Alinhamento à esquerda para as células */
+border: 2px solid #000; /* Borda de 2px nas células */
+}
 
-
-
-#home #foto2 #linkMaps{
+#foto2 th {
+font-size: 1.5em; /* Aumenta o tamanho da fonte dos cabeçalhos */
+background-color: #034F0A; /* Fundo verde escuro para os cabeçalhos */
+color: #fff; /* Texto branco para contraste */
+text-align: center; /* Centraliza o texto dos cabeçalhos */
 text-decoration: none;
-margin-left: 100px;
 }
 
-#home #foto2 #maps {
-border: solid 2px #034F0A;
-border-radius: 8px;
-}
-
-#home #foto2 #maps #titulo {
-border: 2px solid #034F0A;
-
-color: #fff;
-background-color: #34A853;
-}
-
-#home #foto2 #maps #titulo:hover{
-font-size: 2.3em;
+#foto2 table:hover th {
+font-size: 2em; /* Aumenta ainda mais ao passar o mouse */
+transition: font-size 0.3s ease; /* Suaviza a transição */
 }
 
 
@@ -649,6 +746,7 @@ font-size: 2.3em;
 #home #foto2 #maps #imagem {
 border-radius: 8px;
 border:solid 1px #034F0A;
+
 }
 
 
