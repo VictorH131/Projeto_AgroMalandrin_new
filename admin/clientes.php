@@ -2,6 +2,7 @@
 include_once 'includes/header.php';
 require_once 'includes/dbconnect.php';
 
+
 // Ativar exibição de erros para depuração
 error_reporting(E_ALL);
 ini_set('display_errors', 1);

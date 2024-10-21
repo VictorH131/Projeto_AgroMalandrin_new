@@ -75,7 +75,7 @@
                             <?php
                             
                                        
-                                    echo '<a href="secure/login.php" id="link"> <p>Ola, logue ou cadastre-se</p> </a> ';
+                                    echo '<a href="includes/login.php" id="link"> <p>Ola, logue ou cadastre-se</p> </a> ';
                             
                             ?>
                             <!-- colocando o botão para poder logar -->

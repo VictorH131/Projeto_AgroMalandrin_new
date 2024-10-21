@@ -1,3 +1,7 @@
+<?php
+include_once '../includes/internal/session.php';  // Verificando se você está logado
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -83,16 +87,25 @@
                         </li>
                         <li class="nav-item">
                             <!-- link de saida -->
-                            <a class="nav-link" id="nav" href="../includes/logoff">SAIR</a>
+                            <div class="dropdown">
+                                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user"></i>
+                                    <strong><?php echo $nomeUsuario; ?></strong>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-light text-small shadow" aria-labelledby="dropdownUser1">
+                                    
+                                    <li> <a class="nav-link" href="../index.php"><i class="fas fa-home"></i> Home </a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#" onclick="window.location.href='../includes/logoff.php'">Sair</a></li>
+                                </ul>
+                            </div>
+                            
                         </li>
                         
                     </ul>
                     
                         
-                        <div class="d-flex " id="login">
-                            <!-- colocando o botão para poder logar -->
-                            
-                        </div>
+                        
                         
                     </div>
                 </div>

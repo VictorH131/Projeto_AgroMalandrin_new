@@ -7,6 +7,7 @@
       exit;
     }
 
-    // Recuperar o nome do usuário da sessão
+    // pega o nome do usuário logado
     $nomeUsuario = $_SESSION['nome'];
-  ?>
+    
+  ?> 

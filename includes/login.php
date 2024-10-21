@@ -1,26 +1,16 @@
 <?php
-
 session_start(); 
 
 // Verificar se o usuário já está logado
-if (isset($_SESSION['logado'])) {
-    header('Location: ../admin/index.php'); 
+if (isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
+    header('Location: ../admin/principal.php'); 
     exit;
 }
 
 // Inclui o arquivo de conexão com o banco de dados
-include_once "../secure/includes/dbconnect.php";
-if (!$con) {
+include_once "internal/dbconnect.php"; // Ajuste o caminho conforme necessário
+if (!$conn) {
     die("A conexão com o banco de dados falhou: " . mysqli_connect_error());
-}
-
-// Limitar tentativas de login para prevenir ataques de força bruta
-if (!isset($_SESSION['login_attempts'])) {
-    $_SESSION['login_attempts'] = 0;
-}
-
-if ($_SESSION['login_attempts'] >= 5) {
-    die("Muitas tentativas de login falhadas. Tente novamente mais tarde.");
 }
 
 // Verificar se o formulário foi submetido
@@ -38,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Senha é obrigatória.";
     } else {
         // Preparar a consulta para obter o hash da senha
-        $stmt = $con->prepare("SELECT id_usu, nome_usu, senha FROM `Usuario` WHERE email_usu = ?");
+        $stmt = $conn->prepare("SELECT id_usu, nome_usu, senha FROM `Usuario` WHERE email_usu = ?");
         if ($stmt) {
             $stmt->bind_param('s', $email);
             $stmt->execute();
@@ -48,48 +38,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Busca os dados do usuário
                 $user = $result->fetch_assoc();
                 
+                // Verifica se a senha informada corresponde ao hash da senha armazenada
+                if (password_verify($password, $user['senha'])) {
                     // Regenerar ID da sessão para evitar fixação de sessão
                     session_regenerate_id(true);
 
                     // Login bem-sucedido
                     $_SESSION['logado'] = true;
-                    $_SESSION['nome'] = $user['nome_usu'];
+                    $_SESSION['nome'] = $user['nome_usu']; // Armazena o nome do usuário
                     $_SESSION['id'] = $user['id_usu'];
 
-                   
-
                     // Redireciona após o login
-                    echo '<script>window.location.href = "../admin/index.php";</script>';
+                    header('Location: ../admin/principal.php');
                     exit;
+                } else {
+                    $error = "E-mail ou senha incorretos.";
+                }
             } else {
                 $error = "E-mail ou senha incorretos.";
-               
             }
             $stmt->close();  
         } else {
-            $error = "Erro ao preparar a consulta: " . $con->error;
+            $error = "Erro ao preparar a consulta: " . $conn->error;
         }
     }
 }
 
-include 'includes/header.php'
-
+include 'internal/header.php'; // Ajuste o caminho conforme necessário
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login - Agro Malandrin</title>
-        <link rel="stylesheet" href="styles/stylelogin.css"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Agro Malandrin</title>
+    <link rel="stylesheet" href="styles/stylelogin.css"> 
 
-        <!-- Importar a biblioteca SHA-512 -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha512/0.8.0/sha512.min.js"></script>
-        
-        
-    </head>
+    <!-- Importar a biblioteca SHA-512 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha512/0.8.0/sha512.min.js"></script>
+</head>
 
+<body>
     <div id="login">     
         <div class="right-panel">
             <h2>Login</h2>
@@ -100,20 +90,18 @@ include 'includes/header.php'
             
             <form action="<?= $_SERVER["PHP_SELF"] ?>" method="POST" id="form_login" onsubmit="hashSenha(this, this.password); return false;">
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="coloque sua E-mail" required>
+                <input type="email" id="email" name="email" placeholder="coloque seu E-mail" required>
 
                 <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" placeholder="coloque sua Senha" p required>
+                <input type="password" id="password" name="password" placeholder="coloque sua Senha" required>
 
-                <div id="link"><a href="#" style="font-size: 13px;">Esqueceu sua senha?</a></div>
+                <div id="link">
+                    <a href="#" style="font-size: 13px;">Esqueceu sua senha?</a>
+                </div>
                 
                 <button type="submit">Entrar</button>
             </form>
-
-           
-
         </div>
     </div>
-    
 </body>
 </html>

@@ -782,6 +782,18 @@ color: white;
     border-radius: 10px;
 }
 
+#produto #imagens #img5 {
+    padding: 30px;
+}
+
+#produto #imagens #img3 {
+    padding: 20px;
+}
+
+#produto #imagens #img6 {
+    padding: -20px;
+}
+
 .caption {
     margin-top: -42px;
     font-size: 15px;
@@ -789,7 +801,6 @@ color: white;
     color: #000;
     padding: 8px;
     width: 77%;
-
 }
 
 
