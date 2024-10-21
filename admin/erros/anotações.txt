@@ -29,9 +29,20 @@
 -- 20/10/2024
 
    Criamos e finalizamos o arquivo edit_serv.php. Está funcionando tudo certinho. 
+
    Alteramos o botão de alterar entre tabelas de ativos e dabilitados.
+
    Criamos e pré-finalizamos o arquivo os.php. Estamos corrijindo ele.
+
    O arquivo fornecedor.php está finalizado, mas já na parte de edit_for.php está pre-finalizado.
+
+   finalizamos a pagina de fornecedores.
+
+   criando e finalizando a parte inteira do itens-os (inserção, alteração, modificação de status).
+
+   criando e finalizando a parte inteira do itens-compra (inserção, alteração, modificação de status).
+   
+   criando e finalizando a parte inteira do Produtos (inserção, alteração, modificação de status).
 
 -- possiveis melhorias que por conta do tempo não serão possiveis
 

@@ -30,38 +30,38 @@ include_once 'includes/header.php'
             <div class="row"id="imagens">
                 <div class="col-md 4 col-sm-12" id="produto" >
                     <img id="img1" src="multimidia/produtos/caixa-de-ferramenta.png" class="rounded float-left, rounded" alt="Bota Masculina">
-                    <p class="caption">Caixa de Ferramenta BOSCH</p>
+                    <p class="caption"><strong>Caixa de Ferramenta</strong></p>
                 </div>
                 
                 <div class="col-md 4 col-sm-12" id="produto">
                     <img id="img2"src="multimidia/produtos/esmerilhadeira-angular.png" class="rounded float-left, rounded" alt="Bota Masculina">
-                    <p class="caption">Esmerilhadeira Angular Makita</p>
+                    <p class="caption"><strong>Esmerilhadeira Angular</strong></p>
                 </div>
                 <div class="col-md 4 col-sm-12" id="produto">
                     <img id="img3" src="multimidia/produtos/lepecid-spray.png"  class="rounded float-left, rounded" alt="Caixa de Ferramenta">
-                    <p class="caption">Lepecid Spray</p>
+                    <p class="caption"><strong>Lepecid Spray</strong></p>
                 </div>
                 <div class="col-md 4 col-sm-12" id="produto">                    
-                    <img id= "img4" src="multimidia/produtos/master-LP.png" class="rounded float-left, rounded" alt="Bota Masculina">
-                    <p class="caption">Master LP</p>
+                    <img id="img4" src="multimidia/produtos/master-LP.png" class="rounded float-left, rounded" alt="Bota Masculina">
+                    <p class="caption"><strong>Master LP</strong></p>
                 </div>
             </div>
             <div class="row" id="imagens">
                 <div class="col-md 4 col-sm-12" id="produto">
                     <img id="img5" src="multimidia/produtos/fipronil-gado-de-corte.png"  class="rounded float-left, rounded">
-                    <p class="caption">Fipronil Gado de Corte</p>
+                    <p class="caption"><strong>Fipronil Gado de Corte</strong></p>
                 </div>
                 <div class="col-md 4 col-sm-12" id="produto">
                     <img id="img6" src="multimidia/produtos/escova-de-aco-circular.png"  class="rounded float-left, rounded">
-                    <p class="caption">Escova de Aço Circular</p>
+                    <p class="caption"><strong>Escova de Aço Circular</strong></p>
                 </div>
                 <div class="col-md 4 col-sm-12" id="produto">
                     <img id="img7" src="multimidia/produtos/racao-aves-postura.png"  class="rounded float-left, rounded">
-                    <p class="caption">Ração Aves Postura</p>
+                    <p class="caption"><strong>Ração Aves Postura</strong></p>
                 </div>
                 <div class="col-md 4 col-sm-12" id="produto">                    
                     <img id="img8" src="multimidia/produtos/serra_tico-tico.png" class="rounded float-left, rounded">
-                    <p class="caption">Serra Tico-Tico</p>
+                    <p class="caption"><strong>Serra Tico-Tico</strong></p>
                 </div>
             </div>
         </div>

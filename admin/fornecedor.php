@@ -290,7 +290,7 @@ function validarCPF($cpf) {
                                             <td><?= htmlspecialchars($fornecedor['rua']) ?>, <?= htmlspecialchars($fornecedor['numero'] ?? '') ?> - <?= htmlspecialchars($fornecedor['bairro']) ?>, <?= htmlspecialchars($fornecedor['cidade']) ?> - <?= htmlspecialchars($fornecedor['uf']) ?>, <?= htmlspecialchars($fornecedor['cep']) ?></td>
                                             <td><?= htmlspecialchars($fornecedor['status_for']) ?></td>
                                             <td>
-                                                <a href="edit/edit_for.php?id_for=<?= $fornecedor['id_for'] ?>" class="btn btn-primary">Editar</a> |
+                                                    <a href="edit/edit_for.php?id=<?= $fornecedor['id_for'] ?>" class='btn btn-primary' >Editar</a> |
                                                 <?php if ($fornecedor['status_for'] === 'ativo'): ?>
                                                     <a href="fornecedor.php?id_for=<?= $fornecedor['id_for'] ?>&del=1" class="btn btn-danger">Desabilitar</a>
                                                 <?php else: ?>

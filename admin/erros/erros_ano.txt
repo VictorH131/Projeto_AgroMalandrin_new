@@ -10,6 +10,12 @@
 
     25 - erro ao editar a pagina pedidos.
 
+    26 - 28 - error ao editar os fornecedores.
+    
+    29 - erro ao editar o itens os.
+
+    
+
     --Erros a corrigir
     1 - Na pagina pedidos, funciona normalmente mas ao atualizar o valor não atualiza automaticamente para o editor mas edita na tabela
     2 - Na pagina os, aparece só o id do cliente e tbm a opção para selecionar, mais dentro dela nao aparece nada só escrito Selecione o Cliente. Resumindo: Pra baixo do id cliente nao aparece absolutamente nada. 

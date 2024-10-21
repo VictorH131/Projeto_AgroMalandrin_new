@@ -76,7 +76,9 @@
                                 <li><a href="fornecedor.php"  class="dropdown-item" > <h1>Fornecedor</h1> </a></li>
                                 <li><a href="os.php"  class="dropdown-item" > <h1>Ordem de Serviço</h1> </a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                <li><a class="dropdown-item" href="itens_os.php">itens Ordem de Serviço</a></li>
+                                <li><a class="dropdown-item" href="itens_compra.php">itens Compra</a></li>
+                                <li><a class="dropdown-item" href="itens_pedido.php">itens Pedido</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
