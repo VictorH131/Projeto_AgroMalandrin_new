@@ -805,3 +805,92 @@ color: white;
 }
 
 
+/* config login */
+
+#pag_login #login {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+#pag_login  .tableLogin {
+    border-radius: 8px;
+}
+
+
+#pag_login  .tableLogin {
+    background-color: #ffffff;
+    border: 3px solid #F6A507;
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+}
+
+#pag_login  .tableLogin h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-family: 'Inria Serif', serif;
+    color: rgb(0, 0, 0);
+    background: rgb(200,135,9);
+background: linear-gradient(307deg, rgba(200,135,9,1) 17%, rgba(236,202,136,1) 51%, rgba(200,135,9,1) 81%);
+    text-align: center;
+    border-radius: 30px;
+    height: 40px;
+    width: 300px;
+}
+
+#pag_login  .tableLogin form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#pag_login  .tableLogin label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+}
+
+#pag_login  .tableLogin input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    color: #595959;
+    border: 3px solid #F6A507;
+}
+
+
+#pag_login  .tableLogin button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border: solid 1px #F6A507;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#pag_login  .tableLogin button:hover {
+    
+    border: solid 2px #F6A507;
+    transform: scale(1.1); /* Aumenta o botão em 10% */
+}
+
+#pag_login  .tableLogin button:active {
+    transform: scale(0.95); /* Efeito de clique */
+    background-color: #FCDCB7;
+}
+ 

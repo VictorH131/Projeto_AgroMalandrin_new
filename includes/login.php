@@ -80,7 +80,7 @@ include 'internal/header.php'; // Ajuste o caminho conforme necessário
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha512/0.8.0/sha512.min.js"></script>
 </head>
 
-<body>
+<body id="pag_login">
     <div id="login">     
         <div class="tableLogin">
             <h2>Login</h2>
