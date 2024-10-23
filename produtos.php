@@ -1,164 +1,313 @@
+<?php
+
+include_once "includes/header.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos - Agro Malandrin</title>
-   
+    <style>
+        /* Configuração do produto */
+        #produto {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        #produto .menu-container {
+            position: relative;
+            width: 200px;
+            margin: 20px;
+        }
+
+        #produto .menu-button {
+            background-color: #03740E;
+            color: white;
+            padding: 15px;
+            margin-top: -5%;
+            border: 3px solid #034F0A;
+            border-radius: 8px;
+            width: 120%;
+            text-align: left;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #produto .menu-button:hover {
+            background-color: #FCDCB7;
+            color: black;
+            border: 3px solid #F6A507;
+        }
+
+        #produto .dropdown-menu {
+            display: none;
+            background-color: white;
+            border: 10px solid black;
+            border-radius: 10px;
+            position: absolute;
+            margin-bottom: 60%;
+            top: 40px;
+            width: 120%;
+            z-index: 1;
+        }
+
+        #produto .dropdown-menu a {
+            display: block;
+            padding: 10px;
+            border-radius: 6.8px;
+            text-decoration: none;
+            color: black;
+            border-bottom: 2px solid black;
+            border-top: 2px solid black;
+            border-left: 1.8px solid black;
+            border-right: 1.8px solid black;
+        }
+
+        #produto .dropdown-menu a:hover {
+            background-color: #FCDCB7;
+            color: black;
+        }
+
+        #produto .menu-container:hover .dropdown-menu {
+            display: block;
+            margin-top: 8%;
+            border: 2px solid transparent;
+            border-top: 1px solid black;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            border-bottom: 1px solid black;
+            border-radius: 10px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        #produto #imagens img {
+            width: 200px;
+            height: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.575);
+            border: 3px solid #34a853; /* Borda verde */
+            border-radius: 10px; /* Borda arredondada */
+        }
+
+        .caption {
+            margin-top: -42px;
+            font-size: 15px;
+            text-align: center;
+            color: #000;
+            padding: 8px;
+            width: 77%;
+        }
+
+        .nome-container {
+            background-color: #fff;
+            border: 2px solid #34a853; /* Borda verde */
+            border-radius: 10px;
+            text-align: center;
+            height: 50px; /* Altura do quadrado */
+            display: flex;
+            align-items: center; /* Centraliza verticalmente */
+            justify-content: center; /* Centraliza horizontalmente */
+            width: 200px; /* Largura do quadrado igual à largura da imagem */
+            margin-top: -10px; /* Ajusta a posição do quadrado se necessário */
+        }
+
+        /* Estilo para garantir que a altura da imagem e do quadrado sejam iguais */
+        .produto-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza horizontalmente */
+        }
+
+    </style>
 </head>
- 
-<?php
-include_once 'includes/header.php'
-?>
- 
+
 <body id="produto">
-   
-    <!-- Area do Departamento -->
- 
-    <div class="menu-container">
-        <button class="menu-button"><strong>☰ Departamentos</strong></button>
-        <div class="dropdown-menu">
-            <a href="#" onclick="alterarImagens1()">Rações </a>
-            <a href="#" onclick="alterarImagens2()">Ferramentas </a>
-            <a href="#" onclick="alterarImagens3()">Vestimentas</a>
-            <a href="#" onclick="alterarImagens4()">Remedios</a>
+
+    
+
+    <!-- Área do Departamento -->
+    <div class="container my-4">
+        <div class="menu-container mb-3">
+            <button class="menu-button btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                ☰ Departamentos
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" onclick="alterarImagens1()">Rações</a></li>
+                <li><a class="dropdown-item" href="#" onclick="alterarImagens2()">Ferramentas</a></li>
+                <li><a class="dropdown-item" href="#" onclick="alterarImagens3()">Vestimentas</a></li>
+                <li><a class="dropdown-item" href="#" onclick="alterarImagens4()">Remédios</a></li>
+            </ul>
+        </div>
+
+        <!-- Grid com 4 colunas e 2 linhas -->
+        <div class="row" id="imagens">
+            <!-- Linha 1 -->
+            <div class="col-md-3 col-sm-6 mb-4 produto-container">
+                <img id="img1" src="multimidia/produtos/racao-vaca.png" class="img-fluid rounded" alt="Produto 1">
+                <div class="nome-container">
+                    <p id="nome1" class="mb-0"><strong>Ração para Vacas</strong></p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 produto-container">
+                <img id="img2" src="multimidia/produtos/racao-aves-postura.png" class="img-fluid rounded" alt="Produto 2">
+                <div class="nome-container">
+                    <p id="nome2" class="mb-0"><strong>Ração para Aves de Postura</strong></p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 produto-container">
+                <img id="img3" src="multimidia/produtos/racao-boi.png" class="img-fluid rounded" alt="Produto 3">
+                <div class="nome-container">
+                    <p id="nome3" class="mb-0"><strong>Ração para Bois</strong></p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 produto-container">
+                <img id="img4" src="multimidia/produtos/racao-cachorro.png" class="img-fluid rounded" alt="Produto 4">
+                <div class="nome-container">
+                    <p id="nome4" class="mb-0"><strong>Ração para Cachorros</strong></p>
+                </div>
+            </div>
+            <!-- Linha 2 -->
+            <div class="col-md-3 col-sm-6 mb-4 produto-container">
+                <img id="img5" src="multimidia/produtos/racao-cavalo.png" class="img-fluid rounded" alt="Produto 5">
+                <div class="nome-container">
+                    <p id="nome5" class="mb-0"><strong>Ração para Cavalos</strong></p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 produto-container">
+                <img id="img6" src="multimidia/produtos/racao-porco.png" class="img-fluid rounded" alt="Produto 6">
+                <div class="nome-container">
+                    <p id="nome6" class="mb-0"><strong>Ração para Porcos</strong></p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 produto-container">
+                <img id="img7" src="multimidia/produtos/nex-gard-caes.png" class="img-fluid rounded" alt="Produto 7">
+                <div class="nome-container">
+                    <p id="nome7" class="mb-0"><strong>Nex gard</strong></p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 produto-container">
+                <img id="img8" src="multimidia/produtos/parafusadeira-makita.png" class="img-fluid rounded" alt="Produto 8">
+                <div class="nome-container">
+                    <p id="nome8" class="mb-0"><strong>Parafusadeira Makita</strong></p>
+                </div>
+            </div>
         </div>
     </div>
- 
-   
-    <div class="container d-flex justify-content-center">
-            <div class="row"id="imagens">
-                <div class="col-md 4 col-sm-12" id="produto" >
-                    <img id="img1" src="multimidia/produtos/caixa-de-ferramenta.png" class="rounded float-left, rounded" alt="Bota Masculina">
-                    <p class="caption"><strong>Caixa de Ferramenta</strong></p>
-                </div>
-                
-                <div class="col-md 4 col-sm-12" id="produto">
-                    <img id="img2"src="multimidia/produtos/esmerilhadeira-angular.png" class="rounded float-left, rounded" alt="Bota Masculina">
-                    <p class="caption"><strong>Esmerilhadeira Angular</strong></p>
-                </div>
-                <div class="col-md 4 col-sm-12" id="produto">
-                    <img id="img3" src="multimidia/produtos/lepecid-spray.png"  class="rounded float-left, rounded" alt="Caixa de Ferramenta">
-                    <p class="caption"><strong>Lepecid Spray</strong></p>
-                </div>
-                <div class="col-md 4 col-sm-12" id="produto">                    
-                    <img id="img4" src="multimidia/produtos/master-LP.png" class="rounded float-left, rounded" alt="Bota Masculina">
-                    <p class="caption"><strong>Master LP</strong></p>
-                </div>
-            </div>
-            <div class="row" id="imagens">
-                <div class="col-md 4 col-sm-12" id="produto">
-                    <img id="img5" src="multimidia/produtos/fipronil-gado-de-corte.png"  class="rounded float-left, rounded">
-                    <p class="caption"><strong>Fipronil Gado de Corte</strong></p>
-                </div>
-                <div class="col-md 4 col-sm-12" id="produto">
-                    <img id="img6" src="multimidia/produtos/escova-de-aco-circular.png"  class="rounded float-left, rounded">
-                    <p class="caption"><strong>Escova de Aço Circular</strong></p>
-                </div>
-                <div class="col-md 4 col-sm-12" id="produto">
-                    <img id="img7" src="multimidia/produtos/racao-aves-postura.png"  class="rounded float-left, rounded">
-                    <p class="caption"><strong>Ração Aves Postura</strong></p>
-                </div>
-                <div class="col-md 4 col-sm-12" id="produto">                    
-                    <img id="img8" src="multimidia/produtos/serra_tico-tico.png" class="rounded float-left, rounded">
-                    <p class="caption"><strong>Serra Tico-Tico</strong></p>
-                </div>
-            </div>
+
+    <div class="container my-8" id="link_pag">
+        <div class="menu-container mb-3">
+
+            <nav aria-label="Navegação de página exemplo">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+                </ul>
+            </nav>
         </div>
- 
-    <!-- Imagens com Bootstrap -->
-      
-       
- 
- 
-   
+    </div>
+
+
+
     <script>
-    function alterarImagens1() {            
-         // Array com novas URLs das imagens
-         const novasImagens = [                
-            "multimidia/produtos/racao-vaca.png",                
-            "multimidia/produtos/racao-aves-postura.png",                
-            "multimidia/produtos/racao-boi.png",                
-            "multimidia/produtos/racao-cachorro.png",                
-            "multimidia/produtos/racao-cavalo.png",                
-            "multimidia/produtos/racao-porco.png",                
-            "multimidia/produtos/error.png",
-            "multimidia/produtos/error.png",  
-        ];            
-        // Alterar as imagens com base nos IDs
-        for (let i = 1; i <= 8; i++) {
-             document.getElementById('img' + i).src = novasImagens[i - 1];
-             }
-    }
-    function alterarImagens2() {            
-         // Array com novas URLs das imagens
-         const novasImagens = [                
-            "multimidia/produtos/escova-de-aco-circular.png",                
-            "multimidia/produtos/esmerilhadeira-angular.png",                
-            "multimidia/produtos/parafusadeira-makita.png",                
-            "multimidia/produtos/caixa-de-ferramenta.png",                
-            "multimidia/produtos/serra_tico-tico.png",                
-            "multimidia/produtos/lepecid-spray.png",
-            "multimidia/produtos/tupia-M3700B.png",
-            "multimidia/produtos/error.png",
-                       
-        ];            
-        // Alterar as imagens com base nos IDs
-        for (let i = 1; i <= 8; i++) {
-             document.getElementById('img' + i).src = novasImagens[i - 1];
-             }
- 
- 
- 
-       
-    }
- 
-    function alterarImagens3() {            
-         // Array com novas URLs das imagens
-         const novasImagens = [                
-            "multimidia/produtos/sandalia-vestimento.png",                
-            "multimidia/produtos/porta-celular-vestimento.png",              
-            "multimidia/produtos/bota-masc-vestimento.png",                    
-            "multimidia/produtos/bone-vestimento.png",                                  
-            "multimidia/produtos/botina-vestimento.png",  
-            "multimidia/produtos/error.png",
-            "multimidia/produtos/sapatilha-vestimento.png",
-            "multimidia/produtos/error.png",
-                       
-        ];            
-        // Alterar as imagens com base nos IDs
-        for (let i = 1; i <= 8; i++) {
-             document.getElementById('img' + i).src = novasImagens[i - 1];
-           
-            }
- 
- 
- 
-        for (let i = 1; i <= 8; i++) {                
-            const box = document.getElementById('img' + i);                
-            // Muda apenas as imagens 1, 3, 5 e 7
-            if (i % 2 !== 0) {                    
-                if (box.style.width === '250px') {                        
-                    box.style.width = '200px';
-                    // Voltar para a largura original                    
-                } else {                        
-                        box.style.width = '250px';
-                        // Nova largura
-                }
+        // As funções de alterar imagens ainda podem ser usadas, mas não são mais necessárias ao carregar a página.
+        function alterarImagens1() {
+            const novasImagens = [
+                "multimidia/produtos/racao-vaca.png",
+                "multimidia/produtos/racao-aves-postura.png",
+                "multimidia/produtos/racao-boi.png",
+                "multimidia/produtos/racao-cachorro.png",
+                "multimidia/produtos/racao-cavalo.png",
+                "multimidia/produtos/racao-porco.png",
+                "multimidia/produtos/error.png",
+                "multimidia/produtos/error.png"
+            ];
+
+            const novasDescricoes = [
+                "Ração para Vacas",
+                "Ração para Aves de Postura",
+                "Ração para Bois",
+                "Ração para Cachorros",
+                "Ração para Cavalos",
+                "Ração para Porcos",
+                "Iten Faltante",
+                "Iten Faltante"
+            ];
+
+            for (let i = 1; i <= 8; i++) {
+                document.getElementById('img' + i).src = novasImagens[i - 1];
+                document.getElementById('nome' + i).innerHTML = '<strong>' + novasDescricoes[i - 1] + '</strong>';
             }
         }
-                           
-           
-       
- 
- 
-    }
- 
- 
-    function alterarImagens4() {            
-         // Array com novas URLs das imagens
-         const novasImagens = [                
-            "multimidia/produtos/fipronil-gado-de-corte.png",                
+
+        function alterarImagens2() {
+            const novasImagens = [
+                "multimidia/produtos/escova-de-aco-circular.png",                
+                "multimidia/produtos/esmerilhadeira-angular.png",                
+                "multimidia/produtos/parafusadeira-makita.png",                
+                "multimidia/produtos/caixa-de-ferramenta.png",                
+                "multimidia/produtos/serra_tico-tico.png",                
+                "multimidia/produtos/lepecid-spray.png",
+                "multimidia/produtos/tupia-M3700B.png",
+                "multimidia/produtos/error.png",
+            ];
+
+            const novasDescricoes = [
+                "Escova de aço de Circular",
+                "Esmerilhadeira Angular",
+                "Parafusadeira Makita",
+                "Caixa de Ferramenta",
+                "Serra Tico-Tico",
+                "Lepecid spray",
+                "Tupia Makita",
+                "Iten Faltante"
+            ];
+
+            for (let i = 1; i <= 8; i++) {
+                document.getElementById('img' + i).src = novasImagens[i - 1];
+                document.getElementById('nome' + i).innerHTML = '<strong>' + novasDescricoes[i - 1] + '</strong>';
+            }
+        }
+
+        function alterarImagens3() {
+            const novasImagens = [
+                "multimidia/produtos/sandalia-vestimento.png",                
+                "multimidia/produtos/porta-celular-vestimento.png",              
+                "multimidia/produtos/bota-masc-vestimento.png",                    
+                "multimidia/produtos/bone-vestimento.png",                                  
+                "multimidia/produtos/botina-vestimento.png",  
+                "multimidia/produtos/error.png",
+                "multimidia/produtos/sapatilha-vestimento.png",
+                "multimidia/produtos/error.png",
+            ];
+
+            const novasDescricoes = [
+                "Sandalia",
+                "Porta Celular de Couro",
+                "Bota Masculina",
+                "Bone",
+                "Botina",
+                "Iten Faltante",
+                "Sapatilha",
+                "Iten Faltante"
+            ];
+
+            for (let i = 1; i <= 8; i++) {
+                document.getElementById('img' + i).src = novasImagens[i - 1];
+                document.getElementById('nome' + i).innerHTML = '<strong>' + novasDescricoes[i - 1] + '</strong>';
+            }
+        }
+
+        function alterarImagens4() {
+            const novasImagens = [
+                "multimidia/produtos/fipronil-gado-de-corte.png",                
             "multimidia/produtos/mo-performance.png",              
             "multimidia/produtos/nex-gard-caes.png",                    
             "multimidia/produtos/master-LP.png",                                  
@@ -166,18 +315,26 @@ include_once 'includes/header.php'
             "multimidia/produtos/error.png",
             "multimidia/produtos/error.png",
             "multimidia/produtos/error.png",
-                       
-        ];            
-        // Alterar as imagens com base nos IDs
-        for (let i = 1; i <= 8; i++) {
-             document.getElementById('img' + i).src = novasImagens[i - 1];
-           
+            ];
+
+            const novasDescricoes = [
+                "Fipronil de Gado de Corte",
+                "Mo Performance",
+                "Nex Gard Caes e Gatos",
+                "Master LP",
+                "Treo",
+                "Iten Faltante",
+                "Iten Faltante",
+                "Iten Faltante"
+            ];
+
+            for (let i = 1; i <= 8; i++) {
+                document.getElementById('img' + i).src = novasImagens[i - 1];
+                document.getElementById('nome' + i).innerHTML = '<strong>' + novasDescricoes[i - 1] + '</strong>';
+            }
         }
-    }
- 
-       
-   
     </script>
- 
+
 </body>
+
 </html>
