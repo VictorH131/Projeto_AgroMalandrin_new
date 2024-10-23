@@ -8,7 +8,7 @@
     
     <!-- conectando com o css-->
     <link href="estilos/estilo2.css" rel="stylesheet" type="text/css">
-
+ 
     
     <!-- colocando o icone da pagina-->
     <link rel="shortcut icon" href="multimidia/icones/planta.png" type="image/x-icon">

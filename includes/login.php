@@ -73,7 +73,8 @@ include 'internal/header.php'; // Ajuste o caminho conforme necessário
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Agro Malandrin</title>
-    <link rel="stylesheet" href="styles/stylelogin.css"> 
+    <link rel="stylesheet" href="estilos/estilo2.css">
+    
 
     <!-- Importar a biblioteca SHA-512 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha512/0.8.0/sha512.min.js"></script>
@@ -81,7 +82,7 @@ include 'internal/header.php'; // Ajuste o caminho conforme necessário
 
 <body>
     <div id="login">     
-        <div class="right-panel">
+        <div class="tableLogin">
             <h2>Login</h2>
             
             <?php if (isset($error)): ?>
