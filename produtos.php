@@ -29,8 +29,9 @@ include_once "includes/header.php";
             color: white;
             padding: 15px;
             margin-top: -5%;
+            margin-left: -30vh;
             border: 3px solid #034F0A;
-            border-radius: 8px;
+            border-radius: 10px;
             width: 120%;
             text-align: left;
             font-size: 20px;
@@ -50,7 +51,8 @@ include_once "includes/header.php";
             border-radius: 10px;
             position: absolute;
             margin-bottom: 60%;
-            top: 40px;
+            margin-left: -30vh;
+            top: 39px;
             width: 120%;
             z-index: 1;
         }
@@ -58,7 +60,7 @@ include_once "includes/header.php";
         #produto .dropdown-menu a {
             display: block;
             padding: 10px;
-            border-radius: 6.8px;
+            border-radius: 6px;
             text-decoration: none;
             color: black;
             border-bottom: 2px solid black;
@@ -154,28 +156,28 @@ include_once "includes/header.php";
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mb-4 produto-container">
-                <img id="img2" src="multimidia/produtos/racao-aves-postura.png" class="img-fluid rounded" alt="Produto 2">
+                <img id="img2" src="multimidia/produtos/master-LP.png" class="img-fluid rounded" alt="Produto 2">
                 <div class="nome-container">
-                    <p id="nome2" class="mb-0"><strong>Ração para Aves de Postura</strong></p>
+                    <p id="nome2" class="mb-0"><strong>Remédio Master LP</strong></p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mb-4 produto-container">
-                <img id="img3" src="multimidia/produtos/racao-boi.png" class="img-fluid rounded" alt="Produto 3">
+                <img id="img3" src="multimidia/produtos/bone-vestimento.png" class="img-fluid rounded" alt="Produto 3">
                 <div class="nome-container">
-                    <p id="nome3" class="mb-0"><strong>Ração para Bois</strong></p>
+                    <p id="nome3" class="mb-0"><strong>Bone BKE NATIVE INDIAN</strong></p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mb-4 produto-container">
-                <img id="img4" src="multimidia/produtos/racao-cachorro.png" class="img-fluid rounded" alt="Produto 4">
+                <img id="img4" src="multimidia/produtos/caixa-de-ferramenta.png" class="img-fluid rounded" alt="Produto 4">
                 <div class="nome-container">
-                    <p id="nome4" class="mb-0"><strong>Ração para Cachorros</strong></p>
+                    <p id="nome4" class="mb-0"><strong>Caixa de Ferramenta</strong></p>
                 </div>
             </div>
             <!-- Linha 2 -->
             <div class="col-md-3 col-sm-6 mb-4 produto-container">
-                <img id="img5" src="multimidia/produtos/racao-cavalo.png" class="img-fluid rounded" alt="Produto 5">
+                <img id="img5" src="multimidia/produtos/escova-de-aco-circular.png" class="img-fluid rounded" alt="Produto 5">
                 <div class="nome-container">
-                    <p id="nome5" class="mb-0"><strong>Ração para Cavalos</strong></p>
+                    <p id="nome5" class="mb-0"><strong>Escova de Aço Circular</strong></p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mb-4 produto-container">
@@ -185,15 +187,15 @@ include_once "includes/header.php";
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mb-4 produto-container">
-                <img id="img7" src="multimidia/produtos/nex-gard-caes.png" class="img-fluid rounded" alt="Produto 7">
+                <img id="img7" src="multimidia/produtos/fipronil-gado-de-corte.png" class="img-fluid rounded" alt="Produto 7">
                 <div class="nome-container">
-                    <p id="nome7" class="mb-0"><strong>Nex gard</strong></p>
+                    <p id="nome7" class="mb-0"><strong>Fipronil de Gado de Corte</strong></p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mb-4 produto-container">
-                <img id="img8" src="multimidia/produtos/parafusadeira-makita.png" class="img-fluid rounded" alt="Produto 8">
+                <img id="img8" src="multimidia/produtos/sandalia-vestimento.png" class="img-fluid rounded" alt="Produto 8">
                 <div class="nome-container">
-                    <p id="nome8" class="mb-0"><strong>Parafusadeira Makita</strong></p>
+                    <p id="nome8" class="mb-0"><strong>Sandalia</strong></p>
                 </div>
             </div>
         </div>
@@ -237,8 +239,8 @@ include_once "includes/header.php";
                 "Ração para Cachorros",
                 "Ração para Cavalos",
                 "Ração para Porcos",
-                "Iten Faltante",
-                "Iten Faltante"
+                "Item Faltante",
+                "Item Faltante"
             ];
 
             for (let i = 1; i <= 8; i++) {
@@ -253,9 +255,9 @@ include_once "includes/header.php";
                 "multimidia/produtos/esmerilhadeira-angular.png",                
                 "multimidia/produtos/parafusadeira-makita.png",                
                 "multimidia/produtos/caixa-de-ferramenta.png",                
-                "multimidia/produtos/serra_tico-tico.png",                
-                "multimidia/produtos/lepecid-spray.png",
+                "multimidia/produtos/serra_tico-tico.png",
                 "multimidia/produtos/tupia-M3700B.png",
+                "multimidia/produtos/error.png",
                 "multimidia/produtos/error.png",
             ];
 
@@ -267,7 +269,8 @@ include_once "includes/header.php";
                 "Serra Tico-Tico",
                 "Lepecid spray",
                 "Tupia Makita",
-                "Iten Faltante"
+                "Item Faltante",
+                "Item Faltante"
             ];
 
             for (let i = 1; i <= 8; i++) {
@@ -283,8 +286,8 @@ include_once "includes/header.php";
                 "multimidia/produtos/bota-masc-vestimento.png",                    
                 "multimidia/produtos/bone-vestimento.png",                                  
                 "multimidia/produtos/botina-vestimento.png",  
-                "multimidia/produtos/error.png",
                 "multimidia/produtos/sapatilha-vestimento.png",
+                "multimidia/produtos/error.png",
                 "multimidia/produtos/error.png",
             ];
 
@@ -294,9 +297,9 @@ include_once "includes/header.php";
                 "Bota Masculina",
                 "Bone",
                 "Botina",
-                "Iten Faltante",
                 "Sapatilha",
-                "Iten Faltante"
+                "Item Faltante",
+                "Item Faltante"
             ];
 
             for (let i = 1; i <= 8; i++) {
@@ -307,12 +310,12 @@ include_once "includes/header.php";
 
         function alterarImagens4() {
             const novasImagens = [
-                "multimidia/produtos/fipronil-gado-de-corte.png",                
+            "multimidia/produtos/fipronil-gado-de-corte.png",                
             "multimidia/produtos/mo-performance.png",              
             "multimidia/produtos/nex-gard-caes.png",                    
             "multimidia/produtos/master-LP.png",                                  
             "multimidia/produtos/treo-ace.png",  
-            "multimidia/produtos/error.png",
+            "multimidia/produtos/lepecid-spray.png",
             "multimidia/produtos/error.png",
             "multimidia/produtos/error.png",
             ];
@@ -323,9 +326,9 @@ include_once "includes/header.php";
                 "Nex Gard Caes e Gatos",
                 "Master LP",
                 "Treo",
-                "Iten Faltante",
-                "Iten Faltante",
-                "Iten Faltante"
+                "Lepecid Spray",
+                "Item Faltante",
+                "Item Faltante"
             ];
 
             for (let i = 1; i <= 8; i++) {
