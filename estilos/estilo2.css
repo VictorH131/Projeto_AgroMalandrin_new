@@ -728,6 +728,8 @@
 
     #foto2 table {
 width: 100%; /* Ajuste conforme necessário */
+border: 1px solid;
+border-radius: 10px;
 border-collapse: collapse; /* Remove os espaços entre as bordas das células */
 /* Removido a borda de 2px da tabela */
 }
@@ -736,6 +738,7 @@ border-collapse: collapse; /* Remove os espaços entre as bordas das células */
 padding: 10px; /* Espaçamento interno */
 text-align: left; /* Alinhamento à esquerda para as células */
 border: 2px solid #000; /* Borda de 2px nas células */
+
 }
 
 #foto2 th {
@@ -754,7 +757,7 @@ transition: font-size 0.3s ease; /* Suaviza a transição */
 
 
 #home #foto2 #maps #imagem {
-border-radius: 8px;
+border-radius: 10px;
 border:solid 1px #034F0A;
 
 }
@@ -766,8 +769,8 @@ border:solid 1px #034F0A;
 
 
 #home #avaliacao #tabel {
-border: solid 2px #034F0A;
-border-radius: 8px;
+border: 2px solid #034F0A;
+
 }
 
 #home #avaliacao #tabel #titulo {
@@ -803,6 +806,9 @@ margin-bottom: 50px;
 text-decoration: none;
 color: white;
 }
+
+
+
 
 
 /* config login */

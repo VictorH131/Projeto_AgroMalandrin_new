@@ -11,9 +11,9 @@
         font-weight: bold;
         cursor: pointer;
         display: inline-block;
-            }
+        }
 
-            #foto2 .google-logo span {
+        #foto2 .google-logo span {
             transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
 
@@ -40,42 +40,44 @@
        
 
         #foto2 table {
-    width: 100%; /* Ajuste conforme necessário */
-    border-collapse: collapse; /* Remove os espaços entre as bordas das células */
-    /* Removido a borda de 2px da tabela */
-}
+            width: 100%; /* Ajuste conforme necessário */
+            border-collapse: collapse; /* Remove os espaços entre as bordas das células */
+            /* Removido a borda de 2px da tabela */
+        }
 
-#foto2 th, #foto2 td {
-    padding: 10px; /* Espaçamento interno */
-    text-align: left; /* Alinhamento à esquerda para as células */
-    border: 2px solid #000; /* Borda de 2px nas células */
-}
+        #foto2 th, #foto2 td {
+            padding: 10px; /* Espaçamento interno */
+            text-align: left; /* Alinhamento à esquerda para as células */
+            border: 2px solid #000; /* Borda de 2px nas células */
+        }
 
-#foto2 th {
-    font-size: 1.5em; /* Aumenta o tamanho da fonte dos cabeçalhos */
-    background-color: #034F0A; /* Fundo verde escuro para os cabeçalhos */
-    color: #fff; /* Texto branco para contraste */
-    text-align: center; /* Centraliza o texto dos cabeçalhos */
-    text-decoration: none;
-}
+        #foto2 th {
+            font-size: 1.5em; /* Aumenta o tamanho da fonte dos cabeçalhos */
+            background-color: #034F0A; /* Fundo verde escuro para os cabeçalhos */
+            color: #fff; /* Texto branco para contraste */
+            text-align: center; /* Centraliza o texto dos cabeçalhos */
+            text-decoration: none;
+        }       
 
-#foto2 table:hover th {
-    font-size: 2em; /* Aumenta ainda mais ao passar o mouse */
-    transition: font-size 0.3s ease; /* Suaviza a transição */
-}
+        #foto2 table:hover th {
+            font-size: 2em; /* Aumenta ainda mais ao passar o mouse */
+            transition: font-size 0.3s ease; /* Suaviza a transição */
+        }  
 
-#home #foto2 #foto #descricao {
-        align-items: center;
-        padding-left: 10%;
-        padding-right: 10%;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        font-size: 0.9em;
-        font-family: 'Times New Roman', Times, serif;
-    }
-    #foto2 #descricao{
-        width: 40%;
-    }
+        #home #foto2 #foto #descricao {
+            align-items: center;
+            padding-left: 10%;
+            padding-right: 10%;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 0.9em;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #foto2 #descricao{
+            width: 40%;
+        }
+
+        
     </style>
 </head>
 
@@ -84,7 +86,7 @@
 include_once 'includes/header.php'
 ?>
 
-<marquee> visite-nos em Nossa Loja </marquee>
+<marquee> Visite-nos em Nossa Loja </marquee>
 
 <main id="home">
     <div id="ads">
@@ -140,7 +142,7 @@ include_once 'includes/header.php'
                     <div class="container_texto text-center" id="descricao">
                         <h4 class="texto-titulo">Facil localização</h4>
                         <p class="texto-menor">
-                            para acessar o Google Maps e obter mais informações sobre como chegar até nós.
+                            Para acessar o Google Maps e obter mais informações sobre como chegar até nós.
                         </p>
                     </div>    
 
