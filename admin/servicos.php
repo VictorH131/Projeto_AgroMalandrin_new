@@ -96,7 +96,7 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
  
  
                             <label for="desc_serv">Descrição do Serviço:</label>
-                            <input type="text" id="desc_serv" name="desc_serv" required class="form-control"><br>
+                            <textarea type="text" id="desc_serv" name="desc_serv" required class="form-control"></textarea><br>
  
                             
                             <label for="preco_serv">Preço do Serviço:</label>

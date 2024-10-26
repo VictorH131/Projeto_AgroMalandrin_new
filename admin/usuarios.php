@@ -181,91 +181,139 @@ function validarCPF($cpf) {
                 <div class="col-md-6 mx-auto">
                     <div class="box">
 
-                        <br><h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Usuário</h3><br>
+                        <br><h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Usuário</h3>
                         
                         <!-- Inicio do Formulario de Usuários -->
                         <form action="usuarios.php" method="POST">
                             <input type="hidden" name="id_usu" value="<?= isset($_POST['id_usu']) ? (int) $_POST['id_usu'] : -1 ?>">
- 
-                            <label for="nome_usu">Nome:</label>
-                            <input type="text" id="nome_usu" name="nome_usu" required class="form-control"><br>
- 
-                            <label for="nome_social">Nome Social:</label>
-                            <input type="text" id="nome_social" name="nome_social" class="form-control"><br>
- 
-                            <label for="email_usu">E-mail:</label>
-                            <input type="email" id="email_usu" name="email_usu" required class="form-control"><br>
- 
-                            <label for="telefone_usu">Telefone:</label>
-                            <input type="text" id="telefone_usu" name="telefone_usu" placeholder="(00) 1234-5678" class="form-control"><br>
- 
-                            <label for="celular_usu">Celular:</label>
-                            <input type="text" id="celular_usu" name="celular_usu" placeholder="(00) 12345-6789" class="form-control"><br>
- 
-                            <label for="data_nascimento">Data de Nascimento:</label>
-                            <input type="date" id="data_nascimento" name="data_nascimento" required class="form-control"><br>
- 
+
+                            <div class="d-flex mt-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="nome_usu">Nome:</label>
+                                        <input type="text" id="nome_usu" name="nome_usu" required class="form-control" style="width: 300px;">
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="nome_social" style="position: 10%;">Nome Social:</label>
+                                        <input type="text" id="nome_social" name="nome_social" class="form-control" style="width: 300px; position: 10%;"><br>
+                                    </div>
+                                </div>
+                            </div>
+                                    
+                                <label for="email_usu">E-mail:</label>
+                                <input type="email" id="email_usu" name="email_usu" required class="form-control"><br>
                             
-                            <label for="tipo_documento">Tipo de Documento:</label>
-                            <select name="tipo_documento" id="tipo_documento" class="form-control" required> 
-                                <option value="invalido">Selecione</option>
-                                <option value="cpf">CPF</option>
-                                <option value="rg">RG</option>
-                            </select><br>
+                            <div class="d-flex mt-0">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="telefone_usu">Telefone:</label>
+                                        <input type="text" id="telefone_usu" name="telefone_usu" placeholder="(00) 1234-5678" class="form-control" style="width: 300px;">
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="celular_usu" style="position: 10%;">Celular:</label>
+                                        <input type="text" id="celular_usu" name="celular_usu" placeholder="(00) 12345-6789" class="form-control" style="width: 300px; position: 10%;"><br>
+                                    </div>
+                                </div>
+                            </div>
+
+                                <label for="data_nascimento">Data de Nascimento:</label>
+                                <input type="date" id="data_nascimento" name="data_nascimento" required class="form-control"><br>
  
-                            <label for="documento_usu">Documento:</label>
-                            <input type="text" id="documento_usu" name="documento_usu" required class="form-control"><br>
+                                <div class="d-flex mt-0">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="tipo_documento">Tipo de Documento:</label>
+                                            <select name="tipo_documento" id="tipo_documento" class="form-control" required style="width: 300px;"> 
+                                                <option value="invalido">Selecione</option>
+                                                <option value="cpf">CPF</option>
+                                                <option value="rg">RG</option>
+                                            </select>
+                                        </div>
+                                    
+                                        <div class="col">
+                                            <label for="documento_usu" style="position: 10%;">Documento:</label>
+                                            <input type="text" id="documento_usu" name="documento_usu" required class="form-control" style="width: 300px; position: 10%;"><br>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex mt-0">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="uf">Estado:</label>
+                                            <select id="uf" name="uf"  class="form-control" required style="width: 300px;">
+                                                <option>Selecione</option>
+                                                <option value="SP">São Paulo</option>
+                                                <option value="MG">Minas Gerais</option>
+                                                <option value="RJ">Rio de Janeiro</option>
+                                                <option value="RS">Rio Grande do Sul</option>
+                                                <option value="BA">Bahia</option>
+                                                <option value="PR">Paraná</option>
+                                                <option value="SC">Santa Catarina</option>
+                                                <option value="DF">Distrito Federal</option>
+                                                <option value="CE">Ceará</option>
+                                                <option value="PE">Pernambuco</option>
+                                                <option value="ES">Espírito Santo</option>
+                                                <option value="MA">Maranhão</option>
+                                                <option value="GO">Goiás</option>
+                                                <option value="MT">Mato Grosso</option>
+                                                <option value="MS">Mato Grosso do Sul</option>
+                                                <option value="AM">Amazonas</option>
+                                                <option value="PA">Pará</option>
+                                                <option value="AP">Amapá</option>
+                                                <option value="TO">Tocantins</option>
+                                                <option value="RO">Rondônia</option>
+                                                <option value="AC">Acre</option>
+                                                <option value="RR">Roraima</option>
+                                                <option value="AL">Alagoas</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col">
+                                            <label for="cidade" style="position: 10%;">Cidade:</label>
+                                            <input type="text" id="cidade" name="cidade" required class="form-control" style="width: 300px; position: 10%;"><br>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex mt-0">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="bairro">Bairro:</label>
+                                            <input type="text" id="bairro" name="bairro" required class="form-control" style="width: 300px;">
+                                        </div>
  
-                            <label for="rua">Rua:</label>
-                            <input type="text" id="rua" name="rua" required class="form-control"><br>
+                                        <div class="col">
+                                            <label for="cep" style="position: 10%;">CEP:</label>
+                                            <input type="text" id="cep" name="cep" required class="form-control" style="width: 300px; position: 10%;"><br>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex mt-0">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="rua">Rua:</label>
+                                            <input type="text" id="rua" name="rua" required class="form-control" style="width: 300px;">
+                                        </div>
  
-                            <label for="numero">Número:</label>
-                            <input type="text" id="numero" name="numero" required class="form-control"><br>
+                                        <div class="col">
+                                            <label for="numero" style="position: 10%;">Número:</label>
+                                            <input type="text" id="numero" name="numero" required class="form-control" style="width: 300px; position: 10%;"><br>
+                                        </div>
+                                    </div>
+                                </div>
  
-                            <label for="bairro">Bairro:</label>
-                            <input type="text" id="bairro" name="bairro" required class="form-control"><br>
+                                    <label for="complemento">Complemento:</label>
+                                    <input type="text" id="complemento" name="complemento" class="form-control"><br>
  
-                            <label for="cidade">Cidade:</label>
-                            <input type="text" id="cidade" name="cidade" required class="form-control"><br>
+                                <label for="senha">Senha:</label>
+                                <input type="password" id="senha" name="senha" required class="form-control"><br>
  
-                            <label for="uf">Estado:</label><br>
-                            <select id="uf" name="uf"  class="form-control" required>
-                                <option>Selecione</option>
-                                <option value="SP">São Paulo</option>
-                                <option value="MG">Minas Gerais</option>
-                                <option value="RJ">Rio de Janeiro</option>
-                                <option value="RS">Rio Grande do Sul</option>
-                                <option value="BA">Bahia</option>
-                                <option value="PR">Paraná</option>
-                                <option value="SC">Santa Catarina</option>
-                                <option value="DF">Distrito Federal</option>
-                                <option value="CE">Ceará</option>
-                                <option value="PE">Pernambuco</option>
-                                <option value="ES">Espírito Santo</option>
-                                <option value="MA">Maranhão</option>
-                                <option value="GO">Goiás</option>
-                                <option value="MT">Mato Grosso</option>
-                                <option value="MS">Mato Grosso do Sul</option>
-                                <option value="AM">Amazonas</option>
-                                <option value="PA">Pará</option>
-                                <option value="AP">Amapá</option>
-                                <option value="TO">Tocantins</option>
-                                <option value="RO">Rondônia</option>
-                                <option value="AC">Acre</option>
-                                <option value="RR">Roraima</option>
-                                <option value="AL">Alagoas</option>
-                            </select><br>
- 
-                            <label for="cep">CEP:</label>
-                            <input type="text" id="cep" name="cep" required class="form-control"><br>
- 
-                            <label for="complemento">Complemento:</label>
-                            <input type="text" id="complemento" name="complemento" class="form-control"><br>
- 
-                            <label for="senha">Senha:</label>
-                            <input type="password" id="senha" name="senha" required class="form-control"><br>
- 
-                            <button type="submit"  class="btn btn-success" >Cadastrar</button>
+                                <button type="submit" class="btn btn-success">Cadastrar</button>
+                        
                         </form><br><br>
 
                         <!-- Fim do Formulario de Usuários -->

@@ -81,7 +81,7 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
         <div class="row">
             <div class="col-md-6 mx-auto">
                 <div class="box"><br>
-                    <h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Ordem de Serviço</h3>
+                    <h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Ordem de Serviço</h3><br>
                     <form action="os.php" method="POST">
                         <label for="id_cli">Cliente:</label>
                         <select id="id_cli" name="id_cli" required class="form-control">

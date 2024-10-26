@@ -88,27 +88,43 @@ $pedidos = $conn->query($sql);
                             <label for="data_ped">Data do Pedido:</label>
                             <input type="datetime-local" id="data_ped" name="data_ped" required class="form-control"><br>
 
-                            <label for="id_cli">Cliente:</label>
-                            <select id="id_cli" name="id_cli" required class="form-control">
-                                <option value="" disabled selected>Selecione o cliente</option>
-                                <?php while ($row = $clientes->fetch_assoc()): ?>
-                                    <option value="<?= $row['id_cli'] ?>"><?= htmlspecialchars($row['nome_cli']) ?></option>
-                                <?php endwhile; ?>
-                            </select><br>
+                            <div class="d-flex mt-0">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="id_cli">Cliente:</label>
+                                        <select id="id_cli" name="id_cli" required class="form-control" style="width: 300px;">
+                                            <option value="" disabled selected>Selecione o cliente</option>
+                                            <?php while ($row = $clientes->fetch_assoc()): ?>
+                                                <option value="<?= $row['id_cli'] ?>"><?= htmlspecialchars($row['nome_cli']) ?></option>
+                                            <?php endwhile; ?>
+                                        </select>
+                                    </div>
 
-                            <label for="id_usu">Usuário:</label>
-                            <select id="id_usu" name="id_usu" required class="form-control">
-                                <option value="" disabled selected>Selecione o usuário</option>
-                                <?php while ($row = $usuarios->fetch_assoc()): ?>
-                                    <option value="<?= $row['id_usu'] ?>"><?= htmlspecialchars($row['nome_usu']) ?></option>
-                                <?php endwhile; ?>
-                            </select><br>
+                                    <div class="col">
+                                        <label for="id_usu" style="position: 10%;">Usuário:</label>
+                                        <select id="id_usu" name="id_usu" required class="form-control" style="width: 300px; position: 10%;">
+                                            <option value="" disabled selected>Selecione o usuário</option>
+                                            <?php while ($row = $usuarios->fetch_assoc()): ?>
+                                                <option value="<?= $row['id_usu'] ?>"><?= htmlspecialchars($row['nome_usu']) ?></option>
+                                            <?php endwhile; ?>
+                                        </select><br>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <label for="endereco_entrega">Endereço de Entrega:</label>
-                            <input type="text" id="endereco_entrega" name="endereco_entrega" required class="form-control"><br>
+                            <div class="d-flex mt-0">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="endereco_entrega">Endereço de Entrega:</label>
+                                        <input type="text" id="endereco_entrega" name="endereco_entrega" required class="form-control" style="width: 300px;">
+                                    </div>
 
-                            <label for="data_entrega_ped">Data de Entrega:</label>
-                            <input type="datetime-local" id="data_entrega_ped" name="data_entrega_ped" required class="form-control"><br>
+                                    <div class="col">
+                                        <label for="data_entrega_ped" style="position: 10%;">Data de Entrega:</label>
+                                        <input type="datetime-local" id="data_entrega_ped" name="data_entrega_ped" required class="form-control" style="width: 300px; position: 10%;"><br>
+                                    </div>
+                                </div>
+                            </div>
 
                             <button type="submit" class="btn btn-success">Cadastrar Pedido</button>
                         </form><br><br>
