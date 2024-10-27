@@ -119,7 +119,7 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
                     <table class="table table-bordered">
                         <thead>
                             <tr class="table-success">
-                                <th class="id-column">ID</th>
+                                <th class="id-column" style="width: 4%;">ID</th>
                                 <th>Cliente</th>
                                 <th>Usuário</th>
                                 <th>Data OS</th> <!-- Adicionando coluna de Data OS -->

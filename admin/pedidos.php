@@ -143,13 +143,13 @@ $pedidos = $conn->query($sql);
                             <table class="table table-bordered">
                                 <thead>
                                     <tr class="table-success">
-                                        <th>ID</th>
-                                        <th>Data do Pedido</th>
-                                        <th>Cliente</th>
-                                        <th>Usuário</th>
-                                        <th>Endereço de Entrega</th>
-                                        <th>Data de Entrega</th>
-                                        <th>Ações</th> 
+                                        <th style="width: 2%;">ID</th>
+                                        <th style="width: 150px;">Data do Pedido</th>
+                                        <th style="width: 130px;">Cliente</th>
+                                        <th style="width: 130px;">Usuário</th>
+                                        <th style="width: 150px;">Endereço de Entrega</th>
+                                        <th style="width: 150px;">Data de Entrega</th>
+                                        <th style="width: 5%;">Ações</th> 
                                     </tr>
                                 </thead>
                                 <tbody>

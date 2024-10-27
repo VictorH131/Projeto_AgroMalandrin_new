@@ -278,7 +278,9 @@ function validarCPF($cpf) {
     </div>
 
 
-        <hr><br><br>
+        <hr>
+        
+        <br><br>
 
         <div class="container">
                 <div class="row">
@@ -311,8 +313,8 @@ function validarCPF($cpf) {
                                         <th>Celular</th>
                                         <th>Tipo</th>
                                         <th>Documento</th>
-                                        <th >Endereço</th>
-                                        <th>Status</th>
+                                        <th>Endereço</th>
+                                        <th style="width: 80px;">Status</th>
                                         <th style="width: 200px;">Ação</th>
                                     </tr>
                                 </thead>

@@ -161,7 +161,23 @@ function validarCPF($cpf) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuários | Agro Malandrin</title>
 </head>
- 
+    <style>
+        .col-nome {
+            width: 190px;
+        }
+
+        .col-telefone {
+            width: 170px;
+        }
+
+        .col-email {
+            width: 280px;
+        }
+
+        .col-acoes {
+            width: 190px;
+        }
+    </style>
 <body>
     <div class="container">
         <!-- Exibir mensagens de aviso ou sucesso -->
@@ -321,6 +337,8 @@ function validarCPF($cpf) {
                 </div>
             </div>
             <hr>
+
+            <br><br>
  
             <div class="container">
                 <div class="row">
@@ -329,7 +347,7 @@ function validarCPF($cpf) {
                                     
                             <a href="usuarios.php?ativo=<?= $ativo === 'desabilitado' ? 'ativo' : 'desabilitado' ?>" 
                                 class="btn <?= $ativo === 'desabilitado' ? 'btn btn-primary' : 'btn btn-danger' ?>">
-                                Ver Fornecedores <?= $ativo === 'desabilitado' ? 'Ativos' : 'Desabilitados' ?>
+                                Ver Usuários <?= $ativo === 'desabilitado' ? 'Ativos' : 'Desabilitados' ?>
                             </a>
 
                         </div>
@@ -349,22 +367,22 @@ function validarCPF($cpf) {
                             <table  class="table table-bordered ">
                                 <thead>
                                     <tr class="table-success">
-                                        <th >ID</th>
-                                        <th>Nome</th>
-                                        <th>E-mail</th>
-                                        <th>Telefone</th>
+                                        <th style="width: 2%;">ID</th>
+                                        <th class="col-nome">Nome</th>
+                                        <th class="col-email">E-mail</th>
+                                        <th class="col-telefone">Telefone</th>
                                         <th>Documento</th> <!-- Adicionado campo Documento -->
                                         <th>Status</th>
-                                        <th>Ações</th>
+                                        <th class="col-acoes">Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                      <?php while ($row = $usuarios->fetch_assoc()): ?>
                                     <tr>
                                         <td><?= $row['id_usu'] ?></td>
-                                        <td><?= $row['nome_usu'] ?></td>
-                                        <td><?= $row['email_usu'] ?></td>
-                                        <td><?= $row['telefone_usu'] ?></td>
+                                        <td class="col-nome"><?= $row['nome_usu'] ?></td>
+                                        <td class="col-email"><?= $row['email_usu'] ?></td>
+                                        <td class="col-telefone"><?= $row['telefone_usu'] ?></td>
                                         <td><?= $row['documento_usu'] ?></td>
                                         <td><?= $row['status_usu'] ?></td>
                                         <td>
@@ -373,7 +391,7 @@ function validarCPF($cpf) {
                                             <?php if ($ativo === 'desabilitado'): ?>
                                                 <a href="?reabilitar=<?= $row['id_usu'] ?>" class="btn btn-success">Reabilitar</a>
                                             <?php else: ?>
-                                                <a href="usuarios.php?id_usu=<?= $row['id_usu'] ?>&del=1" onclick="return confirm('Tem certeza que deseja desabilitar este serviço?');" class="btn btn-danger">Desligar</a>
+                                                <a href="usuarios.php?id_usu=<?= $row['id_usu'] ?>&del=1" onclick="return confirm('Tem certeza que deseja desabilitar este serviço?');" class="btn btn-danger">Desabilitar</a>
                                             <?php endif; ?>
                                         </td>
                                     </tr>

@@ -139,6 +139,7 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
             </div>
             <hr>
  
+            <br><br>
             
             <div class="container">
                 <div class="row">
@@ -147,7 +148,7 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
                                     
                             <a href="Produtos.php?status=<?= $status === 'desabilitado' ? 'ativo' : 'desabilitado' ?>" 
                                 class="btn <?= $status === 'desabilitado' ? 'btn btn-primary' : 'btn btn-danger' ?>">
-                                Ver Fornecedores <?= $status === 'desabilitado' ? 'Ativos' : 'Desabilitados' ?>
+                                Ver Produtos <?= $status === 'desabilitado' ? 'Ativos' : 'Desabilitados' ?>
                             </a>
 
                         </div>
@@ -172,7 +173,7 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
                                         <th>Preço de Venda</th>
                                         <th>Estoque Mínimo</th>
                                         <th>Status</th>
-                                        <th>Ações</th>
+                                        <th style="width: 190px;">Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>

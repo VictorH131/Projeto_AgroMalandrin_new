@@ -139,6 +139,11 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes | Agro Malandrin</title>
 </head>
+    <style>
+        .col-tipo-documento {
+            width: 10%;
+        }
+    </style>
 <body>
 <div class="container">
     <!-- Exibir mensagens de aviso ou sucesso -->
@@ -296,7 +301,7 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
                                     
                             <a href="clientes.php?ativo=<?= $ativo === 'desabilitado' ? 'ativo' : 'desabilitado' ?>" 
                                 class="btn <?= $ativo === 'desabilitado' ? 'btn btn-primary' : 'btn btn-danger' ?>">
-                                Ver Fornecedores <?= $ativo === 'desabilitado' ? 'Ativos' : 'Desabilitados' ?>
+                                Ver Clientes <?= $ativo === 'desabilitado' ? 'Ativos' : 'Desabilitados' ?>
                             </a>
 
                         </div>
@@ -312,13 +317,13 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
                 <table class="table table-bordered">
                     <thead>
                         <tr class="table-success">
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th style="width: 120px;">Tipo do Documento</th>
-                            <th>Documento</th>
-                            <th>Estado</th>
-                            <th>Status</th>
-                            <th style="width: 190px;">Ações</th>
+                            <th style="width: 2%;">ID</th>
+                            <th style="width: 10%;">Nome</th>
+                            <th class="col-tipo-documento">Tipo do Documento</th>
+                            <th style="width: 10%;">Documento</th>
+                            <th style="width: 5%;">Estado</th>
+                            <th style="width: 8%;">Status</th>
+                            <th style="width: 8%;">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -326,7 +331,7 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
                         <tr>
                             <td><?= $row['id_cli'] ?></td>
                             <td><?= htmlspecialchars($row['nome_cli']) ?></td>
-                            <td><?= htmlspecialchars($row['tipo_do_documento_cli']) ?></td>
+                            <td class="col-tipo-documento"><?= htmlspecialchars($row['tipo_do_documento_cli']) ?></td>
                             <td><?= htmlspecialchars($row['documento_cli']) ?></td>
                             <td><?= htmlspecialchars($row['uf']) ?></td>
                             <td><?= htmlspecialchars($row['status_cli']) ?></td>

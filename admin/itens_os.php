@@ -107,11 +107,11 @@ $servicos = $conn->query("SELECT id_serv, nome_serv FROM Servico");
                         <table class="table table-bordered">
                             <thead>
                                 <tr class="table-success">
-                                    <th>ID Ordem</th>
-                                    <th>ID Serviço</th>
-                                    <th>Nome do Serviço</th>
-                                    <th>Preço dos Itens</th>
-                                    <th>Ações</th>
+                                    <th style="width: 100px;">ID Ordem</th>
+                                    <th style="width: 107px;">ID Serviço</th>
+                                    <th style="width: 130px;">Nome do Serviço</th>
+                                    <th style="width: 130px;">Preço dos Itens</th>
+                                    <th style="width: 10px;">Ações</th>
                                 </tr>
                             </thead>
                             <tbody>

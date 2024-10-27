@@ -58,7 +58,6 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
     <title>Compras | Agro Malandrin</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-
 <body>
     <div class="container">
         <div class="row">
@@ -119,6 +118,8 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
         </div>
         <hr>
 
+        <br>
+
         <div class="container">          
             <div class="row">
                 <div class="box">
@@ -129,14 +130,14 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
                         <table class="table table-bordered">
                             <thead>
                                 <tr class="table-success">
-                                    <th>ID</th>
+                                    <th style="width: 3%;">ID</th>
                                     <th>Data da Compra</th>
                                     <th>Fornecedor</th>
-                                    <th>Usuário</th>
+                                    <th style="width: 120px;">Usuário</th>
                                     <th>Prev. Entrega</th>
                                     <th>Data Entrega Efetiva</th>
                                     <th>Preço da Compra</th>
-                                    <th>Ações</th> 
+                                    <th style="width: 70px;">Ações</th> 
                                 </tr>
                             </thead>
                             <tbody>

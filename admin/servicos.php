@@ -113,15 +113,17 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
                 </div>
             </div>
             <hr>
+
+            <br><br>
  
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 mx-auto">
                         <div class="box">
                                     
-                            <a href="usuarios.php?ativo=<?= $ativo === 'desabilitado' ? 'ativo' : 'desabilitado' ?>" 
+                            <a href="servicos.php?ativo=<?= $ativo === 'desabilitado' ? 'ativo' : 'desabilitado' ?>" 
                                 class="btn <?= $ativo === 'desabilitado' ? 'btn btn-primary' : 'btn btn-danger' ?>">
-                                Ver Fornecedores <?= $ativo === 'desabilitado' ? 'Ativos' : 'Desabilitados' ?>
+                                Ver Serviços <?= $ativo === 'desabilitado' ? 'Ativos' : 'Desabilitados' ?>
                             </a>
 
                         </div>
@@ -145,7 +147,7 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
                                         <th>Preço do Serviço</th>
                                         <th>Previsão de Entrega</th> 
                                         <th>Status</th>
-                                        <th>Ações</th>
+                                        <th style="width: 180px;">Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
