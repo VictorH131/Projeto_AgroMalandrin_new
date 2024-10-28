@@ -49,10 +49,10 @@ $sql = "SELECT os.id_ordem, c.nome_cli, u.nome_usu, os.data_ordem_servico
 $result = $conn->query($sql);
 
 // Consulta para obter a lista de clientes
-$clientes = $conn->query("SELECT id_cli, nome_cli FROM Cliente");
+$clientes = $conn->query("SELECT id_cli, nome_cli FROM Cliente where status_cli = 'Ativo'");
 
 // Consulta para obter a lista de usuários
-$usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
+$usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario where status_usu = 'Ativo'");
 ?>
 
 <!DOCTYPE html>
@@ -128,7 +128,7 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
                                         <tr class="table-success">
                                             <th class="id-column" style="width: 4%;">ID</th>
                                             <th>Cliente</th>
-                                             <th>Usuário</th>
+                                            <th>Usuário</th>
                                             <th>Data OS</th>
                                             <th >Ações</th>
                                         </tr>
@@ -142,9 +142,9 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
                                                 <td><?= htmlspecialchars($row['nome_usu']) ?></td>
                                                 <td><?= htmlspecialchars($row['data_ordem_servico']) ?></td>
                                                 <td>
-                                                <a href="edit/edit_items_os.php?id=<?= $row['id_ordem'] ?>" class="btn btn-primary">Editar</a>
+                                                <a href="edit/edit_items_os.php?id=<?= $row['id_ordem'] ?>" class="btn btn-primary">add itens</a>
                                             
-                                        </td>
+                                                </td>
                                             </tr>
                                         <?php endwhile; ?>
                                     <?php else: ?>

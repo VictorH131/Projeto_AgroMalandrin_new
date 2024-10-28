@@ -6,18 +6,25 @@ require_once 'includes/dbconnect.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+// Captura o ID da ordem da URL
+$id_ordem = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
 // Inserir Item na Ordem de Serviço
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id_ordem"], $_POST["id_serv"], $_POST["preco_items_os"])) {
+    // Verifica se algum campo obrigatório está vazio
     if (empty($_POST["id_ordem"]) || empty($_POST["id_serv"]) || empty($_POST["preco_items_os"])) {
         $aviso = "Todos os campos obrigatórios devem ser preenchidos.";
     } else {
+        // Captura dados do formulário
         $id_ordem = $_POST["id_ordem"];
         $id_serv = $_POST["id_serv"];
         $preco_items_os = $_POST["preco_items_os"];
         
+        // Preparar a inserção
         $stmt = $conn->prepare("INSERT INTO Items_os (id_ordem, id_serv, preco_items_os) VALUES (?, ?, ?)");
         $stmt->bind_param("iid", $id_ordem, $id_serv, $preco_items_os);
 
+        // Executar a inserção
         if ($stmt->execute()) {
             $success = "Item cadastrado com sucesso.";
         } else {
@@ -26,12 +33,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id_ordem"], $_POST["id
     }
 }
 
-// Consulta para buscar itens da ordem de serviço
+// Consulta para buscar itens da ordem de serviço com o ID da ordem específico
 $sql = "SELECT ios.*, s.nome_serv 
         FROM Items_os ios 
-        JOIN Servico s ON ios.id_serv = s.id_serv";
-$itens_os = $conn->query($sql);
+        JOIN Servico s ON ios.id_serv = s.id_serv 
+        WHERE ios.id_ordem = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $id_ordem);
+$stmt->execute();
+$itens_os = $stmt->get_result();
 
+// Verificar se houve erro na consulta
 if (!$itens_os) {
     die("Erro na consulta: " . $conn->error);
 }
@@ -54,8 +66,9 @@ $servicos = $conn->query("SELECT id_serv, nome_serv FROM Servico");
         <div class="row">
             <div class="col-md-6 mx-auto">
                 <div class="box">
-                    <h3>Cadastro de Itens da Ordem de Serviço</h3>
+                    <br><h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Itens da Ordem de Serviço</h3><br>
 
+                    <!-- Exibir mensagens de aviso ou sucesso -->
                     <?php if (!empty($aviso)): ?>
                         <div class="alert alert-danger"><?= htmlspecialchars($aviso) ?></div>
                     <?php endif; ?>
@@ -64,10 +77,11 @@ $servicos = $conn->query("SELECT id_serv, nome_serv FROM Servico");
                         <div class="alert alert-success"><?= htmlspecialchars($success) ?></div>
                     <?php endif; ?>
 
-                    <form action="itens_os.php" method="POST">
+                    <!-- Formulário de Inserção de Itens da Ordem de Serviço -->
+                    <form action="itens_os.php?id=<?= $id_ordem ?>" method="POST">
                         <div class="form-group">
                             <label for="id_ordem">ID da Ordem:</label>
-                            <input type="number" id="id_ordem" name="id_ordem" required class="form-control">
+                            <input type="number" id="id_ordem" name="id_ordem" value="<?= htmlspecialchars($id_ordem) ?>" required class="form-control" readonly>
                         </div>
 
                         <div class="form-group">
@@ -86,23 +100,26 @@ $servicos = $conn->query("SELECT id_serv, nome_serv FROM Servico");
                         </div>
 
                         <button type="submit" class="btn btn-success">Cadastrar Item</button>
-                    </form>
+                    </form><br>
                 </div>
             </div>
         </div>
-
+        <hr>
+        
+        <br>
+        
         <div class="container">          
             <div class="row">
                 <div class="box">
-                    <h3>Tabela de Itens da Ordem de Serviço</h3>
+                    <h3 style="margin-left: 18%;">Tabela de Itens da Ordem de Serviço</h3>
                     <div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" style="width: 63%; margin: auto;">
                             <thead>
-                                <tr>
-                                    <th>ID Ordem</th>
-                                    <th>ID Serviço</th>
-                                    <th>Nome do Serviço</th>
-                                    <th>Preço dos Itens</th>
+                                <tr class="table-success">
+                                    <th style="width: 150px;">ID Ordem</th>
+                                    <th style="width: 110px;">ID Serviço</th>
+                                    <th style="width: 190px;">Nome do Serviço</th>
+                                    <th style="width: 150px;">Preço dos Itens</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>

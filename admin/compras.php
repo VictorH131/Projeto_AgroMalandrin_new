@@ -45,8 +45,8 @@ if (!$compras) {
 }
 
 // Consulta para buscar fornecedores e usuários
-$fornecedores = $conn->query("SELECT id_for, nome_for FROM Fornecedor");
-$usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
+$fornecedores = $conn->query("SELECT id_for, nome_for FROM Fornecedor where status_for = 'Ativo'");
+$usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario where status_usu = 'Ativo'");
 
 ?>
 
