@@ -153,8 +153,13 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
     <div class="row">
         <div class="col-md-6 mx-auto">
             <div class="box">
+
+                         <div class="d-flex justify-content-end mb-3 fixed-top">
+                            <a href="#formulario" class="btn btn-outline-primary me-2">Ir para Formulário</a>
+                            <a href="#tabela" class="btn btn-outline-secondary">Ir para Tabela</a>
+                        </div>
                 <br><h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Cliente</h3>
-                <form action="clientes.php" method="POST">
+                <form action="clientes.php" method="POST" id="formulario">
                     <input type="hidden" name="id_cli" value="<?= isset($_POST['id_cli']) ? (int) $_POST['id_cli'] : -1 ?>">
 
                     <div class="d-flex mt-4">
@@ -309,16 +314,16 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
         <div class="box">
             <h3 style="margin-left: 220px;">Clientes <?= $ativo === "desabilitado" ? "Desativados" : "Ativos" ?></h3>
             <div class="table-responsive">
-                <table class="table table-bordered" style="width: 65%; margin: auto;">
+                <table class="table table-bordered" id="tabela" >
                     <thead>
                         <tr class="table-success">
                             <th style="width: 2%;">ID</th>
                             <th style="width: 130px;">Nome</th>
-                            <th style="width: 240px;">Tipo do Documento</th>
-                            <th style="width: 170px;">Documento</th>
+                            <th style="width: 100px;">Tipo do Doc.</th>
+                            <th style="width: 50px;">Documento</th>
                             <th style="width: 5%;">Estado</th>
-                            <th>Status</th>
-                            <th style="width: 250px;">Ações</th>
+                            <th style="width: 50px;">Status</th>
+                            <th style="width: 100px;">Ações</th>
                         </tr>
                     </thead>
                     <tbody>

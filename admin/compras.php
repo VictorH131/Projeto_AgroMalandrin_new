@@ -63,6 +63,13 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
         <div class="row">
             <div class="col-md-6 mx-auto">
                 <div class="box">
+
+                <div class="d-flex justify-content-end mb-3 fixed-top">
+                            <a href="#formulario" class="btn btn-outline-primary me-2">Ir para Formulário</a>
+                            <a href="#tabela" class="btn btn-outline-secondary">Ir para Tabela</a>
+                        </div>
+
+
                     <br><h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Compras</h3><br>
 
                     <!-- Exibir mensagens de aviso ou sucesso -->
@@ -75,7 +82,7 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
                     <?php endif; ?>
 
                     <!-- Formulário de Inserção de Compras -->
-                    <form action="compras.php" method="POST">
+                    <form action="compras.php" method="POST" id="formulario">
                         <div class="form-group">
                             <label for="id_for">Fornecedor:</label>
                             <select name="id_for" id="id_for" class="form-control" required>
@@ -127,7 +134,7 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
                     <div class="table-responsive">
 
                         
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" id="tabela">
                             <thead>
                                 <tr class="table-success">
                                     <th style="width: 3%;">ID</th>

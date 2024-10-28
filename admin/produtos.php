@@ -107,10 +107,16 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
             <div class="row">
                 <div class="col-md-6 mx-auto">
                     <div class="box">
+                        
+                        <div class="d-flex justify-content-end mb-3 fixed-top">
+                            <a href="#formulario" class="btn btn-outline-primary me-2">Ir para Formulário</a>
+                            <a href="#tabela" class="btn btn-outline-secondary">Ir para Tabela</a>
+                        </div>
+
                         <br><h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Produto</h3><br>
                         
                         <!-- Inicio do Formulario de Produtos -->
-                        <form action="produtos.php" method="POST">
+                        <form action="produtos.php" method="POST" id="formulario">
                             <input type="hidden" name="id_prod" value="<?= isset($_POST['id_prod']) ? (int) $_POST['id_prod'] : -1 ?>">
  
                             <label for="nome_prod">Nome:</label>
@@ -163,7 +169,7 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
                         <div class="table-responsive">
 
                             <!-- Inicio da Tabela de Produtos -->
-                            <table class="table table-bordered" style="width: 85%; margin: auto;">
+                            <table class="table table-bordered" style="width: 85%; margin: auto;" id="tabela">
                                 <thead>
                                     <tr class="table-success">
                                         <th style="width: 2%;">ID</th>

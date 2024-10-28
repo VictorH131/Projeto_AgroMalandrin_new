@@ -87,8 +87,13 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
                 <div class="box"> 
                     <br><h3>Cadastro de Serviços</h3><br>
 
+                        <div class="d-flex justify-content-end mb-3 fixed-top">
+                            <a href="#formulario" class="btn btn-outline-primary me-2">Ir para Formulário</a>
+                            <a href="#tabela" class="btn btn-outline-secondary">Ir para Tabela</a>
+                        </div>
+
                     <!-- Inicio do Formulario de Serviços -->
-                    <form action="servicos.php" method="POST">
+                    <form action="servicos.php" method="POST" id="formulario">
                     <input type="hidden" name="id_serv" value="">
  
                             <label for="nome_serv">Nome do Serviço:</label>
@@ -138,7 +143,7 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
                         <div class="table-responsive">
 
                             <!-- Inicio da Tabela de Serviços -->
-                            <table  class="table table-bordered" style="width: 99%; margin: auto;">
+                            <table  class="table table-bordered" style="width: 99%; margin: auto;" id="tabela">
                                 <thead>
                                     <tr class="table-success">
                                         <th style="width: 2%;">ID</th>

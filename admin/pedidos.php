@@ -68,8 +68,8 @@ $pedidos = $conn->query($sql);
 
 <body>
     <div class="container">
-        <div class="d-flex justify-content-end mb-3">
-            <a href="#formulario-pedido" class="btn btn-outline-primary me-2">Ir para Formulário</a>
+        <div class="d-flex justify-content-end mb-3 fixed-top">
+            <a href="#formulario" class="btn btn-outline-primary me-2">Ir para Formulário</a>
             <a href="#tabela-pedidos" class="btn btn-outline-secondary">Ir para Tabela</a>
         </div>
 
@@ -86,11 +86,11 @@ $pedidos = $conn->query($sql);
             <div class="row">
                 <div class="col-md-6 mx-auto">
                     <div class="box">
-                        <div id="formulario-pedidos">
+                        <div >
                             <br><h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Pedido</h3><br>
 
                             <!-- Inicio do Formulario de Pedidos -->
-                            <form action="pedidos.php" method="POST">
+                            <form action="pedidos.php" method="POST" id="formulario">
                                 <label for="data_ped">Data do Pedido:</label>
                                 <input type="datetime-local" id="data_ped" name="data_ped" required class="form-control"><br>
 

@@ -81,8 +81,14 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
         <div class="row">
             <div class="col-md-6 mx-auto">
                 <div class="box"><br>
+
+
+                <div class="d-flex justify-content-end mb-3 fixed-top">
+                            <a href="#formulario" class="btn btn-outline-primary me-2">Ir para Formulário</a>
+                            <a href="#tabela" class="btn btn-outline-secondary">Ir para Tabela</a>
+                        </div>
                     <h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Ordem de Serviço</h3><br>
-                    <form action="os.php" method="POST">
+                    <form action="os.php" method="POST" id="formulario">
                         <label for="id_cli">Cliente:</label>
                         <select id="id_cli" name="id_cli" required class="form-control">
                             <option value="">Selecione um cliente</option>
@@ -113,17 +119,18 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
 
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5 mx-auto">
+                    <div class="col-md-7 mx-auto">
                         <div class="box">          
                             <h3 style="margin-left: -1%;">Ordens de Serviço</h3>
                             <div class="table-responsive">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered" id="tabela">
                                     <thead>
                                         <tr class="table-success">
                                             <th class="id-column" style="width: 4%;">ID</th>
                                             <th>Cliente</th>
-                                            <th>Usuário</th>
-                                            <th>Data OS</th> <!-- Adicionando coluna de Data OS -->
+                                             <th>Usuário</th>
+                                            <th>Data OS</th>
+                                            <th >Ações</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -134,6 +141,10 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
                                                 <td><?= htmlspecialchars($row['nome_cli']) ?></td>
                                                 <td><?= htmlspecialchars($row['nome_usu']) ?></td>
                                                 <td><?= htmlspecialchars($row['data_ordem_servico']) ?></td>
+                                                <td>
+                                                <a href="edit/edit_items_os.php?id=<?= $row['id_ordem'] ?>" class="btn btn-primary">Editar</a>
+                                            
+                                        </td>
                                             </tr>
                                         <?php endwhile; ?>
                                     <?php else: ?>

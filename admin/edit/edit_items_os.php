@@ -9,7 +9,7 @@ ini_set('display_errors', 1);
 if (!isset($_GET['id'])) {
     die("ID do item não especificado.");
 }
-
+ 
 $id_ordem = $_GET['id'];
 
 // Consultar o item para editar

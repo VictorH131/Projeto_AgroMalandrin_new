@@ -160,8 +160,14 @@ function validarCPF($cpf) {
             <div class="row">
                 <div class="col-md-6 mx-auto">
                     <div class="box"><br>
+
+                    
+                        <div class="d-flex justify-content-end mb-3 fixed-top">
+                            <a href="#formulario" class="btn btn-outline-primary me-2">Ir para Formulário</a>
+                            <a href="#tabela" class="btn btn-outline-secondary">Ir para Tabela</a>
+                        </div>
                         <h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Fornecedor</h3><br>
-                        <form action="fornecedor.php" method="POST">
+                        <form action="fornecedor.php" method="POST" id="formulario">
                             <label for="nome_for">Nome:</label>
                             <input type="text" id="nome_for" name="nome_for" required class="form-control" value="<?= htmlspecialchars($_POST['nome_for'] ?? '') ?>"><br>
 
@@ -305,7 +311,7 @@ function validarCPF($cpf) {
                         <div class="table-responsive">                            
                             <table  class="table table-bordered ">
                                 <thead>
-                                    <tr class="table-success">
+                                    <tr class="table-success" id="tabela">
                                         <th>ID</th>
                                         <th>Nome</th>
                                         <th>Email</th>
@@ -315,7 +321,7 @@ function validarCPF($cpf) {
                                         <th>Documento</th>
                                         <th>Endereço</th>
                                         <th style="width: 80px;">Status</th>
-                                        <th style="width: 198px;">Ação</th>
+                                        <th style="width: 250px;">Ação</th>
                                     </tr>
                                 </thead>
                                 <tbody>
