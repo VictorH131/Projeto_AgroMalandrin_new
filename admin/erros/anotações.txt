@@ -48,6 +48,14 @@
 
    - quando qualquer tabela que puxa o id para adicionar ele confere se esta ativos.
 
+-- 28/10/2024
+
+   Corrigindo alguns erros basicos das tabelas e dos formularios. No formulario mudamos a ordem do textbox Nome social para ficar ao lado do Nome, fizemos isso para os outros formularios, preços e documentos tambem.
+   Nas tabelas arrumamos as larguras para nao ficar com muitos espaço em branco. 
+   Criamos botões de ir para o formulario e ir para a tabela.
+   Corrigido alguns espaços e alturas dos arquivos edit.
+   No arquivo pedidos.php quando vc clica no botão de Cadastrar Pedido o usuário é renderizado para a pagina de Ordemd e Servico.
+
    
 
 

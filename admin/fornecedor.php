@@ -269,8 +269,8 @@ function validarCPF($cpf) {
                                         <label for="complemento">Complemento:</label>
                                         <input type="text" id="complemento" name="complemento" class="form-control" value="<?= htmlspecialchars($_POST['complemento'] ?? '') ?>"><br>
 
-                            <button type="submit" class="btn btn-success">Cadastrar</button><br><br><br><br>
-                        </form>
+                            <button type="submit" class="btn btn-success">Cadastrar</button>
+                        </form><br>
                     </div>
                 </div>
             </div>
@@ -280,7 +280,7 @@ function validarCPF($cpf) {
 
         <hr>
         
-        <br><br>
+        <br>
 
         <div class="container">
                 <div class="row">
@@ -315,7 +315,7 @@ function validarCPF($cpf) {
                                         <th>Documento</th>
                                         <th>Endereço</th>
                                         <th style="width: 80px;">Status</th>
-                                        <th style="width: 200px;">Ação</th>
+                                        <th style="width: 198px;">Ação</th>
                                     </tr>
                                 </thead>
                                 <tbody>

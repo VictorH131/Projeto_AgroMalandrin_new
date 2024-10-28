@@ -148,7 +148,7 @@ function validarCPF($cpf) {
             <div class="col-md-6 mx-auto">
                 <div class="box">
                 
-                <h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Modificar Fornecedor</h3>
+                <h3 style="margin-left: -1%;"><i class="glyphicon glyphicon-plus"></i>&nbsp;Modificar Fornecedor</h3>
 
                 <?php if ($success): ?>
                     <div class="alert alert-success"><?php echo $success; ?></div>
@@ -160,65 +160,108 @@ function validarCPF($cpf) {
                     <input type="hidden" value="<?php echo $row['id_for'];?>" name="id_for">
 
                     <label for="nome_for">Nome:</label>
-                    <input type="text" id="nome_for" name="nome_for" value="<?php echo htmlspecialchars($row['nome_for']);?>" required class="form-control"><br>
+                    <input type="text" id="nome_for" name="nome_for" style="width: 622px;" value="<?php echo htmlspecialchars($row['nome_for']);?>" required class="form-control"><br>
 
                     <label for="email_for">E-mail:</label>
-                    <input type="email" id="email_for" name="email_for" value="<?php echo htmlspecialchars($row['email_for']);?>" required class="form-control"><br>
+                    <input type="email" id="email_for" name="email_for" style="width: 622px;" value="<?php echo htmlspecialchars($row['email_for']);?>" required class="form-control"><br>
 
-                    <label for="telefone_for">Telefone:</label>
-                    <input type="text" id="telefone_for" name="telefone_for" value="<?php echo htmlspecialchars($row['telefone_for']);?>" class="form-control"><br>
+                    <div class="d-flex mt-0">
+                        <div class="row">
+                            <div class="col">
+                                <label for="telefone_for">Telefone:</label>
+                                <input type="text" id="telefone_for" name="telefone_for" style="width: 300px;" value="<?php echo htmlspecialchars($row['telefone_for']);?>" class="form-control"><br>
+                            </div>
 
-                    <label for="celular_for">Celular:</label>
-                    <input type="text" id="celular_for" name="celular_for" value="<?php echo htmlspecialchars($row['celular_for']);?>" class="form-control"><br>
+                            <div class="col">
+                                <label for="celular_for" style="position: 10%;">Celular:</label>
+                                <input type="text" id="celular_for" name="celular_for" style="width: 300px; position: 10%;" value="<?php echo htmlspecialchars($row['celular_for']);?>" class="form-control"><br>
+                            </div>
+                        </div>
+                    </div>
 
-                    <label for="tipo_do_documento_for">Tipo de Documento:</label>
-                    <select name="tipo_do_documento_for" id="tipo_do_documento_for" class="form-control" required> 
-                        <option value="cpf" <?= ($row['tipo_do_documento_for'] == 'cpf') ? 'selected' : '' ?>>CPF</option>
-                        <option value="rg" <?= ($row['tipo_do_documento_for'] == 'rg') ? 'selected' : '' ?>>RG</option>
-                    </select><br>
+                    <div class="d-flex mt-0">
+                        <div class="row">
+                            <div class="col">
+                                <label for="tipo_do_documento_for">Tipo de Documento:</label>
+                                <select name="tipo_do_documento_for" id="tipo_do_documento_for" class="form-control" required style="width: 300px;"> 
+                                    <option value="cpf" <?= ($row['tipo_do_documento_for'] == 'cpf') ? 'selected' : '' ?>>CPF</option>
+                                    <option value="rg" <?= ($row['tipo_do_documento_for'] == 'rg') ? 'selected' : '' ?>>RG</option>
+                                </select><br>
+                            </div>
 
-                    <label for="documento_for">Documento:</label>
-                    <input type="text" id="documento_for" name="documento_for" value="<?php echo htmlspecialchars($row['documento_for']);?>" required class="form-control"><br>
+                            <div class="col">
+                                <label for="documento_for" style="position: 10%;">Documento:</label>
+                                <input type="text" id="documento_for" name="documento_for" style="width: 300px; position: 10%;" value="<?php echo htmlspecialchars($row['documento_for']);?>" required class="form-control"><br>
+                            </div>
+                        </div>
+                    </div>
 
-                    <label for="rua">Rua:</label>
-                    <input type="text" id="rua" name="rua" value="<?php echo htmlspecialchars($row['rua']);?>" required class="form-control"><br>
+                    <div class="d-flex mt-0">
+                        <div class="row">
+                            <div class="col">
+                                <label for="uf">Estado:</label>
+                                <select id="uf" name="uf"  class="form-control" required style="width: 300px;">
+                                    <option>Selecione</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="TO">Tocantins</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="AL">Alagoas</option>
+                                </select>
+                            </div>
 
-                    <label for="bairro">Bairro:</label>
-                    <input type="text" id="bairro" name="bairro" value="<?php echo htmlspecialchars($row['bairro']);?>" required class="form-control"><br>
+                            <div class="col">
+                                <label for="cidade" style="position: 10%;">Cidade:</label>    
+                                <input type="text" id="cidade" name="cidade" required class="form-control" style="width: 300px; position: 10%;" value="<?= htmlspecialchars($_POST['cidade'] ?? '') ?>"><br>
+                            </div>
+                        </div>
+                    </div>
 
-                    <label for="cidade">Cidade:</label>
-                    <input type="text" id="cidade" name="cidade" value="<?php echo htmlspecialchars($row['cidade']);?>" required class="form-control                    "><br>
+                    <div class="d-flex mt-0">
+                        <div class="row">
+                            <div class="col">
+                                <label for="bairro">Bairro:</label>
+                                <input type="text" id="bairro" name="bairro" required class="form-control" style="width: 300px;" value="<?= htmlspecialchars($_POST['bairro'] ?? '') ?>">
+                            </div>
 
-                    <label for="uf">Estado:</label><br>
-                    <select id="uf" name="uf" class="form-control" required>
-                        <option value="">Selecione</option>
-                        <option value="SP" <?= ($row['uf'] == 'SP') ? 'selected' : '' ?>>São Paulo</option>
-                        <option value="MG" <?= ($row['uf'] == 'MG') ? 'selected' : '' ?>>Minas Gerais</option>
-                        <option value="RJ" <?= ($row['uf'] == 'RJ') ? 'selected' : '' ?>>Rio de Janeiro</option>
-                        <option value="RS" <?= ($row['uf'] == 'RS') ? 'selected' : '' ?>>Rio Grande do Sul</option>
-                        <option value="BA" <?= ($row['uf'] == 'BA') ? 'selected' : '' ?>>Bahia</option>
-                        <option value="PR" <?= ($row['uf'] == 'PR') ? 'selected' : '' ?>>Paraná</option>
-                        <option value="SC" <?= ($row['uf'] == 'SC') ? 'selected' : '' ?>>Santa Catarina</option>
-                        <option value="DF" <?= ($row['uf'] == 'DF') ? 'selected' : '' ?>>Distrito Federal</option>
-                        <option value="CE" <?= ($row['uf'] == 'CE') ? 'selected' : '' ?>>Ceará</option>
-                        <option value="PE" <?= ($row['uf'] == 'PE') ? 'selected' : '' ?>>Pernambuco</option>
-                        <option value="ES" <?= ($row['uf'] == 'ES') ? 'selected' : '' ?>>Espírito Santo</option>
-                        <option value="MA" <?= ($row['uf'] == 'MA') ? 'selected' : '' ?>>Maranhão</option>
-                        <option value="GO" <?= ($row['uf'] == 'GO') ? 'selected' : '' ?>>Goiás</option>
-                        <option value="MT" <?= ($row['uf'] == 'MT') ? 'selected' : '' ?>>Mato Grosso</option>
-                        <option value="MS" <?= ($row['uf'] == 'MS') ? 'selected' : '' ?>>Mato Grosso do Sul</option>
-                        <option value="AM" <?= ($row['uf'] == 'AM') ? 'selected' : '' ?>>Amazonas</option>
-                        <option value="PA" <?= ($row['uf'] == 'PA') ? 'selected' : '' ?>>Pará</option>
-                        <option value="AP" <?= ($row['uf'] == 'AP') ? 'selected' : '' ?>>Amapá</option>
-                        <option value="TO" <?= ($row['uf'] == 'TO') ? 'selected' : '' ?>>Tocantins</option>
-                        <option value="RO" <?= ($row['uf'] == 'RO') ? 'selected' : '' ?>>Rondônia</option>
-                        <option value="AC" <?= ($row['uf'] == 'AC') ? 'selected' : '' ?>>Acre</option>
-                        <option value="RR" <?= ($row['uf'] == 'RR') ? 'selected' : '' ?>>Roraima</option>
-                        <option value="AL" <?= ($row['uf'] == 'AL') ? 'selected' : '' ?>>Alagoas</option>
-                    </select><br>
+                            <div class="col">
+                                <label for="cep" style="position: 10%;">CEP:</label>
+                                <input type="text" id="cep" name="cep" required class="form-control" style="width: 300px; position: 10%;" value="<?= htmlspecialchars($_POST['cep'] ?? '') ?>"><br>
+                            </div>
+                        </div>
+                    </div>
 
-                    <label for="cep">CEP:</label>
-                    <input type="text" id="cep" name="cep" value="<?php echo htmlspecialchars($row['cep']);?>" required class="form-control"><br>
+                    <div class="d-flex mt-0">
+                        <div class="row">
+                            <div class="col">
+                                <label for="rua">Rua:</label>
+                                <input type="text" id="rua" name="rua" required class="form-control" style="width: 300px;" value="<?= htmlspecialchars($_POST['rua'] ?? '') ?>">
+                            </div>
+
+                            <div class="col">
+                                <label for="numero" style="position: 10%;">Número:</label>
+                                <input type="text" id="numero" name="numero" class="form-control" style="width: 300px; position: 10%;" value="<?= htmlspecialchars($_POST['numero'] ?? '') ?>"><br>
+                            </div>
+                        </div>
+                    </div>
 
                     <button type="submit" name="update" class="btn btn-primary">Atualizar</button>
                 </form>

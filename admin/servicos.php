@@ -134,20 +134,20 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
             <div class="container">
                 <div class="row">
                     <div class="box">
-                        <h3>Servicos <?= $ativo === "desabilitado" ? "Desativados" : "Ativos" ?></h3>
+                        <h3 style="margin-left: 5px;">Servicos <?= $ativo === "desabilitado" ? "Desativados" : "Ativos" ?></h3>
                         <div class="table-responsive">
 
                             <!-- Inicio da Tabela de Serviços -->
-                            <table  class="table table-bordered ">
+                            <table  class="table table-bordered" style="width: 99%; margin: auto;">
                                 <thead>
                                     <tr class="table-success">
-                                        <th>ID</th>
-                                        <th>Nome do Serviço</th>
-                                        <th>Descrição do Serviço</th>
-                                        <th>Preço do Serviço</th>
-                                        <th>Previsão de Entrega</th> 
-                                        <th>Status</th>
-                                        <th style="width: 180px;">Ações</th>
+                                        <th style="width: 2%;">ID</th>
+                                        <th style="width: 170px;">Nome do Serviço</th>
+                                        <th style="width: 280px;">Descrição do Serviço</th>
+                                        <th style="width: 110px;">Preço do Serviço</th>
+                                        <th style="width: 130px;">Previsão de Entrega</th> 
+                                        <th style="width: 60px;">Status</th>
+                                        <th style="width: 140px;">Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>

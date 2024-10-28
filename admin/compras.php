@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id_for"], $_POST["id_u
         if ($stmt->execute()) {
             $success = "Compra cadastrada com sucesso.";
         } else {
-            $aviso = "Erro ao cadastrar compra: " . $stmt->error;
+            $aviso = "Erro ao cadastrar a compra: " . $stmt->error;
         }
     }
 }

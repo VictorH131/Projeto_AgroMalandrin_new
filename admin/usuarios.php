@@ -161,23 +161,7 @@ function validarCPF($cpf) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuários | Agro Malandrin</title>
 </head>
-    <style>
-        .col-nome {
-            width: 190px;
-        }
-
-        .col-telefone {
-            width: 170px;
-        }
-
-        .col-email {
-            width: 280px;
-        }
-
-        .col-acoes {
-            width: 190px;
-        }
-    </style>
+   
 <body>
     <div class="container">
         <!-- Exibir mensagens de aviso ou sucesso -->
@@ -360,29 +344,27 @@ function validarCPF($cpf) {
                 <div class="row">
                     
                     <div class="box">
-                        <h3>Usuários <?= $ativo === "desabilitado" ? "Desativados" : "Ativos" ?></h3>
+                        <h3 style="margin-left: 150px;">Usuários <?= $ativo === "desabilitado" ? "Desativados" : "Ativos" ?></h3>
                         <div class="table-responsive">
-
-                            
-                            <table  class="table table-bordered ">
+                            <table  class="table table-bordered " style="width: 75%; margin: auto;">
                                 <thead>
                                     <tr class="table-success">
                                         <th style="width: 2%;">ID</th>
-                                        <th class="col-nome">Nome</th>
-                                        <th class="col-email">E-mail</th>
-                                        <th class="col-telefone">Telefone</th>
-                                        <th>Documento</th> <!-- Adicionado campo Documento -->
+                                        <th style="width: 190px;">Nome</th>
+                                        <th style="width: 280px;">E-mail</th>
+                                        <th style="width: 150px;">Telefone</th>
+                                        <th     >Documento</th> <!-- Adicionado campo Documento -->
                                         <th>Status</th>
-                                        <th class="col-acoes">Ações</th>
+                                        <th style="width: 400px;">Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                      <?php while ($row = $usuarios->fetch_assoc()): ?>
                                     <tr>
                                         <td><?= $row['id_usu'] ?></td>
-                                        <td class="col-nome"><?= $row['nome_usu'] ?></td>
-                                        <td class="col-email"><?= $row['email_usu'] ?></td>
-                                        <td class="col-telefone"><?= $row['telefone_usu'] ?></td>
+                                        <td><?= $row['nome_usu'] ?></td>
+                                        <td><?= $row['email_usu'] ?></td>
+                                        <td><?= $row['telefone_usu'] ?></td>
                                         <td><?= $row['documento_usu'] ?></td>
                                         <td><?= $row['status_usu'] ?></td>
                                         <td>

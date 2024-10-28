@@ -159,21 +159,21 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
             <div class="container">
                 <div class="row">
                     <div class="box">
-                        <h3>Produtos <?= $status === "desabilitado" ? "Desativados" : "Ativos" ?></h3>
+                        <h3 style="margin-left: 90px;">Produtos <?= $status === "desabilitado" ? "Desativados" : "Ativos" ?></h3>
                         <div class="table-responsive">
 
                             <!-- Inicio da Tabela de Produtos -->
-                            <table class="table table-bordered">
+                            <table class="table table-bordered" style="width: 85%; margin: auto;">
                                 <thead>
                                     <tr class="table-success">
-                                        <th>ID</th>
-                                        <th>Nome</th>
-                                        <th>Descrição</th>
-                                        <th>Marca</th>
-                                        <th>Preço de Venda</th>
-                                        <th>Estoque Mínimo</th>
+                                        <th style="width: 2%;">ID</th>
+                                        <th style="width: 150px;">Nome</th>
+                                        <th style="width: 230px;">Descrição</th>
+                                        <th style="width: 100px;">Marca</th>
+                                        <th style="width: 140px;">Preço de Venda</th>
+                                        <th style="width: 150px;">Estoque Mínimo</th>
                                         <th>Status</th>
-                                        <th style="width: 190px;">Ações</th>
+                                        <th style="width: 185px;">Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>

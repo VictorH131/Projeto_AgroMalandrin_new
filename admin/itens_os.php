@@ -98,20 +98,22 @@ $servicos = $conn->query("SELECT id_serv, nome_serv FROM Servico");
             </div>
         </div>
         <hr>
-
+        
+        <br>
+        
         <div class="container">          
             <div class="row">
                 <div class="box">
-                    <h3>Tabela de Itens da Ordem de Serviço</h3>
+                    <h3 style="margin-left: 18%;">Tabela de Itens da Ordem de Serviço</h3>
                     <div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" style="width: 63%; margin: auto;">
                             <thead>
                                 <tr class="table-success">
-                                    <th style="width: 100px;">ID Ordem</th>
-                                    <th style="width: 107px;">ID Serviço</th>
-                                    <th style="width: 130px;">Nome do Serviço</th>
-                                    <th style="width: 130px;">Preço dos Itens</th>
-                                    <th style="width: 10px;">Ações</th>
+                                    <th style="width: 150px;">ID Ordem</th>
+                                    <th style="width: 110px;">ID Serviço</th>
+                                    <th style="width: 190px;">Nome do Serviço</th>
+                                    <th style="width: 150px;">Preço dos Itens</th>
+                                    <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>

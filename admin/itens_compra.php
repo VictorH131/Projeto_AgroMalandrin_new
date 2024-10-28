@@ -106,18 +106,20 @@ $produtos = $conn->query("SELECT id_prod, nome_prod FROM Produto");
         </div>
         <hr>
 
+        <br>
+
         <div class="container">          
             <div class="row">
                 <div class="box">
-                    <h3>Tabela de Itens da Compra</h3>
+                    <h3 style="margin-left: 18%;">Tabela de Itens da Compra</h3>
                     <div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" style="width: 63%; margin: auto;">
                             <thead>
                                 <tr class="table-success">
-                                    <th>Data da Compra</th>
-                                    <th>ID Produto</th>
-                                    <th>Nome do Produto</th>
-                                    <th>Preço dos Itens</th>
+                                    <th style="width: 150px;">Data da Compra</th>
+                                    <th style="width: 110px;">ID Produto</th>
+                                    <th style="width: 190px;">Nome do Produto</th>
+                                    <th style="width: 150px;">Preço dos Itens</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>

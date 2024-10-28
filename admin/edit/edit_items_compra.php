@@ -99,6 +99,11 @@ $produtos = $conn->query("SELECT id_prod, nome_prod FROM Produto");
                         </div>
 
                         <div class="form-group">
+                            <label for="preco_compra">Preço da Compra:</label>
+                            <input type="number" step="0.01" min="0" id="preco_compra" name="preco_compra" required class="form-control">
+                        </div>
+
+                        <div class="form-group">
                             <label for="preco_items_compra">Preço dos Itens:</label>
                             <input type="number" step="0.01" min="0" id="preco_items_compra" name="preco_items_compra" value="<?= htmlspecialchars($item['preco_items_compra']) ?>" required class="form-control">
                         </div>

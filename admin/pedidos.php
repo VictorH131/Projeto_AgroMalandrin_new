@@ -68,6 +68,11 @@ $pedidos = $conn->query($sql);
 
 <body>
     <div class="container">
+        <div class="d-flex justify-content-end mb-3">
+            <a href="#formulario-pedido" class="btn btn-outline-primary me-2">Ir para Formulário</a>
+            <a href="#tabela-pedidos" class="btn btn-outline-secondary">Ir para Tabela</a>
+        </div>
+
         <!-- Exibir mensagens de aviso ou sucesso -->
         <?php if (!empty($aviso)): ?>
             <div class="alert alert-danger"><?= htmlspecialchars($aviso) ?></div>
@@ -81,98 +86,109 @@ $pedidos = $conn->query($sql);
             <div class="row">
                 <div class="col-md-6 mx-auto">
                     <div class="box">
-                        <br><h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Pedido</h3><br>
+                        <div id="formulario-pedidos">
+                            <br><h3><i class="glyphicon glyphicon-plus"></i>&nbsp;Cadastro de Pedido</h3><br>
 
-                        <!-- Inicio do Formulario de Pedidos -->
-                        <form action="pedidos.php" method="POST">
-                            <label for="data_ped">Data do Pedido:</label>
-                            <input type="datetime-local" id="data_ped" name="data_ped" required class="form-control"><br>
+                            <!-- Inicio do Formulario de Pedidos -->
+                            <form action="pedidos.php" method="POST">
+                                <label for="data_ped">Data do Pedido:</label>
+                                <input type="datetime-local" id="data_ped" name="data_ped" required class="form-control"><br>
 
-                            <div class="d-flex mt-0">
-                                <div class="row">
-                                    <div class="col">
-                                        <label for="id_cli">Cliente:</label>
-                                        <select id="id_cli" name="id_cli" required class="form-control" style="width: 300px;">
-                                            <option value="" disabled selected>Selecione o cliente</option>
-                                            <?php while ($row = $clientes->fetch_assoc()): ?>
-                                                <option value="<?= $row['id_cli'] ?>"><?= htmlspecialchars($row['nome_cli']) ?></option>
-                                            <?php endwhile; ?>
-                                        </select>
-                                    </div>
+                                <div class="d-flex mt-0">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="id_cli">Cliente:</label>
+                                            <select id="id_cli" name="id_cli" required class="form-control" style="width: 300px;">
+                                                <option value="" disabled selected>Selecione o cliente</option>
+                                                <?php while ($row = $clientes->fetch_assoc()): ?>
+                                                    <option value="<?= $row['id_cli'] ?>"><?= htmlspecialchars($row['nome_cli']) ?></option>
+                                                <?php endwhile; ?>
+                                            </select>
+                                        </div>
 
-                                    <div class="col">
-                                        <label for="id_usu" style="position: 10%;">Usuário:</label>
-                                        <select id="id_usu" name="id_usu" required class="form-control" style="width: 300px; position: 10%;">
-                                            <option value="" disabled selected>Selecione o usuário</option>
-                                            <?php while ($row = $usuarios->fetch_assoc()): ?>
-                                                <option value="<?= $row['id_usu'] ?>"><?= htmlspecialchars($row['nome_usu']) ?></option>
-                                            <?php endwhile; ?>
-                                        </select><br>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="d-flex mt-0">
-                                <div class="row">
-                                    <div class="col">
-                                        <label for="endereco_entrega">Endereço de Entrega:</label>
-                                        <input type="text" id="endereco_entrega" name="endereco_entrega" required class="form-control" style="width: 300px;">
-                                    </div>
-
-                                    <div class="col">
-                                        <label for="data_entrega_ped" style="position: 10%;">Data de Entrega:</label>
-                                        <input type="datetime-local" id="data_entrega_ped" name="data_entrega_ped" required class="form-control" style="width: 300px; position: 10%;"><br>
+                                        <div class="col">
+                                            <label for="id_usu" style="position: 10%;">Usuário:</label>
+                                            <select id="id_usu" name="id_usu" required class="form-control" style="width: 300px; position: 10%;">
+                                                <option value="" disabled selected>Selecione o usuário</option>
+                                                <?php while ($row = $usuarios->fetch_assoc()): ?>
+                                                    <option value="<?= $row['id_usu'] ?>"><?= htmlspecialchars($row['nome_usu']) ?></option>
+                                                <?php endwhile; ?>
+                                            </select><br>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <button type="submit" class="btn btn-success">Cadastrar Pedido</button>
-                        </form><br><br>
-                        <!-- Fim do Formulario de Pedidos -->
+                                <div class="d-flex mt-0">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="endereco_entrega">Endereço de Entrega:</label>
+                                            <input type="text" id="endereco_entrega" name="endereco_entrega" required class="form-control" style="width: 300px;">
+                                        </div>
+
+                                        <div class="col">
+                                            <label for="data_entrega_ped" style="position: 10%;">Data de Entrega:</label>
+                                            <input type="datetime-local" id="data_entrega_ped" name="data_entrega_ped" required class="form-control" style="width: 300px; position: 10%;"><br>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="submit" onclick="redirecionarOrdemServico()" class="btn btn-success">Cadastrar Pedido</button>
+
+                                <script>
+                                    function redirecionarOrdemServico() {
+                                    // Redireciona para a página de Ordem de Serviço
+                                    window.location.href = 'os.php';
+                                    }
+                                </script>
+
+                            </form><br><br>
+                            <!-- Fim do Formulario de Pedidos -->
+                        </div>
                     </div>
                 </div>
             </div>
-            <hr>
+            <hr><br><br>    
 
             <!-- Tabela de Pedidos -->
             <div class="container">
                 <div class="row">
                     <div class="box">
-                        <h3>Lista de Pedidos</h3>
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr class="table-success">
-                                        <th style="width: 2%;">ID</th>
-                                        <th style="width: 150px;">Data do Pedido</th>
-                                        <th style="width: 130px;">Cliente</th>
-                                        <th style="width: 130px;">Usuário</th>
-                                        <th style="width: 150px;">Endereço de Entrega</th>
-                                        <th style="width: 150px;">Data de Entrega</th>
-                                        <th style="width: 5%;">Ações</th> 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                     <?php while ($row = $pedidos->fetch_assoc()): ?>
-                                    <tr>
-                                        <td><?= $row['id_ped'] ?></td>
-                                        <td><?= $row['data_ped'] ?></td>
-                                        <td><?= htmlspecialchars($row['nome_cli']) ?></td>
-                                        <td><?= htmlspecialchars($row['nome_usu']) ?></td>
-                                        <td><?= $row['endereco_entrega'] ?></td>
-                                        <td><?= $row['data_entrega_ped'] ?></td>
-                                        <td>
-                                            <a href="edit/edit_ped.php?id=<?= $row['id_ped'] ?>" class="btn btn-primary">Edit</a>
-                                        </td> 
-                                    </tr>
-                                    <?php endwhile; ?>
-                                </tbody>
-                            </table>
+                        <div id="tabela-pedidos">
+                            <h3 style="margin-left: 184px;">Lista de Pedidos</h3>
+                            <div class="table-responsive">
+                                <table class="table table-bordered" style="width: 70%; margin: auto;">
+                                    <thead>
+                                        <tr class="table-success">
+                                            <th style="width: 2%;">ID</th>
+                                            <th style="width: 150px;">Data do Pedido</th>
+                                            <th style="width: 130px;">Cliente</th>
+                                            <th style="width: 130px;">Usuário</th>
+                                            <th style="width: 150px;">Endereço de Entrega</th>
+                                            <th style="width: 150px;">Data de Entrega</th>
+                                            <th style="width: 70px;">Ações</th> 
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php while ($row = $pedidos->fetch_assoc()): ?>
+                                        <tr>
+                                            <td><?= $row['id_ped'] ?></td>
+                                            <td><?= $row['data_ped'] ?></td>
+                                            <td><?= htmlspecialchars($row['nome_cli']) ?></td>
+                                            <td><?= htmlspecialchars($row['nome_usu']) ?></td>
+                                            <td><?= $row['endereco_entrega'] ?></td>
+                                            <td><?= $row['data_entrega_ped'] ?></td>
+                                            <td>
+                                                <a href="edit/edit_ped.php?id=<?= $row['id_ped'] ?>" class="btn btn-primary">Edit</a>
+                                            </td> 
+                                        </tr>
+                                        <?php endwhile; ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </body>

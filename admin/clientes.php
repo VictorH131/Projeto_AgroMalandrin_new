@@ -139,11 +139,6 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes | Agro Malandrin</title>
 </head>
-    <style>
-        .col-tipo-documento {
-            width: 10%;
-        }
-    </style>
 <body>
 <div class="container">
     <!-- Exibir mensagens de aviso ou sucesso -->
@@ -312,18 +307,18 @@ if (isset($_GET['reabilitar']) && is_numeric($_GET['reabilitar'])) {
 <div class="container">
     <div class="row">
         <div class="box">
-            <h3>Clientes <?= $ativo === "desabilitado" ? "Desativados" : "Ativos" ?></h3>
+            <h3 style="margin-left: 220px;">Clientes <?= $ativo === "desabilitado" ? "Desativados" : "Ativos" ?></h3>
             <div class="table-responsive">
-                <table class="table table-bordered">
+                <table class="table table-bordered" style="width: 65%; margin: auto;">
                     <thead>
                         <tr class="table-success">
                             <th style="width: 2%;">ID</th>
-                            <th style="width: 10%;">Nome</th>
-                            <th class="col-tipo-documento">Tipo do Documento</th>
-                            <th style="width: 10%;">Documento</th>
+                            <th style="width: 130px;">Nome</th>
+                            <th style="width: 240px;">Tipo do Documento</th>
+                            <th style="width: 170px;">Documento</th>
                             <th style="width: 5%;">Estado</th>
-                            <th style="width: 8%;">Status</th>
-                            <th style="width: 8%;">Ações</th>
+                            <th>Status</th>
+                            <th style="width: 250px;">Ações</th>
                         </tr>
                     </thead>
                     <tbody>

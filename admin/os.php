@@ -102,49 +102,51 @@ $usuarios = $conn->query("SELECT id_usu, nome_usu FROM Usuario");
                         <input type="hidden" name="data_ordem_servico" value="<?= date('Y-m-d H:i:s') ?>"> <!-- Campo oculto para a data -->
 
                         <button type="submit" class="btn btn-success">Cadastrar</button>
-                    </form>
+                    </form><br>
                 </div>
             </div>
         </div>
 
         <hr>
 
-        <div class="container">
+        <br>
+
+            <div class="container">
                 <div class="row">
                     <div class="col-md-5 mx-auto">
-                        <div class="box">
-                                    
-                <h3>Ordens de Serviço</h3>
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr class="table-success">
-                                <th class="id-column" style="width: 4%;">ID</th>
-                                <th>Cliente</th>
-                                <th>Usuário</th>
-                                <th>Data OS</th> <!-- Adicionando coluna de Data OS -->
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if ($result && $result->num_rows > 0): ?>
-                                <?php while ($row = $result->fetch_assoc()): ?>
+                        <div class="box">          
+                            <h3 style="margin-left: -1%;">Ordens de Serviço</h3>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr class="table-success">
+                                            <th class="id-column" style="width: 4%;">ID</th>
+                                            <th>Cliente</th>
+                                            <th>Usuário</th>
+                                            <th>Data OS</th> <!-- Adicionando coluna de Data OS -->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php if ($result && $result->num_rows > 0): ?>
+                                        <?php while ($row = $result->fetch_assoc()): ?>
+                                            <tr>
+                                                <td><?= htmlspecialchars($row['id_ordem']) ?></td> 
+                                                <td><?= htmlspecialchars($row['nome_cli']) ?></td>
+                                                <td><?= htmlspecialchars($row['nome_usu']) ?></td>
+                                                <td><?= htmlspecialchars($row['data_ordem_servico']) ?></td>
+                                            </tr>
+                                        <?php endwhile; ?>
+                                    <?php else: ?>
                                     <tr>
-                                        <td><?= htmlspecialchars($row['id_ordem']) ?></td> 
-                                        <td><?= htmlspecialchars($row['nome_cli']) ?></td>
-                                        <td><?= htmlspecialchars($row['nome_usu']) ?></td>
-                                        <td><?= htmlspecialchars($row['data_ordem_servico']) ?></td>
+                                        <td colspan="5">Nenhuma ordem de serviço encontrada.</td>
                                     </tr>
-                                <?php endwhile; ?>
-                            <?php else: ?>
-                                <tr>
-                                    <td colspan="5">Nenhuma ordem de serviço encontrada.</td>
-                                </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
+                                    <?php endif; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 </body>
 </html>

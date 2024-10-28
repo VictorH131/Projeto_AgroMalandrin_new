@@ -14,8 +14,10 @@
     
     29 - erro ao editar o itens os.
 
+    30 - erro ao mover o textbox de Preço da Compra para o arquivo itens_compra.php. Pois da erro da database.
+
     
 
-    --Erros a corrigir
-    1 - Na pagina pedidos, funciona normalmente mas ao atualizar o valor não atualiza automaticamente para o editor mas edita na tabela
-    2 - Na pagina os, aparece só o id do cliente e tbm a opção para selecionar, mais dentro dela nao aparece nada só escrito Selecione o Cliente. Resumindo: Pra baixo do id cliente nao aparece absolutamente nada. 
+-- Erros a corrigir
+   1 - Na pagina pedidos, funciona normalmente mas ao atualizar o valor não atualiza automaticamente para o editor mas edita na tabela
+   2 - Na pagina os, aparece só o id do cliente e tbm a opção para selecionar, mais dentro dela nao aparece nada só escrito Selecione o Cliente. Resumindo: Pra baixo do id cliente nao aparece absolutamente nada. 
